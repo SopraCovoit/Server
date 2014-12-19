@@ -1,4 +1,4 @@
-package bdd;
+package model.bdd;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
