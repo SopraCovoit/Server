@@ -8,7 +8,7 @@
 
     <servlet>
         <servlet-name>UserServlet</servlet-name>
-        <servlet-class>UserServlet</servlet-class>
+        <servlet-class>view.UserServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -20,7 +20,7 @@
 
     <servlet>
         <servlet-name>PathServlet</servlet-name>
-        <servlet-class>PathServlet</servlet-class>
+        <servlet-class>view.PathServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -32,7 +32,7 @@
 
     <servlet>
         <servlet-name>WorkplaceServlet</servlet-name>
-        <servlet-class>WorkplaceServlet</servlet-class>
+        <servlet-class>view.WorkplaceServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

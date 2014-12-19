@@ -1,3 +1,5 @@
+package view;
+
 import controller.AbstractController;
 import controller.UserController;
 
