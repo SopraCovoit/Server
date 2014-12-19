@@ -1,4 +1,4 @@
-package sopra_covoit_a_p_i_v_1_dot_1_r_0;
+package view;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

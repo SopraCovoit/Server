@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
+ * Servlet class used to access to path information with http methods
  * Created by root on 19/12/14.
  */
 public class PathServlet extends HttpServlet {
