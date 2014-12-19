@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class JDBCConnector {
 
     private static boolean driverLoaded = false;
-    private static String urlBase ="www.urldebasemongars.fr";
+    private static String urlBase ="jdbc:mysql://localhost:3306/sopracovoit";
     private static String utilisateur = "sopra";
     private static String motDePasse = "covoit";
 
@@ -21,6 +21,7 @@ public class JDBCConnector {
         try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch ( ClassNotFoundException e ) {
+
         }
     }
 
@@ -28,6 +29,7 @@ public class JDBCConnector {
 
         if (!driverLoaded){
             chargementDriver();
+            driverLoaded = true;
         }
 
         Connection connexion = null;

@@ -1,7 +1,6 @@
 package model.dao;
 
 import java.sql.Connection;
-import java.sql.Statement;
 
 /**
  * Created by julescantegril on 19/12/2014.

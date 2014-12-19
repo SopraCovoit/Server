@@ -1,6 +1,7 @@
 package controller;
 
-import model.dao.DAO_Path;
+import model.dao.DAOPath;
+
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -9,10 +10,10 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class PathController extends AbstractController {
 
-    DAO_Path daoPt;
+    DAOPath daoPt;
 
     public PathController(){
-        daoPt = new DAO_Path();
+        daoPt = new DAOPath();
     }
 
 
