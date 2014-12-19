@@ -1,4 +1,4 @@
-package model.bdd;
+package model.dao;
 
 import java.sql.Connection;
 import java.sql.Statement;
@@ -9,10 +9,11 @@ import java.sql.Statement;
 public abstract class DAO<T> extends JDBCConnector {
 
     Statement statement;
-    public Connection connect = ConnectionPostgreSQL.getInstance();
 
     public DAO() {
         super();
+        connect = connexionBase();
+
     }
 
     /**

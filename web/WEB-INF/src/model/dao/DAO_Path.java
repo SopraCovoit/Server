@@ -1,26 +1,26 @@
-package model.bdd;
+package model.dao;
+
+import model.Path;
 
 /**
  * Created by julescantegril on 19/12/2014.
  */
-public class DAO_Workplace extends DAO {
+public class DAO_Path extends DAO {
 
-    public DAO_Workplace() {
-        super();
-    }
+
 
     @Override
-    public Object find(long id) {
+    public Path find(long id) {
         return null;
     }
 
     @Override
-    public Object create(Object obj) {
+    public Path create(Object obj) {
         return null;
     }
 
     @Override
-    public Object update(Object obj) {
+    public Path update(Object obj) {
         return null;
     }
 
@@ -28,4 +28,5 @@ public class DAO_Workplace extends DAO {
     public void delete(Object obj) {
 
     }
+
 }

@@ -1,4 +1,4 @@
-package model.bdd;
+package model.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,12 +10,9 @@ import java.sql.SQLException;
 
 public class JDBCConnector {
 
-    Connection connection;
+    private Connection connection;
+    private static String urlBase;
 
-    public JDBCConnector(){
-        this.chargementDriver();
-       this.connection = this.connexionBase(urlBase);
-    }
 
     public void chargementDriver(){
         /* Chargement du driver JDBC pour MySQL */
@@ -25,7 +22,7 @@ public class JDBCConnector {
         }
     }
 
-    public Connection connexionBase(String urlBase){
+    public static Connection getInstance(){
 
         String utilisateur = "sopra";
         String motDePasse = "covoit";
