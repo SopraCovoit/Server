@@ -7,6 +7,7 @@ import java.sql.SQLException;
 /**
  * Created by julescantegril on 19/12/2014.
  */
+
 public class JDBCConnector {
 
     Connection connection;

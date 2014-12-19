@@ -6,6 +6,7 @@ import java.sql.Statement;
 /**
  * Created by julescantegril on 19/12/2014.
  */
+
 public class DAO_User extends JDBCConnector {
 
     Statement statement;
