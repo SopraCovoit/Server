@@ -1,20 +1,43 @@
 package model.bdd;
 
-import java.sql.SQLException;
+import java.sql.Connection;
 import java.sql.Statement;
 
 /**
  * Created by julescantegril on 19/12/2014.
  */
-public class DAO extends JDBCConnector {
+public abstract class DAO<T> extends JDBCConnector {
 
     Statement statement;
-    public DAO(String urlBase){
-        super(urlBase);
-        try {
-            this.statement = this.connection.createStatement();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public Connection connect = ConnectionPostgreSQL.getInstance();
+
+    public DAO() {
+        super();
     }
+
+    /**
+     * Permet de récupérer un objet via son ID
+     * @param id
+     * @return
+     */
+    public abstract T find(long id);
+
+    /**
+     * Permet de créer une entrée dans la base de données
+     * par rapport à un objet
+     * @param obj
+     */
+    public abstract T create(T obj);
+
+    /**
+     * Permet de mettre à jour les données d'une entrée dans la base
+     * @param obj
+     */
+    public abstract T update(T obj);
+
+    /**
+     * Permet la suppression d'une entrée de la base
+     * @param obj
+     */
+    public abstract void delete(T obj);
 }

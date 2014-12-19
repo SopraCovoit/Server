@@ -12,7 +12,7 @@ public class JDBCConnector {
 
     Connection connection;
 
-    public JDBCConnector(String urlBase){
+    public JDBCConnector(){
         this.chargementDriver();
        this.connection = this.connexionBase(urlBase);
     }

@@ -5,8 +5,8 @@ package model.bdd;
  */
 public class DAO_Path extends DAO {
 
-    public DAO_Path(String urlBase) {
-        super(urlBase);
+    public DAO_Path() {
+        super();
     }
 
 }
