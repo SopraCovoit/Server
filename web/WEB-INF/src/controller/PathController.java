@@ -1,7 +1,6 @@
 package controller;
 
-import model.bdd.DAO_Path;
-import model.bdd.DAO_User;
+import model.dao.DAO_Path;
 
 import javax.servlet.http.HttpServletRequest;
 

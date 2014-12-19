@@ -1,6 +1,7 @@
 package controller;
 
-import model.bdd.DAO_Workplace;
+
+import model.dao.DAO_Workplace;
 
 import javax.servlet.http.HttpServletRequest;
 
