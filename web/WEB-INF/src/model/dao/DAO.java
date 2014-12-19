@@ -6,15 +6,9 @@ import java.sql.Statement;
 /**
  * Created by julescantegril on 19/12/2014.
  */
-public abstract class DAO<T> extends JDBCConnector {
+public abstract class DAO<T> {
 
-    Statement statement;
-
-    public DAO() {
-        super();
-        connect = connexionBase();
-
-    }
+    public Connection connect = JDBCConnector.getInstance();
 
     /**
      * Permet de récupérer un objet via son ID

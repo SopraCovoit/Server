@@ -6,9 +6,9 @@ import model.User;
  * Created by julescantegril on 19/12/2014.
  */
 
-public class DAO_User extends DAO {
+public class DAOUser extends DAO {
 
-    public DAO_User(){
+    public DAOUser(){
         super();
     }
 

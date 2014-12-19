@@ -1,26 +1,28 @@
 package model.dao;
 
-import model.Path;
+import model.Workplace;
 
 /**
  * Created by julescantegril on 19/12/2014.
  */
-public class DAO_Path extends DAO {
+public class DAOWorkplace extends DAO {
 
-
+    public DAOWorkplace() {
+        super();
+    }
 
     @Override
-    public Path find(long id) {
+    public Workplace find(long id) {
         return null;
     }
 
     @Override
-    public Path create(Object obj) {
+    public Workplace create(Object obj) {
         return null;
     }
 
     @Override
-    public Path update(Object obj) {
+    public Workplace update(Object obj) {
         return null;
     }
 
@@ -28,5 +30,4 @@ public class DAO_Path extends DAO {
     public void delete(Object obj) {
 
     }
-
 }

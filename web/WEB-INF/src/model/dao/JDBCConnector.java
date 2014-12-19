@@ -10,22 +10,26 @@ import java.sql.SQLException;
 
 public class JDBCConnector {
 
-    private Connection connection;
-    private static String urlBase;
+    private static boolean driverLoaded = false;
+    private static String urlBase ="www.urldebasemongars.fr";
+    private static String utilisateur = "sopra";
+    private static String motDePasse = "covoit";
 
 
-    public void chargementDriver(){
+    public static void chargementDriver(){
         /* Chargement du driver JDBC pour MySQL */
         try {
-            Class.forName( "com.mysql.jdbc.Driver" );
+            Class.forName("com.mysql.jdbc.Driver");
         } catch ( ClassNotFoundException e ) {
         }
     }
 
     public static Connection getInstance(){
 
-        String utilisateur = "sopra";
-        String motDePasse = "covoit";
+        if (!driverLoaded){
+            chargementDriver();
+        }
+
         Connection connexion = null;
         try {
             connexion = DriverManager.getConnection(urlBase, utilisateur, motDePasse);
