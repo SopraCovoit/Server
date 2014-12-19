@@ -3,4 +3,21 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
+
+    <!-- To save as <CATALINA_HOME>\webapps\helloservlet\WEB-INF\web.xml -->
+
+    <servlet>
+        <servlet-name>HelloWorldServlet</servlet-name>
+        <servlet-class>helloWorld</servlet-class>
+    </servlet>
+
+    <!-- Note: All <servlet> elements MUST be grouped together and
+          placed IN FRONT of the <servlet-mapping> elements -->
+
+    <servlet-mapping>
+        <servlet-name>HelloWorldServlet</servlet-name>
+        <url-pattern>/sayhello</url-pattern>
+    </servlet-mapping>
+
 </web-app>
