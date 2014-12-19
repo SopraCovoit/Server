@@ -10,6 +10,7 @@ import java.sql.SQLException;
 
 public class JDBCConnector {
 
+    public static String urlBase ="url";
     Connection connection;
 
     public JDBCConnector(String urlBase){

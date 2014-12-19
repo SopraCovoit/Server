@@ -2,6 +2,7 @@ package view;
 
 import controller.AbstractController;
 import controller.WorkplaceController;
+import model.bdd.JDBCConnector;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -23,7 +24,7 @@ public class WorkplaceServlet extends HttpServlet {
 
     protected void initController(){
         if(c == null){
-            c = new WorkplaceController();
+            c = new WorkplaceController(JDBCConnector.urlBase);
         }
     }
 
