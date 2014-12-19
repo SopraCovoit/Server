@@ -1,8 +1,11 @@
-package mypckg;
+package sopra_covoit_a_p_i_v_1_dot_1_r_0;
 
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Created by root on 19/12/14.
