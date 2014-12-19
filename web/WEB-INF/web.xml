@@ -5,19 +5,40 @@
          version="3.1">
 
 
-    <!-- To save as <CATALINA_HOME>\webapps\helloservlet\WEB-INF\web.xml -->
+    <!--Servlet USER -->
 
     <servlet>
-        <servlet-name>HelloWorldServlet</servlet-name>
-        <servlet-class>helloWorld</servlet-class>
+        <servlet-name>ServletUser</servlet-name>
+        <servlet-class>servletUser</servlet-class>
     </servlet>
 
-    <!-- Note: All <servlet> elements MUST be grouped together and
-          placed IN FRONT of the <servlet-mapping> elements -->
+    <servlet-mapping>
+        <servlet-name>ServletUser</servlet-name>
+        <url-pattern>/api/user</url-pattern>
+    </servlet-mapping>
+
+    <!--Servlet PATH -->
+
+    <servlet>
+        <servlet-name>ServletPath</servlet-name>
+        <servlet-class>servletPath</servlet-class>
+    </servlet>
 
     <servlet-mapping>
-        <servlet-name>HelloWorldServlet</servlet-name>
-        <url-pattern>/sayhello</url-pattern>
+        <servlet-name>ServletPath</servlet-name>
+        <url-pattern>/api/path</url-pattern>
+    </servlet-mapping>
+
+    <!--Servlet WORKPLACE -->
+
+    <servlet>
+        <servlet-name>ServletWorkplace</servlet-name>
+        <servlet-class>servletWorkplace</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletWorkplace</servlet-name>
+        <url-pattern>/api/workplace</url-pattern>
     </servlet-mapping>
 
 </web-app>
