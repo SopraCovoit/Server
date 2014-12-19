@@ -1,11 +1,20 @@
 package controller;
 
+import model.dao.DAO_Path;
+
 import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by julescantegril on 19/12/2014.
  */
 public class PathController extends AbstractController {
+
+    DAO_Path daoPt;
+
+    public PathController(){
+        daoPt = new DAO_Path();
+    }
+
 
     public String getResponseFromResquest(HttpServletRequest request){
         return  null;

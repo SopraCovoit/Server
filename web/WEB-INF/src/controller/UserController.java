@@ -1,11 +1,19 @@
 package controller;
 
+import model.dao.DAO_User;
+
 import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by julescantegril on 19/12/2014.
  */
 public class UserController extends AbstractController {
+
+    DAO_User daoUs;
+
+    public UserController(){
+        daoUs = new DAO_User();
+    }
 
     public String getResponseFromResquest(HttpServletRequest request){
         return  null;
