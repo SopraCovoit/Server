@@ -10,6 +10,39 @@ public abstract class DAO<T> {
     public Connection connect = JDBCConnector.getInstance();
 
     /**
+     * Name of every column we can have
+     */
+
+    protected String id = "id";
+    protected String name = "name";
+    protected String surname = "surname";
+    protected String mail = "mail";
+    protected String phone = "phone";
+    protected String isDriver = "isDriver";
+    protected String home = "home";
+    protected String latitude = "lat";
+    protected String longitude = "lng";
+    protected String workplaceId = "workplaceId";
+
+    protected String location = "location";
+    protected String departureHour = "departure_hour";
+    protected String direction = "direction";
+    protected String user = "user";
+
+    protected String error = "error";
+    protected String type = "type";
+    protected String message = "message";
+
+    /**
+     * Name of every table
+     */
+
+    protected String userTable = "userTable";
+    protected String pathTable = "pathTable";
+    protected String workplaceTable = "workplaceTable";
+
+
+    /**
      * Permet de récupérer un objet via son ID
      * @param id
      * @return
@@ -21,17 +54,17 @@ public abstract class DAO<T> {
      * par rapport à un objet
      * @param obj
      */
-    public abstract T create(T obj);
+    public abstract boolean create(T obj);
 
     /**
      * Permet de mettre à jour les données d'une entrée dans la base
      * @param obj
      */
-    public abstract T update(T obj);
+    public abstract boolean update(T obj);
 
     /**
      * Permet la suppression d'une entrée de la base
      * @param obj
      */
-    public abstract void delete(T obj);
+    public abstract boolean delete(T obj);
 }

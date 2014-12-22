@@ -1,6 +1,6 @@
 package controller;
 
-import model.dao.DAO_User;
+import model.dao.DAOUser;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class UserController extends AbstractController {
 
-    DAO_User daoUs;
+    DAOUser daoUs;
 
     public UserController(){
-        daoUs = new DAO_User();
+        daoUs = new DAOUser();
     }
 
     public String getResponseFromResquest(HttpServletRequest request){

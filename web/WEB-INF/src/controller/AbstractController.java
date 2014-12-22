@@ -20,24 +20,24 @@ public abstract class AbstractController {
      * Every key we use to get every values in our JSonObject
      */
 
-    private String id = "id";
-    private String name = "name";
-    private String surname = "surname";
-    private String mail = "mail";
-    private String phone = "phone";
-    private String isDriver = "isDriver";
-    private String home = "home";
-    private String latitude = "lat";
-    private String longitude = "lng";
-    private String workplace = "workplace";
+    protected String id = "id";
+    protected String name = "name";
+    protected String surname = "surname";
+    protected String mail = "mail";
+    protected String phone = "phone";
+    protected String isDriver = "isDriver";
+    protected String home = "home";
+    protected String latitude = "lat";
+    protected String longitude = "lng";
+    protected String workplaceId = "workplace";
 
-    private String location = "location";
-    private String departureHour = "departure_hour";
-    private String direction = "direction";
-    private String user = "user";
+    protected String location = "location";
+    protected String departureHour = "departure_hour";
+    protected String direction = "direction";
+    protected String user = "user";
 
-    private String error = "error";
-    private String type = "type";
-    private String message = "message";
+    protected String error = "error";
+    protected String type = "type";
+    protected String message = "message";
 
 }

@@ -1,7 +1,7 @@
 package controller;
 
 
-import model.dao.DAO_Workplace;
+import model.dao.DAOWorkplace;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class WorkplaceController extends AbstractController {
 
-    DAO_Workplace daoWp;
+    DAOWorkplace daoWp;
 
     public WorkplaceController(){
-        daoWp = new DAO_Workplace();
+        daoWp = new DAOWorkplace();
     }
 
     public String getResponseFromResquest(HttpServletRequest request){
