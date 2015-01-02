@@ -2,16 +2,25 @@ package model.dao;
 
 import model.Path;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * Created by julescantegril on 19/12/2014.
  */
 public class DAOPath extends DAO {
 
+    Statement statement;
 
+    public DAOPath(){
+        super();
+        try {
+            statement = this.connect.createStatement();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public Path find(long id) {
@@ -19,17 +28,17 @@ public class DAOPath extends DAO {
     }
 
     @Override
-    public Path create(Object obj) {
-        return null;
+    public boolean create(Object obj) {
+        return false;
     }
 
     @Override
-    public Path update(Object obj) {
-        return null;
+    public boolean update(Object obj) {
+        return false;
     }
 
     @Override
-    public void delete(Object obj) {
+    public boolean delete(Object obj) {
         try {
             this.connect
                     .createStatement(
@@ -42,7 +51,7 @@ public class DAOPath extends DAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        return false;
     }
 
 }

@@ -37,13 +37,20 @@ public class JDBCConnector {
             connexion = DriverManager.getConnection(urlBase, utilisateur, motDePasse);
             return connexion;
         } catch ( SQLException e ) {
+            e.printStackTrace();
+            System.out.println("erreur sql ");
             return null;
         } finally {
-            if ( connexion != null )
+            if ( connexion != null ) {
                 try {
+                    System.out.println("erreur close ");
                     connexion.close();
-                } catch ( SQLException ignore ) {
+                } catch (SQLException ignore) {
+                    System.out.println("erreur la ");
                 }
+            }else{
+                System.out.println("erreur ici ");
+            }
         }
     }
 
