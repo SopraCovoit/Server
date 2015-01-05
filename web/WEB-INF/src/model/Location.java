@@ -5,16 +5,16 @@ package model;
  */
 public class Location {
 
-    long latitude;
-    long longitude;
+    double latitude;
+    double longitude;
 
-    public Location(long latitude, long longitude) {
+    public Location(double latitude, double longitude) {
 
         this.latitude = latitude;
         this.longitude = longitude;
     }
 
-    public long getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
@@ -22,7 +22,7 @@ public class Location {
         this.longitude = longitude;
     }
 
-    public long getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 

@@ -6,12 +6,12 @@ package model;
 public class Workplace {
 
     private Location location;
-    private int workplaceId;
+    private int id;
     private String name;
 
     public Workplace(Location location, int workplaceId, String name) {
         this.location = location;
-        this.workplaceId = workplaceId;
+        this.id = workplaceId;
         this.name = name;
     }
 
@@ -23,12 +23,12 @@ public class Workplace {
         this.location = location;
     }
 
-    public int getWorkplaceId() {
-        return workplaceId;
+    public int getId() {
+        return id;
     }
 
     public void setWorkplaceId(int workplaceId) {
-        this.workplaceId = workplaceId;
+        this.id = workplaceId;
     }
 
     public String getName() {

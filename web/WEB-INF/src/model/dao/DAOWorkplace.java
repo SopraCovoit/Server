@@ -29,7 +29,7 @@ public class DAOWorkplace extends DAO {
         try {
             ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.workplaceTable+" WHERE "+this.id+" = "+id);
             return new Workplace(
-                    new Location(resultatQuery.getLong(this.latitude),resultatQuery.getLong(this.longitude)),
+                    new Location(resultatQuery.getDouble(this.latitude),resultatQuery.getDouble(this.longitude)),
                     resultatQuery.getInt(this.id),
                     resultatQuery.getString(this.name));
         } catch (SQLException e) {
@@ -38,12 +38,28 @@ public class DAOWorkplace extends DAO {
         return null;
     }
 
+    /*public ArrayList<Workplace> findAll() {
+        try {
+            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.workplaceTable);
+
+            for(int i = 0;i<resultatQuery.next())
+            return new Workplace(
+                    new Location(resultatQuery.getDouble(this.latitude),resultatQuery.getDouble(this.longitude)),
+                    resultatQuery.getInt(this.id),
+                    resultatQuery.getString(this.name));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }*/
+
+
     @Override
     public boolean create(Object obj) {
         Workplace workplacetoAdd = (Workplace)obj;
         try {
             return this.statement.execute("INSERT INTO "+this.workplaceTable+" VALUES ("+
-                    workplacetoAdd.getWorkplaceId()+","+
+                    workplacetoAdd.getId()+","+
                     workplacetoAdd.getName()+","+
                     workplacetoAdd.getLocation().getLatitude()+","+
                     workplacetoAdd.getLocation().getLongitude());
@@ -60,7 +76,7 @@ public class DAOWorkplace extends DAO {
             if( this.statement.executeUpdate("UPDATE "+this.workplaceTable+
                     " SET "+this.name+" = "+workplaceToUpdate.getName()+", "+
                     this.latitude +" = "+workplaceToUpdate.getLocation().getLatitude()+", "+
-                    this.longitude+" = "+workplaceToUpdate.getLocation().getLongitude()+" WHERE "+this.id+" = "+workplaceToUpdate.getWorkplaceId()) != 0){
+                    this.longitude+" = "+workplaceToUpdate.getLocation().getLongitude()+" WHERE "+this.id+" = "+workplaceToUpdate.getId()) != 0){
                 return true;
             }else{
                 return false;
@@ -75,7 +91,7 @@ public class DAOWorkplace extends DAO {
     public boolean delete(Object obj) {
         Workplace workplacetoAdd = (Workplace)obj;
         try {
-            return this.statement.execute("DELETE " + this.workplaceTable + " WHERE " + this.id + " = " + workplacetoAdd.getWorkplaceId());
+            return this.statement.execute("DELETE " + this.workplaceTable + " WHERE " + this.id + " = " + workplacetoAdd.getId());
         } catch (SQLException e) {
             e.printStackTrace();
         }

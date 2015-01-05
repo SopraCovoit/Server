@@ -11,19 +11,29 @@ public class User {
     private String mail;
     private String phone;
     private boolean isDriver;
-    private Location homeLocation;
     private int workplaceId;
+    private String passWord;
+
 
     public User(String name, String surname, int id, String mail, String phone,
-                boolean isDriver, Location homeLocation, int workplaceId) {
+                boolean isDriver, int workplaceId,String passWord) {
+        this.passWord = passWord;
         this.name = name;
         this.surname = surname;
         this.id = id;
         this.mail = mail;
         this.phone = phone;
         this.isDriver = isDriver;
-        this.homeLocation = homeLocation;
         this.workplaceId = workplaceId;
+
+    }
+
+    public String getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
     }
 
     public String getName() {
@@ -72,14 +82,6 @@ public class User {
 
     public void setDriver(boolean isDriver) {
         this.isDriver = isDriver;
-    }
-
-    public Location getHomeLocation() {
-        return homeLocation;
-    }
-
-    public void setHomeLocation(Location homeLocation) {
-        this.homeLocation = homeLocation;
     }
 
     public int getWorkplaceId() {

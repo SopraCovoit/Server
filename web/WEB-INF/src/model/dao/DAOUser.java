@@ -1,6 +1,5 @@
 package model.dao;
 
-import model.Location;
 import model.User;
 
 import java.sql.ResultSet;
@@ -35,9 +34,8 @@ public class DAOUser extends DAO {
                     resultatQuery.getString(this.mail),
                     resultatQuery.getString(this.phone),
                     resultatQuery.getBoolean(this.isDriver),
-                    new Location(resultatQuery.getLong(this.latitude),resultatQuery.getLong(this.longitude)),
-                    resultatQuery.getInt(this.workplaceId));
-
+                    resultatQuery.getInt(this.workplaceId),
+                    resultatQuery.getString(this.passWord));
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -55,9 +53,8 @@ public class DAOUser extends DAO {
                     userToAdd.getMail()+", "+
                     userToAdd.getPhone()+", "+
                     userToAdd.isDriver()+", "+
-                    userToAdd.getHomeLocation().getLatitude()+", "+
-                    userToAdd.getHomeLocation().getLongitude()+", "+
-                    userToAdd.getWorkplaceId());
+                    userToAdd.getWorkplaceId()+", "+
+                    userToAdd.getPassWord());
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -72,9 +69,8 @@ public class DAOUser extends DAO {
                     " SET "+this.name+" = "+userToUpdate.getName()+", "+
                     this.surname +" = "+userToUpdate.getSurname()+", "+
                     this.isDriver+" = "+userToUpdate.isDriver()+
-                    this.longitude+" = "+userToUpdate.getHomeLocation().getLongitude()+", "+
-                    this.latitude+" = "+userToUpdate.getHomeLocation().getLatitude()+", "+
-                    this.workplaceId+" = "+userToUpdate.getWorkplaceId()+" WHERE "+this.id+" = "+userToUpdate.getId()) != 0){
+                    this.workplaceId+" = "+userToUpdate.getWorkplaceId()+", "+
+                    this.passWord+ "= "+userToUpdate.getPassWord()+" WHERE "+this.id+" = "+userToUpdate.getId()) != 0){
                 return true;
             }else{
                 return false;

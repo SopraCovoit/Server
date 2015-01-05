@@ -9,14 +9,25 @@ public class Path {
     private String departureHour;
     private int workPlaceId;
     private String direction;
-    private User user;
+    private int userId;
+    private int id;
 
-    public Path(Location location, String departureHour, int workPlaceId, String direction, User user) {
+    public Path(Location location, String departureHour, int workPlaceId, String direction, int userId,int id) {
         this.location = location;
         this.departureHour = departureHour;
         this.workPlaceId = workPlaceId;
         this.direction = direction;
-        this.user = user;
+        this.userId = userId;
+        this.id = id;
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Location getLocation() {
@@ -51,11 +62,11 @@ public class Path {
         this.direction = direction;
     }
 
-    public User getUser() {
-        return user;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }

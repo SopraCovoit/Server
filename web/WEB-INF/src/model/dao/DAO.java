@@ -19,16 +19,15 @@ public abstract class DAO<T> {
     protected String mail = "mail";
     protected String phone = "phone";
     protected String isDriver = "isDriver";
-    protected String home = "home";
     protected String latitude = "lat";
     protected String longitude = "lng";
     protected String workplaceId = "workplaceId";
+    protected String passWord = "passWord";
+    protected String departureHour = "departureHour";
 
-    protected String location = "location";
-    protected String departureHour = "departure_hour";
-    protected String direction = "direction";
-    protected String user = "user";
+    //protected String direction = "direction";
 
+    protected String userMail = "userMail";
     protected String error = "error";
     protected String type = "type";
     protected String message = "message";
@@ -40,6 +39,9 @@ public abstract class DAO<T> {
     protected String userTable = "userTable";
     protected String pathTable = "pathTable";
     protected String workplaceTable = "workplaceTable";
+
+    protected String userId = "workplaceTable";
+    protected String direction = "workplaceTable";
 
 
     /**
