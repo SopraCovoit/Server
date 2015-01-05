@@ -29,6 +29,7 @@ public class UserServlet extends HttpServlet {
         super.doGet(req, resp);
         initController();
         PrintWriter out = resp.getWriter();
+        if(req!=null)
         out.write(c.getResponseFromResquest(req));
     }
 

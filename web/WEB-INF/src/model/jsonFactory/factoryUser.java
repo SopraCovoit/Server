@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 public class factoryUser extends factory<User> {
 
+
     @Override
     public User jsonToObject(JSONObject json) {
         try {
