@@ -5,6 +5,7 @@ import model.User;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  * Created by julescantegril on 19/12/2014.
@@ -36,6 +37,30 @@ public class DAOUser extends DAO {
                     resultatQuery.getBoolean(this.isDriver),
                     resultatQuery.getInt(this.workplaceId),
                     resultatQuery.getString(this.passWord));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public ArrayList<User> findAllWithWorkPlaceId(long wpId){
+        try {
+            ArrayList<User> toReturn = new ArrayList<User>() ;
+            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.userTable+" WHERE "+this.workplaceId+" = "+wpId);
+            boolean rowExist = resultatQuery.first();
+            while(rowExist){
+                toReturn.add(new User(
+                        resultatQuery.getString(this.name),
+                        resultatQuery.getString(this.surname),
+                        resultatQuery.getInt(this.id),
+                        resultatQuery.getString(this.mail),
+                        resultatQuery.getString(this.phone),
+                        resultatQuery.getBoolean(this.isDriver),
+                        resultatQuery.getInt(this.workplaceId),
+                        resultatQuery.getString(this.passWord)));
+                rowExist = resultatQuery.next();
+            }
+            return toReturn;
         } catch (SQLException e) {
             e.printStackTrace();
         }

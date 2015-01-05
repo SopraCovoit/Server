@@ -6,6 +6,7 @@ import model.Workplace;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  * Created by julescantegril on 19/12/2014.
@@ -38,20 +39,24 @@ public class DAOWorkplace extends DAO {
         return null;
     }
 
-    /*public ArrayList<Workplace> findAll() {
+    public ArrayList<Workplace> findAll() {
+        ArrayList<Workplace> toReturn = new ArrayList<Workplace>() ;
         try {
             ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.workplaceTable);
+            boolean rowExist = resultatQuery.first();
+            while(rowExist){
+                toReturn.add(new Workplace(
+                        new Location(resultatQuery.getDouble(this.latitude), resultatQuery.getDouble(this.longitude)),
+                        resultatQuery.getInt(this.id),
+                        resultatQuery.getString(this.name)));
+                rowExist = resultatQuery.next();
+            }
 
-            for(int i = 0;i<resultatQuery.next())
-            return new Workplace(
-                    new Location(resultatQuery.getDouble(this.latitude),resultatQuery.getDouble(this.longitude)),
-                    resultatQuery.getInt(this.id),
-                    resultatQuery.getString(this.name));
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
-    }*/
+        return toReturn;
+    }
 
 
     @Override
