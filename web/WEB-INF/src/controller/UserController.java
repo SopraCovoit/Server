@@ -2,8 +2,6 @@ package controller;
 
 import model.dao.DAOUser;
 import model.jsonFactory.factoryUser;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -28,11 +26,12 @@ public class UserController extends AbstractController {
     }
 
     public String postResponseFromResquest(HttpServletRequest request){
-        try {
-            return facUs.objectToJson(daoUs.create(facUs.jsonToObject(new JSONObject(request.getParameter(postdata))))).toString();
+       /* try {
+            facUs.objectToJson(daoUs.create(facUs.jsonToObject(new JSONObject(request.getParameter(postdata))))).toString();
         } catch (JSONException e) {
             e.printStackTrace();
-        }
+        }*/
+        return null;
     }
 
     public String deleteResponseFromResquest(HttpServletRequest request){
