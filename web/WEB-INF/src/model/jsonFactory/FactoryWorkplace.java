@@ -1,7 +1,7 @@
 package model.jsonFactory;
 
 import model.Location;
-import model.Path;
+import model.Workplace;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -12,18 +12,15 @@ import java.util.ArrayList;
 /**
  * Created by julescantegril on 05/01/2015.
  */
-public class factoryPath extends factory<Path> {
+public class FactoryWorkplace extends Factory<Workplace> {
 
     @Override
-    public Path jsonToObject(JSONObject json) {
+    public Workplace jsonToObject(JSONObject json) {
         try {
 
-            return new Path(new Location(json.getDouble(JsonKey.latitude),json.getDouble(JsonKey.longitude)),
-                    json.getString(JsonKey.departure_hour),
-                    json.getInt(JsonKey.workplace),
-                    json.getString(JsonKey.direction),
-                    json.getInt(JsonKey.user_id),
-                    0);//PATH ID A 0 ?
+            return new Workplace(new Location(json.getDouble(JsonKey.latitude),json.getDouble(JsonKey.longitude)),
+                    json.getInt(JsonKey.id),
+                    json.getString(JsonKey.name));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -31,15 +28,12 @@ public class factoryPath extends factory<Path> {
     }
 
     @Override
-    public JSONObject objectToJson(Path object) {
+    public JSONObject objectToJson(Workplace object) {
         JSONObject jsonToReturn = new JSONObject();
         try {
             jsonToReturn.put(JsonKey.latitude,object.getLocation().getLatitude());
             jsonToReturn.put(JsonKey.longitude,object.getLocation().getLongitude());
-            jsonToReturn.put(JsonKey.departure_hour,object.getDepartureHour());
-            jsonToReturn.put(JsonKey.workplace,object.getWorkPlaceId());
-            jsonToReturn.put(JsonKey.direction,object.getDirection());
-            jsonToReturn.put(JsonKey.user_id,object.getUserId());
+            jsonToReturn.put(JsonKey.id,object.getId());
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -47,7 +41,7 @@ public class factoryPath extends factory<Path> {
     }
 
     @Override
-    public JSONArray arrayListToJson(ArrayList<Path> list) {
+    public JSONArray arrayListToJson(ArrayList<Workplace> list) {
         JSONArray jsonToReturn = new JSONArray();
         for(int i = 0;i<list.size();i++){
             jsonToReturn.put(objectToJson(list.get(i)));

@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * Created by julescantegril on 05/01/2015.
  */
 
-public abstract class factory<T> {
+public abstract class Factory<T> {
 
 
     public abstract T jsonToObject(JSONObject json);

@@ -19,18 +19,18 @@ public class DAOUser extends DAO {
         super();
         try {
             statement = this.connect.createStatement();
-            System.out.println("statement ok");
         } catch (SQLException e) {
-            System.out.println(" erreur");
             e.printStackTrace();
         }
     }
 
     @Override
     public User find(long id) {
+        User newUser = null;
         try {
             ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.userTable+" WHERE "+this.id+" = "+id);
-            return new User(
+            resultatQuery.first();
+            newUser = new User(
                     resultatQuery.getString(this.name),
                     resultatQuery.getString(this.surname),
                     resultatQuery.getInt(this.id),
@@ -39,36 +39,21 @@ public class DAOUser extends DAO {
                     resultatQuery.getBoolean(this.isDriver),
                     resultatQuery.getInt(this.workplaceId),
                     resultatQuery.getString(this.passWord));
+            System.out.println(newUser);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+
+        return newUser;
     }
 
-    public User find(String mail,String password) {
-        try {
-            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.userTable+" WHERE "+this.mail+" = "+mail+" AND "+this.passWord+" = "+password);
-            return new User(
-                    resultatQuery.getString(this.name),
-                    resultatQuery.getString(this.surname),
-                    resultatQuery.getInt(this.id),
-                    resultatQuery.getString(this.mail),
-                    resultatQuery.getString(this.phone),
-                    resultatQuery.getBoolean(this.isDriver),
-                    resultatQuery.getInt(this.workplaceId),
-                    resultatQuery.getString(this.passWord));
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    public ArrayList<User> findAllWithWorkPlaceId(long wpId){
+    public ArrayList<User> findAll(){
         try {
             ArrayList<User> toReturn = new ArrayList<User>() ;
-            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.userTable+" WHERE "+this.workplaceId+" = "+wpId);
+            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.userTable);
             boolean rowExist = resultatQuery.first();
             while(rowExist){
+                resultatQuery.first();
                 toReturn.add(new User(
                         resultatQuery.getString(this.name),
                         resultatQuery.getString(this.surname),
