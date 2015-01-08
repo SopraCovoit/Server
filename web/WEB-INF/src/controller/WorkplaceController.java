@@ -1,7 +1,7 @@
 package controller;
 
 
-import model.CustomError;
+import model.StatusedMessage;
 import model.Workplace;
 import model.dao.DAOWorkplace;
 import model.jsonFactory.FactoryError;
@@ -61,7 +61,7 @@ public class WorkplaceController extends AbstractController {
         if(daoWp.create(wpToAdd) != null){
             return facWp.objectToJson(wpToAdd).toString();
         }else{
-            return facEr.objectToJson(new CustomError(1,"Fail to create workplace","")).toString();
+            return facEr.objectToJson(new StatusedMessage(StatusedMessage.FAILURE_STATUS,StatusedMessage.FAILURE_MESSAGE)).toString();
         }
 
     }
@@ -104,7 +104,7 @@ public class WorkplaceController extends AbstractController {
         if(daoWp.update(wpToUp)){
             return facWp.objectToJson(wpToUp).toString();
         }else{
-            return facEr.objectToJson(new CustomError(1,"Fail to update workplace","")).toString();
+            return facEr.objectToJson(new StatusedMessage(1,"Fail to update workplace")).toString();
         }
     }
 }

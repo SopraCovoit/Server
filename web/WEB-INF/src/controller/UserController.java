@@ -97,7 +97,6 @@ public class UserController extends AbstractController {
         if(success){
             new StatusedMessage(StatusedMessage.)
         }
-        System.out.println(json);
         return json;
     }
 
