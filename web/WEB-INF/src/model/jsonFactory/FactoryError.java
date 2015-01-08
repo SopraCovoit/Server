@@ -38,7 +38,7 @@ public class FactoryError extends Factory<StatusedMessage> {
     }
 
     @Override
-    public JSONArray arrayListToJson(ArrayList<StatusedMessage> list) {
+    public JSONArray arrayListToJson(ArrayList<Error> list) {
         return null;
     }
 }
