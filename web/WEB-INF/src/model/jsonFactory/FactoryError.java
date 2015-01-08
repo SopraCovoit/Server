@@ -1,6 +1,6 @@
 package model.jsonFactory;
 
-import model.Error;
+import model.StatusedMessage;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -11,14 +11,14 @@ import java.util.ArrayList;
 /**
  * Created by julescantegril on 05/01/2015.
  */
-public class FactoryError extends Factory<Error> {
+public class FactoryError extends Factory<StatusedMessage> {
 
 
 
     @Override
-    public Error jsonToObject(JSONObject json) {
+    public StatusedMessage jsonToObject(JSONObject json) {
         try {
-            return new Error(json.getInt(JsonKey.id),json.getString(JsonKey.type),json.getString(JsonKey.message));
+            return new StatusedMessage(json.getInt(JsonKey.id),json.getString(JsonKey.message));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -26,12 +26,11 @@ public class FactoryError extends Factory<Error> {
     }
 
     @Override
-    public JSONObject objectToJson(Error object) {
+    public JSONObject objectToJson(StatusedMessage object) {
         JSONObject jsonToReturn = new JSONObject();
         try {
             jsonToReturn.put(JsonKey.id,object.getId());
             jsonToReturn.put(JsonKey.message,object.getMessage());
-            jsonToReturn.put(JsonKey.type,object.getType());
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -39,7 +38,7 @@ public class FactoryError extends Factory<Error> {
     }
 
     @Override
-    public JSONArray arrayListToJson(ArrayList<Error> list) {
+    public JSONArray arrayListToJson(ArrayList<StatusedMessage> list) {
         return null;
     }
 }

@@ -1,7 +1,9 @@
 package controller;
 
+import model.StatusedMessage;
 import model.User;
 import model.dao.DAOUser;
+import model.jsonFactory.FactoryError;
 import model.jsonFactory.FactoryUser;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,6 +20,7 @@ public class UserController extends AbstractController {
 
     DAOUser daoUs;
     FactoryUser facUs;
+    FactoryError factoryError;
 
     public UserController(){
         daoUs = new DAOUser();
@@ -86,7 +89,16 @@ public class UserController extends AbstractController {
     }
 
     public String deleteResponseFromResquest(HttpServletRequest request){
-        return  null;
+        String json = null;
+        boolean success = false;
+        if(request.getParameter(id) !=null) {
+            success = daoUs.delete(daoUs.find(Long.parseLong(request.getParameter(id))));
+        }
+        if(success){
+            new StatusedMessage()
+        }
+        System.out.println(json);
+        return json;
     }
 
     public String putResponseFromResquest(HttpServletRequest request){

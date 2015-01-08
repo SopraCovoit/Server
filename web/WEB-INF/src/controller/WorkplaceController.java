@@ -2,7 +2,7 @@ package controller;
 
 
 import model.dao.DAOWorkplace;
-import model.jsonFactory.factoryUser;
+import model.jsonFactory.FactoryUser;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -12,12 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 public class WorkplaceController extends AbstractController {
 
     DAOWorkplace daoWp;
-    factoryUser facWp;
+    FactoryUser facWp;
 
     public WorkplaceController(){
 
         daoWp = new DAOWorkplace();
-        facWp = new factoryUser();
+        facWp = new FactoryUser();
 
     }
 

@@ -50,7 +50,7 @@ public class UserServlet extends HttpServlet {
         super.doDelete(req, resp);
         initController();
         PrintWriter out = resp.getWriter();
-        out.write(c.postResponseFromResquest(req));
+        out.write(c.deleteResponseFromResquest(req));
     }
 
     @Override
@@ -58,6 +58,6 @@ public class UserServlet extends HttpServlet {
         super.doPut(req, resp);
         initController();
         PrintWriter out = resp.getWriter();
-        out.write(c.postResponseFromResquest(req));
+        out.write(c.putResponseFromResquest(req));
     }
 }

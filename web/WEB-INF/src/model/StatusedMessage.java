@@ -3,16 +3,18 @@ package model;
 /**
  * Created by julescantegril on 05/01/2015.
  */
-public class Error {
+public class StatusedMessage {
 
+    private final static String SUCCESS_MESSAGE ="Success";
+    private final static int SUCCESS_STATUS =200;
+    private final static String FAILURE_MESSAGE ="Failure";
+    private final static int FAILURE_STATUS =500;
 
     int id;
-    String type;
     String message;
 
-    public Error(int id, String type, String message) {
+    public StatusedMessage(int id, String message) {
         this.id = id;
-        this.type = type;
         this.message = message;
     }
 
@@ -22,14 +24,6 @@ public class Error {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public String getMessage() {
