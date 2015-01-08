@@ -89,15 +89,17 @@ public class UserController extends AbstractController {
     }
 
     public String deleteResponseFromResquest(HttpServletRequest request){
-        String json = null;
+        String json;
         boolean success = false;
         if(request.getParameter(id) !=null) {
             success = daoUs.delete(daoUs.find(Long.parseLong(request.getParameter(id))));
         }
         if(success){
-            new StatusedMessage(StatusedMessage.)
+            json = new StatusedMessage(StatusedMessage.SUCCESS_STATUS,StatusedMessage.SUCCESS_MESSAGE).toString();
+        }else{
+
         }
-        System.out.println(json);
+
         return json;
     }
 
