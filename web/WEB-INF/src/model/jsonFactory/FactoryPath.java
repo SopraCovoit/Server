@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
  * Created by julescantegril on 05/01/2015.
  */
-public class factoryPath extends factory<Path> {
+public class FactoryPath extends Factory<Path> {
 
     @Override
     public Path jsonToObject(JSONObject json) {

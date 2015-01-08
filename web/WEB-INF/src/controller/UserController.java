@@ -2,7 +2,7 @@ package controller;
 
 import model.User;
 import model.dao.DAOUser;
-import model.jsonFactory.factoryUser;
+import model.jsonFactory.FactoryUser;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -14,18 +14,25 @@ import javax.servlet.http.HttpServletRequest;
 public class UserController extends AbstractController {
 
     DAOUser daoUs;
-    factoryUser facUs;
+    FactoryUser facUs;
 
     public UserController(){
         daoUs = new DAOUser();
-       facUs = new factoryUser();
+       facUs = new FactoryUser();
     }
 
     String id = "id";
+    String workplaceId = "workplaceId";
     String token = "postdata";
 
     public String getResponseFromResquest(HttpServletRequest request){
-       return facUs.objectToJson(daoUs.find(Long.parseLong(request.getParameter(id)))).toString();
+        String json = null;
+        if(request.getParameter(id) !=null) {
+            json = facUs.objectToJson(daoUs.find(Long.parseLong(request.getParameter(id)))).toString();
+        }
+
+        System.out.println(json);
+        return "{\"toto\":\"zoubida\"}";
     }
 
     public String postResponseFromResquest(HttpServletRequest request){

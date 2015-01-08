@@ -42,12 +42,6 @@ public class JDBCConnector {
             return null;
         } finally {
             if ( connexion != null ) {
-                try {
-                    System.out.println("erreur close ");
-                    connexion.close();
-                } catch (SQLException ignore) {
-                    System.out.println("erreur la ");
-                }
             }else{
                 System.out.println("erreur ici ");
             }

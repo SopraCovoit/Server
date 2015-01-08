@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
  * Created by julescantegril on 05/01/2015.
  */
-public class factoryWorkplace extends factory<Workplace> {
+public class FactoryWorkplace extends Factory<Workplace> {
 
     @Override
     public Workplace jsonToObject(JSONObject json) {

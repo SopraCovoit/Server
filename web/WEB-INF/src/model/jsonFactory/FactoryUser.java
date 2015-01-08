@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * Created by julescantegril on 05/01/2015.
  */
 
-public class factoryUser extends factory<User> {
+public class FactoryUser extends Factory<User> {
 
 
     @Override

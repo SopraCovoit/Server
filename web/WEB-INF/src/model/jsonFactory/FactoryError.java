@@ -10,7 +10,7 @@ import java.util.ArrayList;
 /**
  * Created by julescantegril on 05/01/2015.
  */
-public class factoryError extends factory<Error> {
+public class FactoryError extends Factory<Error> {
 
 
 
