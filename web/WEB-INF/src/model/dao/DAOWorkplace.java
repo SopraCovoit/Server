@@ -60,18 +60,20 @@ public class DAOWorkplace extends DAO {
 
 
     @Override
-    public boolean create(Object obj) {
+    public Workplace create(Object obj) {
         Workplace workplacetoAdd = (Workplace)obj;
         try {
-            return this.statement.execute("INSERT INTO "+this.workplaceTable+" VALUES ("+
+            if(this.statement.execute("INSERT INTO "+this.workplaceTable+" VALUES ("+
                     workplacetoAdd.getId()+","+
                     workplacetoAdd.getName()+","+
                     workplacetoAdd.getLocation().getLatitude()+","+
-                    workplacetoAdd.getLocation().getLongitude());
+                    workplacetoAdd.getLocation().getLongitude())){
+                return workplacetoAdd;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false;
+        return null;
     }
 
     @Override

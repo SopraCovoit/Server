@@ -41,21 +41,23 @@ public class DAOPath extends DAO {
     }
 
     @Override
-    public boolean create(Object obj) {
+    public Path create(Object obj) {
         Path pathtoAdd = (Path)obj;
         try {
-            return this.statement.execute("INSERT INTO "+this.pathTable+" VALUES ("+
+            if(this.statement.execute("INSERT INTO "+this.pathTable+" VALUES ("+
                     pathtoAdd.getId()+","+
                     pathtoAdd.getLocation().getLatitude()+","+
                     pathtoAdd.getLocation().getLongitude()+","+
                     pathtoAdd.getWorkPlaceId()+","+
                     pathtoAdd.getDepartureHour()+","+
                     pathtoAdd.getDirection()+","+
-                    pathtoAdd.getUserId());
+                    pathtoAdd.getUserId())){
+                return pathtoAdd;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false;
+        return null;
     }
 
     @Override

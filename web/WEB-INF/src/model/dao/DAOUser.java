@@ -68,10 +68,10 @@ public class DAOUser extends DAO {
     }
 
     @Override
-    public boolean create(Object obj) {
+    public User create(Object obj) {
         User userToAdd = (User)obj;
         try {
-            return this.statement.execute("INSERT INTO "+this.userTable+" VALUES ("+
+            if(this.statement.execute("INSERT INTO "+this.userTable+" VALUES ("+
                     userToAdd.getName()+", "+
                     userToAdd.getSurname()+", "+
                     userToAdd.getId()+", "+
@@ -79,11 +79,13 @@ public class DAOUser extends DAO {
                     userToAdd.getPhone()+", "+
                     userToAdd.isDriver()+", "+
                     userToAdd.getWorkplaceId()+", "+
-                    userToAdd.getPassWord());
+                    userToAdd.getPassWord())){
+                return userToAdd;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false;
+        return null;//METTRE UN ERREUR
     }
 
     @Override
