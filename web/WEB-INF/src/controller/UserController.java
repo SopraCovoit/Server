@@ -36,10 +36,13 @@ public class UserController extends AbstractController {
         String json = null;
         if(request.getParameter(id) !=null) {
             json = facUs.objectToJson(daoUs.find(Long.parseLong(request.getParameter(id)))).toString();
+        }else {
+            System.out.println("avant");
+            json = facUs.arrayListToJson(daoUs.findAll()).toString();
+            System.out.println("après");
         }
-
         System.out.println(json);
-        return "{\"toto\":\"zoubida\"}";
+        return json;
     }
 
     public String postResponseFromResquest(HttpServletRequest request){
