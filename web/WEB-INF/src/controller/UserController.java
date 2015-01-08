@@ -95,7 +95,7 @@ public class UserController extends AbstractController {
             success = daoUs.delete(daoUs.find(Long.parseLong(request.getParameter(id))));
         }
         if(success){
-            new StatusedMessage()
+            new StatusedMessage(StatusedMessage.)
         }
         System.out.println(json);
         return json;
