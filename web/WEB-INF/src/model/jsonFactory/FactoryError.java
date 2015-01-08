@@ -1,6 +1,6 @@
 package model.jsonFactory;
 
-import model.Error;
+import model.CustomError;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -11,14 +11,14 @@ import java.util.ArrayList;
 /**
  * Created by julescantegril on 05/01/2015.
  */
-public class FactoryError extends Factory<Error> {
+public class FactoryError extends Factory<CustomError> {
 
 
 
     @Override
-    public Error jsonToObject(JSONObject json) {
+    public CustomError jsonToObject(JSONObject json) {
         try {
-            return new Error(json.getInt(JsonKey.id),json.getString(JsonKey.type),json.getString(JsonKey.message));
+            return new CustomError(json.getInt(JsonKey.id),json.getString(JsonKey.type),json.getString(JsonKey.message));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -26,7 +26,7 @@ public class FactoryError extends Factory<Error> {
     }
 
     @Override
-    public JSONObject objectToJson(Error object) {
+    public JSONObject objectToJson(CustomError object) {
         JSONObject jsonToReturn = new JSONObject();
         try {
             jsonToReturn.put(JsonKey.id,object.getId());
@@ -39,7 +39,7 @@ public class FactoryError extends Factory<Error> {
     }
 
     @Override
-    public JSONArray arrayListToJson(ArrayList<Error> list) {
+    public JSONArray arrayListToJson(ArrayList<CustomError> list) {
         return null;
     }
 }

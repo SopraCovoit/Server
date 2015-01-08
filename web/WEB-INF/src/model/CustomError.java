@@ -3,14 +3,14 @@ package model;
 /**
  * Created by julescantegril on 05/01/2015.
  */
-public class Error {
+public class CustomError {
 
 
     int id;
     String type;
     String message;
 
-    public Error(int id, String type, String message) {
+    public CustomError(int id, String type, String message) {
         this.id = id;
         this.type = type;
         this.message = message;
