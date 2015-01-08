@@ -18,7 +18,7 @@ public class UserController extends AbstractController {
 
     public UserController(){
         daoUs = new DAOUser();
-        facUs = new factoryUser();
+       facUs = new factoryUser();
     }
 
     String id = "id";
