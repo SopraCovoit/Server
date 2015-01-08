@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class JDBCConnector {
 
     private static boolean driverLoaded = false;
-    private static String urlBase ="jdbc:mysql://localhost:3306/sopracovoit";
+    private static String urlBase ="jdbc:mysql://localhost:8888/sopracovoit";
     private static String utilisateur = "sopra";
     private static String motDePasse = "covoit";
 

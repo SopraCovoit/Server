@@ -43,6 +43,24 @@ public class DAOUser extends DAO {
         return null;
     }
 
+    public User find(String mail,String password) {
+        try {
+            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.userTable+" WHERE "+this.mail+" = "+mail+" AND "+this.passWord+" = "+password);
+            return new User(
+                    resultatQuery.getString(this.name),
+                    resultatQuery.getString(this.surname),
+                    resultatQuery.getInt(this.id),
+                    resultatQuery.getString(this.mail),
+                    resultatQuery.getString(this.phone),
+                    resultatQuery.getBoolean(this.isDriver),
+                    resultatQuery.getInt(this.workplaceId),
+                    resultatQuery.getString(this.passWord));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public ArrayList<User> findAllWithWorkPlaceId(long wpId){
         try {
             ArrayList<User> toReturn = new ArrayList<User>() ;

@@ -22,7 +22,11 @@ public class UserController extends AbstractController {
     }
 
     String id = "id";
+    String password = "password";
+    String mail = "mail";
+
     String token = "postdata";
+
 
     public String getResponseFromResquest(HttpServletRequest request){
        return facUs.objectToJson(daoUs.find(Long.parseLong(request.getParameter(id)))).toString();
@@ -37,8 +41,14 @@ public class UserController extends AbstractController {
                 e.printStackTrace();
             }
                 return facUs.objectToJson(newUser).toString();
+            //RETURN JUST TOKEN
         }else {
             //TOKEN
+            User toReturn = daoUs.find(request.getParameter(this.mail),request.getParameter(this.password));
+            if( toReturn != null){
+
+            }
+
         }
         return null;
     }

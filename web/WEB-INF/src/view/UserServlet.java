@@ -36,6 +36,13 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doPost(req, resp);
+
+        System.out.println("get user : "+req.getParameterMap());
+
+        for(int i = 0;i <req.getParameterMap().size();i++){
+            System.out.println();
+        }
+
         initController();
         PrintWriter out = resp.getWriter();
         out.write(c.postResponseFromResquest(req));
