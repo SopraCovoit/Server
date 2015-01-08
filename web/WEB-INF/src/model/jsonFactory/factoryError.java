@@ -4,6 +4,7 @@ import model.Error;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import utils.JsonKey;
 
 import java.util.ArrayList;
 
@@ -17,7 +18,7 @@ public class factoryError extends factory<Error> {
     @Override
     public Error jsonToObject(JSONObject json) {
         try {
-            return new Error(json.getInt(id),json.getString(type),json.getString(message));
+            return new Error(json.getInt(JsonKey.id),json.getString(JsonKey.type),json.getString(JsonKey.message));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -28,9 +29,9 @@ public class factoryError extends factory<Error> {
     public JSONObject objectToJson(Error object) {
         JSONObject jsonToReturn = new JSONObject();
         try {
-            jsonToReturn.put(id,object.getId());
-            jsonToReturn.put(message,object.getMessage());
-            jsonToReturn.put(type,object.getType());
+            jsonToReturn.put(JsonKey.id,object.getId());
+            jsonToReturn.put(JsonKey.message,object.getMessage());
+            jsonToReturn.put(JsonKey.type,object.getType());
         } catch (JSONException e) {
             e.printStackTrace();
         }

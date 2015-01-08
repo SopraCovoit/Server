@@ -19,7 +19,9 @@ public class DAOUser extends DAO {
         super();
         try {
             statement = this.connect.createStatement();
+            System.out.println("statement ok");
         } catch (SQLException e) {
+            System.out.println(" erreur");
             e.printStackTrace();
         }
     }

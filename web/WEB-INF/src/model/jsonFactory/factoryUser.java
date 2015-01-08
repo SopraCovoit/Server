@@ -4,6 +4,7 @@ import model.User;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import utils.JsonKey;
 
 import java.util.ArrayList;
 
@@ -18,25 +19,25 @@ public class factoryUser extends factory<User> {
     public User jsonToObject(JSONObject json) {
         try {
             try{
-                json.getString(password);
+                json.getString(JsonKey.password);
             }catch(JSONException e){
-                return new User(json.getString(name),
-                        json.getString(surname),
-                        json.getInt(id),
-                        json.getString(mail),
-                        json.getString(phone),
-                        json.getBoolean(isDriver),
-                        json.getInt(workplace),
+                return new User(json.getString(JsonKey.name),
+                        json.getString(JsonKey.surname),
+                        json.getInt(JsonKey.id),
+                        json.getString(JsonKey.mail),
+                        json.getString(JsonKey.phone),
+                        json.getBoolean(JsonKey.isDriver),
+                        json.getInt(JsonKey.workplace),
                         "");
             }
-            return new User(json.getString(name),
-                    json.getString(surname),
-                    json.getInt(id),
-                    json.getString(mail),
-                    json.getString(phone),
-                    json.getBoolean(isDriver),
-                    json.getInt(workplace),
-                    json.getString(password));
+            return new User(json.getString(JsonKey.name),
+                    json.getString(JsonKey.surname),
+                    json.getInt(JsonKey.id),
+                    json.getString(JsonKey.mail),
+                    json.getString(JsonKey.phone),
+                    json.getBoolean(JsonKey.isDriver),
+                    json.getInt(JsonKey.workplace),
+                    json.getString(JsonKey.password));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -47,14 +48,14 @@ public class factoryUser extends factory<User> {
     public JSONObject objectToJson(User object) {
         JSONObject jsonToReturn = new JSONObject();
         try {
-            jsonToReturn.put(name,object.getName());
-            jsonToReturn.put(surname,object.getSurname());
-            jsonToReturn.put(id,object.getId());
-            jsonToReturn.put(mail,object.getMail());
-            jsonToReturn.put(phone,object.getPhone());
-            jsonToReturn.put(isDriver,object.isDriver());
-            jsonToReturn.put(workplace,object.getWorkplaceId());
-            jsonToReturn.put(password,object.getPassWord());
+            jsonToReturn.put(JsonKey.name,object.getName());
+            jsonToReturn.put(JsonKey.surname,object.getSurname());
+            jsonToReturn.put(JsonKey.id,object.getId());
+            jsonToReturn.put(JsonKey.mail,object.getMail());
+            jsonToReturn.put(JsonKey.phone,object.getPhone());
+            jsonToReturn.put(JsonKey.isDriver,object.isDriver());
+            jsonToReturn.put(JsonKey.workplace,object.getWorkplaceId());
+            jsonToReturn.put(JsonKey.password,object.getPassWord());
         } catch (JSONException e) {
             e.printStackTrace();
         }

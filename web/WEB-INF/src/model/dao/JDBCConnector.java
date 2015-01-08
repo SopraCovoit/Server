@@ -11,9 +11,9 @@ import java.sql.SQLException;
 public class JDBCConnector {
 
     private static boolean driverLoaded = false;
-    private static String urlBase ="jdbc:mysql://localhost:8888/sopracovoit";
-    private static String utilisateur = "sopra";
-    private static String motDePasse = "covoit";
+    private static String urlBase ="jdbc:mysql://localhost:8889/sopracovoit";
+    private static String utilisateur = "a";
+    private static String motDePasse = "a";
 
 
     public static void chargementDriver(){
@@ -35,6 +35,7 @@ public class JDBCConnector {
         Connection connexion = null;
         try {
             connexion = DriverManager.getConnection(urlBase, utilisateur, motDePasse);
+            System.out.println("no error ");
             return connexion;
         } catch ( SQLException e ) {
             e.printStackTrace();
@@ -42,12 +43,7 @@ public class JDBCConnector {
             return null;
         } finally {
             if ( connexion != null ) {
-                try {
-                    System.out.println("erreur close ");
-                    connexion.close();
-                } catch (SQLException ignore) {
-                    System.out.println("erreur la ");
-                }
+
             }else{
                 System.out.println("erreur ici ");
             }

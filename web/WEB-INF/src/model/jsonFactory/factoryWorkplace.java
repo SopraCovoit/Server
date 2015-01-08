@@ -5,6 +5,7 @@ import model.Workplace;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import utils.JsonKey;
 
 import java.util.ArrayList;
 
@@ -17,9 +18,9 @@ public class factoryWorkplace extends factory<Workplace> {
     public Workplace jsonToObject(JSONObject json) {
         try {
 
-            return new Workplace(new Location(json.getDouble(latitude),json.getDouble(longitude)),
-                    json.getInt(id),
-                    json.getString(name));
+            return new Workplace(new Location(json.getDouble(JsonKey.latitude),json.getDouble(JsonKey.longitude)),
+                    json.getInt(JsonKey.id),
+                    json.getString(JsonKey.name));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -30,9 +31,9 @@ public class factoryWorkplace extends factory<Workplace> {
     public JSONObject objectToJson(Workplace object) {
         JSONObject jsonToReturn = new JSONObject();
         try {
-            jsonToReturn.put(latitude,object.getLocation().getLatitude());
-            jsonToReturn.put(longitude,object.getLocation().getLongitude());
-            jsonToReturn.put(id,object.getId());
+            jsonToReturn.put(JsonKey.latitude,object.getLocation().getLatitude());
+            jsonToReturn.put(JsonKey.longitude,object.getLocation().getLongitude());
+            jsonToReturn.put(JsonKey.id,object.getId());
         } catch (JSONException e) {
             e.printStackTrace();
         }

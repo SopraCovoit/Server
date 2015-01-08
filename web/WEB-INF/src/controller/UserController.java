@@ -7,6 +7,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by julescantegril on 19/12/2014.
@@ -18,7 +21,7 @@ public class UserController extends AbstractController {
 
     public UserController(){
         daoUs = new DAOUser();
-       facUs = new factoryUser();
+        facUs = new factoryUser();
     }
 
     String id = "id";
@@ -34,14 +37,33 @@ public class UserController extends AbstractController {
 
     public String postResponseFromResquest(HttpServletRequest request){
         if(request.getParameter(token) == null){
-            User newUser = null;
-            try {
-                newUser = daoUs.create(facUs.jsonToObject(new JSONObject(request.getParameter("postdata"))));
-            } catch (JSONException e) {
-                e.printStackTrace();
+
+            Map m = request.getParameterMap();
+            Set s = m.entrySet();
+            Iterator it = s.iterator();
+            JSONObject json = new JSONObject();
+
+            while(it.hasNext()){
+
+                Map.Entry<String,String> entry = (Map.Entry<String,String>)it.next();
+
+                String key             = entry.getKey();
+                String value         = entry.getValue();
+
+                try {
+                    json.put(key,value);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
             }
+
+            User newUser = null;
+
+                newUser = daoUs.create(facUs.jsonToObject(json));
+
                 return facUs.objectToJson(newUser).toString();
-            //RETURN JUST TOKEN
         }else {
             //TOKEN
             User toReturn = daoUs.find(request.getParameter(this.mail),request.getParameter(this.password));

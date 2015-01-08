@@ -44,6 +44,14 @@ public class WorkplaceServlet extends HttpServlet {
     }
 
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.doDelete(req, resp);
+        initController();
+        PrintWriter out = resp.getWriter();
+        out.write(c.getResponseFromResquest(req));
+    }
+
+    @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doDelete(req, resp);
         initController();
