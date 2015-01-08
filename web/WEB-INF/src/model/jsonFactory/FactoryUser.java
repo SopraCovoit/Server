@@ -69,4 +69,5 @@ public class FactoryUser extends Factory<User> {
         }
         return jsonToReturn;
     }
+
 }
