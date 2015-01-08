@@ -7,6 +7,7 @@ import model.jsonFactory.FactoryError;
 import model.jsonFactory.FactoryUser;
 import org.json.JSONException;
 import org.json.JSONObject;
+import utils.TokenMap;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Iterator;
@@ -20,11 +21,13 @@ public class UserController extends AbstractController {
 
     DAOUser daoUs;
     FactoryUser facUs;
-    FactoryError factoryError;
+    FactoryError facEr;
 
     public UserController(){
         daoUs = new DAOUser();
        facUs = new FactoryUser();
+        facEr = new FactoryError();
+
     }
 
     String id = "id";
@@ -50,14 +53,12 @@ public class UserController extends AbstractController {
 
     public String postResponseFromResquest(HttpServletRequest request){
         if(request.getParameter(token) == null){
-
             Map m = request.getParameterMap();
             Set s = m.entrySet();
             Iterator it = s.iterator();
             JSONObject json = new JSONObject();
 
             while(it.hasNext()){
-
                 Map.Entry<String,String> entry = (Map.Entry<String,String>)it.next();
 
                 String key             = entry.getKey();
@@ -68,11 +69,9 @@ public class UserController extends AbstractController {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
-
             }
 
-            User newUser = null;
+                User newUser = null;
 
                 newUser = daoUs.create(facUs.jsonToObject(json));
 
@@ -80,22 +79,24 @@ public class UserController extends AbstractController {
         }else {
             //TOKEN
             User toReturn = daoUs.find(request.getParameter(this.mail),request.getParameter(this.password));
+            long token = TokenMap.getNewToken();
             if( toReturn != null){
-
+                TokenMap.addToken(token, toReturn);
+                return String.valueOf(token);
+            }else{
+                return facEr.objectToJson(new StatusedMessage(StatusedMessage.FAILURE_STATUS,StatusedMessage.FAILURE_POST_USER)).toString();
             }
-
         }
-        return null;
     }
 
     public String deleteResponseFromResquest(HttpServletRequest request){
-        String json;
+        String json = null;
         boolean success = false;
         if(request.getParameter(id) !=null) {
             success = daoUs.delete(daoUs.find(Long.parseLong(request.getParameter(id))));
         }
         if(success){
-            json = new StatusedMessage(StatusedMessage.SUCCESS_STATUS,StatusedMessage.SUCCESS_MESSAGE).toString();
+            json = facEr.objectToJson(new StatusedMessage(StatusedMessage.SUCCESS_STATUS,StatusedMessage.FAILURE_DELETE_USER)).toString();
         }else{
 
         }
