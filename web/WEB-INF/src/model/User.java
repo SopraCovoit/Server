@@ -13,6 +13,7 @@ public class User {
     private boolean isDriver;
     private int workplaceId;
     private String passWord;
+    private String token;
 
 
     public User(String name, String surname, int id, String mail, String phone,
@@ -90,5 +91,13 @@ public class User {
 
     public void setWorkplaceId(int workplaceId) {
         this.workplaceId = workplaceId;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }
