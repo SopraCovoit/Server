@@ -20,6 +20,7 @@ public class PathController extends AbstractController {
     FactoryPath facPath;
     FactoryError facEr;
     FactoryWorkplace facWp;
+    int distance = 5;
 
     public PathController(){
         daoPt = new DAOPath();
@@ -30,17 +31,17 @@ public class PathController extends AbstractController {
 
 
     public String getResponseFromResquest(HttpServletRequest request){
-        if(request.getParameter(JsonKey.longitude) == null || request.getParameter(JsonKey.latitude) == null){
 
-        }else{
             try {
                 JSONObject workplaceJson = new JSONObject(request.getParameter(JsonKey.workplace));
+                double lat = Double.parseDouble(request.getParameter(JsonKey.latitude));
+                double longi = Double.parseDouble(request.getParameter(JsonKey.longitude));
+
                 Workplace wp = facWp.jsonToObject(workplaceJson);
-                return facPath.arrayListToJson(daoPt.findAllWorkPlacePath(wp.getId())).toString();
+                return facPath.arrayListToJson(daoPt.findAllPath(wp.getId(),lat,longi,distance)).toString();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-        }
 
         return  null;
     }

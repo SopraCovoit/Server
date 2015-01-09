@@ -96,7 +96,7 @@ public class DAOPath extends DAO {
     public ArrayList<Path> findAllUserPath(long id){
         try {
             ArrayList<Path> toReturn = new ArrayList<Path>() ;
-            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.userTable+" WHERE "+this.userId+" = "+id);
+            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.pathTable+" WHERE "+this.userId+" = "+id);
             boolean rowExist = resultatQuery.first();
             while(rowExist){
                 resultatQuery.first();
@@ -119,7 +119,7 @@ public class DAOPath extends DAO {
     public ArrayList<Path> findAllWorkPlacePath(long id){
         try {
             ArrayList<Path> toReturn = new ArrayList<Path>() ;
-            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.userTable+" WHERE "+this.workplaceId+" = "+id);
+            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.pathTable+" WHERE "+this.workplaceId+" = "+id);
             boolean rowExist = resultatQuery.first();
             while(rowExist){
                 resultatQuery.first();
@@ -138,5 +138,60 @@ public class DAOPath extends DAO {
         }
         return null;
     }
+
+    public ArrayList<Path> findAllPath(long wpId,double latitude, double longitude, int distance){
+        try {
+            ArrayList<Path> allPath = new ArrayList<Path>() ;
+            ArrayList<Path> toReturn = new ArrayList<Path>() ;
+
+            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.pathTable);
+            boolean rowExist = resultatQuery.first();
+            while(rowExist){
+                resultatQuery.first();
+                allPath.add(new Path(
+                        new Location(resultatQuery.getDouble(this.latitude),resultatQuery.getDouble(this.longitude)),
+                        resultatQuery.getString(this.departureHour),
+                        resultatQuery.getInt(this.workplaceId),
+                        resultatQuery.getString(this.direction),
+                        resultatQuery.getInt(this.userId),
+                        resultatQuery.getInt(this.id)));
+                rowExist = resultatQuery.next();
+            }
+
+            for(int i = 0;i<allPath.size();i++){
+                if(allPath.get(i).getWorkPlaceId() == wpId && getDistance(latitude,longitude,allPath.get(i).getLocation().getLatitude(),allPath.get(i).getLocation().getLongitude())<=distance){
+                    allPath.get(i).setDistance(getDistance(latitude,longitude,allPath.get(i).getLocation().getLatitude(),allPath.get(i).getLocation().getLongitude()));
+                    toReturn.add(allPath.get(i));
+                }
+            }
+            return toReturn;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private double getDistance(double lat1, double long1,double lat2,double long2){
+
+        int R = 6371; // Radius of the earth in km
+        double dLat = deg2rad(lat2-lat1);  // deg2rad below
+        double dLon = deg2rad(long2-long1);
+        double a =
+                Math.sin(dLat/2) * Math.sin(dLat/2) +
+                        Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+                                Math.sin(dLon/2) * Math.sin(dLon/2)
+                ;
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        double d = R * c; // Distance in km
+        return d;
+
+
+    }
+
+    private double deg2rad(double deg) {
+        return deg * (3.14/180);
+    }
+
+
 
 }

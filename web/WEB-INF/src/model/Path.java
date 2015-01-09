@@ -11,6 +11,9 @@ public class Path {
     private String direction;
     private int userId;
     private int id;
+    private double distance;
+
+
 
     public Path(Location location, String departureHour, int workPlaceId, String direction, int userId,int id) {
         this.location = location;
@@ -20,6 +23,14 @@ public class Path {
         this.userId = userId;
         this.id = id;
 
+    }
+
+    public double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
     }
 
     public int getId() {

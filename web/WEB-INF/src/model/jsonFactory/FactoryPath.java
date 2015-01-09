@@ -40,6 +40,7 @@ public class FactoryPath extends Factory<Path> {
             jsonToReturn.put(JsonKey.workplace,object.getWorkPlaceId());
             jsonToReturn.put(JsonKey.direction,object.getDirection());
             jsonToReturn.put(JsonKey.user_id,object.getUserId());
+            jsonToReturn.put(JsonKey.distance,object.getDistance());
         } catch (JSONException e) {
             e.printStackTrace();
         }
