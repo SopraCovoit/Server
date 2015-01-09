@@ -22,6 +22,7 @@ public class JsonKey {
     /*
     JSON PATH
      */
+    public static String location = "location";
     public static String latitude = "latitude";
     public static String longitude = "longitude";
     public static String departure_hour = "departure_hour";

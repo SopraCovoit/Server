@@ -36,10 +36,9 @@ public class FactoryPath extends Factory<Path> {
         JSONObject jsonToReturn = new JSONObject();
         DAOUser daoUs = new DAOUser();
         FactoryUser facUs = new FactoryUser();
-
+        FactoryLocation facLoc = new FactoryLocation();
         try {
-            jsonToReturn.put(JsonKey.latitude,object.getLocation().getLatitude());
-            jsonToReturn.put(JsonKey.longitude,object.getLocation().getLongitude());
+            jsonToReturn.put(JsonKey.location,facLoc.objectToJson(object.getLocation()));
             jsonToReturn.put(JsonKey.departure_hour,object.getDepartureHour());
             jsonToReturn.put(JsonKey.workplace,object.getWorkPlaceId());
             jsonToReturn.put(JsonKey.direction,object.getDirection());

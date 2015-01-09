@@ -30,9 +30,9 @@ public class FactoryWorkplace extends Factory<Workplace> {
     @Override
     public JSONObject objectToJson(Workplace object) {
         JSONObject jsonToReturn = new JSONObject();
+        FactoryLocation facLoc = new FactoryLocation();
         try {
-            jsonToReturn.put(JsonKey.latitude,object.getLocation().getLatitude());
-            jsonToReturn.put(JsonKey.longitude,object.getLocation().getLongitude());
+            jsonToReturn.put(JsonKey.location,facLoc.objectToJson(object.getLocation()));
             jsonToReturn.put(JsonKey.id,object.getId());
             jsonToReturn.put(JsonKey.name,object.getName());
         } catch (JSONException e) {
