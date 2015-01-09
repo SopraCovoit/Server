@@ -37,7 +37,8 @@ public class WorkplaceServlet extends HttpServlet {
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPut(req, resp);
+        //super.doPut(req, resp);
+        resp.setContentType("text/plain");
         initController();
         PrintWriter out = resp.getWriter();
         out.write(c.putResponseFromResquest(req));
@@ -45,7 +46,8 @@ public class WorkplaceServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doDelete(req, resp);
+        //super.doGet(req, resp);
+        resp.setContentType("text/plain");
         initController();
         PrintWriter out = resp.getWriter();
         out.write(c.getResponseFromResquest(req));
@@ -53,7 +55,8 @@ public class WorkplaceServlet extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doDelete(req, resp);
+        //super.doDelete(req, resp);
+        resp.setContentType("text/plain");
         initController();
         PrintWriter out = resp.getWriter();
         out.write(c.deleteResponseFromResquest(req));
