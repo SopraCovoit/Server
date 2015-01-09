@@ -25,7 +25,7 @@ public class UserController extends AbstractController {
 
     public UserController(){
         daoUs = new DAOUser();
-       facUs = new FactoryUser();
+        facUs = new FactoryUser();
         facEr = new FactoryError();
 
     }

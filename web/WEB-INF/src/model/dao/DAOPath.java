@@ -6,6 +6,7 @@ import model.Path;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  * Created by julescantegril on 19/12/2014.
@@ -90,6 +91,29 @@ public class DAOPath extends DAO {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public ArrayList<Path> findAllUserPath(long id){
+        try {
+            ArrayList<Path> toReturn = new ArrayList<Path>() ;
+            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.userTable+" WHERE "+this.id+" = "+id);
+            boolean rowExist = resultatQuery.first();
+            while(rowExist){
+                resultatQuery.first();
+                toReturn.add(new Path(
+                    new Location(resultatQuery.getDouble(this.latitude),resultatQuery.getDouble(this.longitude)),
+                        resultatQuery.getString(this.departureHour),
+                        resultatQuery.getInt(this.workplaceId),
+                        resultatQuery.getString(this.direction),
+                        resultatQuery.getInt(this.userId),
+                        resultatQuery.getInt(this.id)));
+                rowExist = resultatQuery.next();
+            }
+            return toReturn;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

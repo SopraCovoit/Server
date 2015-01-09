@@ -2,6 +2,7 @@ package model.jsonFactory;
 
 import model.User;
 import model.Workplace;
+import model.dao.DAOPath;
 import model.dao.DAOWorkplace;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,7 +50,10 @@ public class FactoryUser extends Factory<User> {
     @Override
     public JSONObject objectToJson(User object) {
         DAOWorkplace daoWp = new DAOWorkplace();
+        DAOPath daoPath = new DAOPath();
+
         FactoryWorkplace facWp = new FactoryWorkplace();
+        FactoryPath facPath = new FactoryPath();
 
         Workplace wpUser = daoWp.find(object.getWorkplaceId());
 
@@ -62,6 +66,7 @@ public class FactoryUser extends Factory<User> {
             jsonToReturn.put(JsonKey.phone,object.getPhone());
             jsonToReturn.put(JsonKey.isDriver,object.isDriver());
             jsonToReturn.put(JsonKey.workplace,facWp.objectToJson(wpUser));
+            jsonToReturn.put(JsonKey.path,facPath.arrayListToJson(daoPath.findAllUserPath(object.getId())));
             jsonToReturn.put(JsonKey.password,object.getPassWord());
         } catch (JSONException e) {
             e.printStackTrace();

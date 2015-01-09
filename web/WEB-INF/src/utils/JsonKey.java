@@ -17,6 +17,7 @@ public class JsonKey {
     public static String isDriver="isDriver";
     public static String workplace="workplace";
     public static String password="password";
+    public static String path="paths";
 
     /*
     JSON PATH
