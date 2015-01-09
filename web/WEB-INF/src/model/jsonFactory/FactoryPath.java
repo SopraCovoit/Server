@@ -19,7 +19,7 @@ public class FactoryPath extends Factory<Path> {
     public Path jsonToObject(JSONObject json) {
         try {
 
-            return new Path(new Location(json.getDouble(JsonKey.latitude),json.getDouble(JsonKey.longitude)),
+            return new Path(new Location(json.getJSONObject(JsonKey.location).getDouble(JsonKey.latitude),json.getJSONObject(JsonKey.location).getDouble(JsonKey.longitude)),
                     json.getString(JsonKey.departure_hour),
                     json.getInt(JsonKey.workplace),
                     json.getString(JsonKey.direction),

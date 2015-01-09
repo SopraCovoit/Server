@@ -31,7 +31,6 @@ public class PathController extends AbstractController {
         facEr = new FactoryError();
     }
 
-
     public String getResponseFromResquest(HttpServletRequest request){
 
         try {

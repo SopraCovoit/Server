@@ -17,11 +17,17 @@ public class FactoryWorkplace extends Factory<Workplace> {
     @Override
     public Workplace jsonToObject(JSONObject json) {
         try {
-
-            return new Workplace(new Location(json.getDouble(JsonKey.latitude),json.getDouble(JsonKey.longitude)),
+            return new Workplace(new Location(json.getJSONObject(JsonKey.location).getDouble(JsonKey.latitude),json.getJSONObject(JsonKey.location).getDouble(JsonKey.longitude)),
                     json.getInt(JsonKey.id),
                     json.getString(JsonKey.name));
         } catch (JSONException e) {
+            try {
+                return new Workplace(new Location(json.getJSONObject(JsonKey.location).getDouble(JsonKey.latitude),json.getJSONObject(JsonKey.location).getDouble(JsonKey.longitude)),
+                        0,
+                        json.getString(JsonKey.name));
+            } catch (JSONException e1) {
+                e1.printStackTrace();
+            }
             e.printStackTrace();
         }
         return null;

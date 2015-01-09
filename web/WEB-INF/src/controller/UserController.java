@@ -43,21 +43,20 @@ public class UserController extends AbstractController {
     }
 
     public String postResponseFromResquest(HttpServletRequest request) {
-            Map m = request.getParameterMap();
-            Set s = m.entrySet();
-            Iterator it = s.iterator();
-            JSONObject json = new JSONObject();
-            while (it.hasNext()) {
-                Map.Entry<String, String> entry = (Map.Entry<String, String>) it.next();
-                String key = entry.getKey();
-                String value = entry.getValue();
+        Map m = request.getParameterMap();
+        Set s = m.entrySet();
+        Iterator it = s.iterator();
 
-                try {
-                    json.put(key, value);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
+
+        Map.Entry<String,String> entry = (Map.Entry<String,String>)it.next();
+
+        JSONObject json = null;
+        try {
+            json = new JSONObject(entry.getKey());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        
             User newUser = daoUs.create(facUs.jsonToObject(json));
             newUser.setToken(TokenList.getNewToken());
         return facUs.objectToJson(newUser).toString();
@@ -83,18 +82,17 @@ public class UserController extends AbstractController {
         Map m = request.getParameterMap();
         Set s = m.entrySet();
         Iterator it = s.iterator();
-        JSONObject json = new JSONObject();
-        while (it.hasNext()) {
-            Map.Entry<String, String> entry = (Map.Entry<String, String>) it.next();
-            String key = entry.getKey();
-            String value = entry.getValue();
 
-            try {
-                json.put(key, value);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+
+        Map.Entry<String,String> entry = (Map.Entry<String,String>)it.next();
+
+        JSONObject json = null;
+        try {
+            json = new JSONObject(entry.getKey());
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
+
         boolean isUpdated = daoUs.update(facUs.jsonToObject(json));
         if (isUpdated) {
             retStr = facEr.objectToJson(new StatusedMessage(StatusedMessage.SUCCESS_STATUS, StatusedMessage.FAILURE_PUT_USER)).toString();

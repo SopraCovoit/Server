@@ -34,7 +34,7 @@ public class ConnectionController extends AbstractController {
         User toReturn = daoUs.find(request.getParameter(this.mail),request.getParameter(JsonKey.password));
 
         if( toReturn != null){
-            Long token = TokenList.getNewToken();
+            String token = TokenList.getNewToken();
             toReturn.setToken(token);
             return facUs.objectToJson(toReturn).toString();
         }else{

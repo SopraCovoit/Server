@@ -1,6 +1,7 @@
 package controller;
 
 
+import model.Location;
 import model.StatusedMessage;
 import model.Workplace;
 import model.dao.DAOWorkplace;
@@ -35,9 +36,9 @@ public class WorkplaceController extends AbstractController {
 
     public String getResponseFromResquest(HttpServletRequest request){
         //send all worplace
-       // Workplace test = new Workplace(new Location(4,5),4,"saadslkt");
+        Workplace test = new Workplace(new Location(4,5),4,"saadslkt");
        // daoWp.update(test);
-       // System.out.println(facWp.arrayListToJson(daoWp.findAll()).toString());
+        System.out.println(facWp.objectToJson(test));
         return facWp.arrayListToJson(daoWp.findAll()).toString();
 
     }
@@ -47,20 +48,17 @@ public class WorkplaceController extends AbstractController {
         Map m = request.getParameterMap();
         Set s = m.entrySet();
         Iterator it = s.iterator();
-        JSONObject json = new JSONObject();
 
-        while(it.hasNext()){
-            Map.Entry<String,String> entry = (Map.Entry<String,String>)it.next();
 
-            String key = entry.getKey();
-            String value = entry.getValue();
+        Map.Entry<String,String> entry = (Map.Entry<String,String>)it.next();
 
-            try {
-                json.put(key,value);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+        JSONObject json = null;
+        try {
+            json = new JSONObject(entry.getKey());
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
+
         Workplace wpToAdd = facWp.jsonToObject(json);
         if(daoWp.create(wpToAdd) != null){
             return facWp.objectToJson(wpToAdd).toString();
