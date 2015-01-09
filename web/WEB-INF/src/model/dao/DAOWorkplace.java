@@ -29,6 +29,21 @@ public class DAOWorkplace extends DAO {
     public Workplace find(long id) {
         try {
             ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.workplaceTable+" WHERE "+this.id+" = "+id);
+            resultatQuery.first();
+            return new Workplace(
+                    new Location(resultatQuery.getDouble(this.latitude),resultatQuery.getDouble(this.longitude)),
+                    resultatQuery.getInt(this.id),
+                    resultatQuery.getString(this.name));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Workplace findByName(String name) {
+        try {
+            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.workplaceTable+" WHERE "+this.name+" = '"+name+"'");
+            resultatQuery.first();
             return new Workplace(
                     new Location(resultatQuery.getDouble(this.latitude),resultatQuery.getDouble(this.longitude)),
                     resultatQuery.getInt(this.id),
@@ -68,7 +83,7 @@ public class DAOWorkplace extends DAO {
                     workplacetoAdd.getLocation().getLatitude()+","+
                     workplacetoAdd.getLocation().getLongitude()+",'"+
                     workplacetoAdd.getName()+"')") == 1){
-                return workplacetoAdd;
+                return findByName(workplacetoAdd.getName());
             }else{
                 return null;
             }

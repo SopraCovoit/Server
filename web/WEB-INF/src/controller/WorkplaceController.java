@@ -61,7 +61,7 @@ public class WorkplaceController extends AbstractController {
 
         Workplace wpToAdd = facWp.jsonToObject(json);
         if(daoWp.create(wpToAdd) != null){
-            return facWp.objectToJson(wpToAdd).toString();
+            return facWp.objectToJson(daoWp.findByName(wpToAdd.getName())).toString();
         }else{
             return facEr.objectToJson(new StatusedMessage(StatusedMessage.FAILURE_STATUS,StatusedMessage.FAILURE_POST_WORKPLACE)).toString();
         }

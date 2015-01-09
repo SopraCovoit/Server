@@ -47,7 +47,6 @@ public class UserController extends AbstractController {
         Set s = m.entrySet();
         Iterator it = s.iterator();
 
-
         Map.Entry<String,String> entry = (Map.Entry<String,String>)it.next();
 
         JSONObject json = null;
@@ -56,7 +55,7 @@ public class UserController extends AbstractController {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        
+
             User newUser = daoUs.create(facUs.jsonToObject(json));
             newUser.setToken(TokenList.getNewToken());
         return facUs.objectToJson(newUser).toString();

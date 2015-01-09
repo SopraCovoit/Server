@@ -47,6 +47,28 @@ public class DAOUser extends DAO {
         return newUser;
     }
 
+    public User findByMail(String mail) {
+        User newUser = null;
+        try {
+            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.userTable+" WHERE "+this.mail+" = '"+mail+"'");
+            resultatQuery.first();
+            newUser = new User(
+                    resultatQuery.getString(this.name),
+                    resultatQuery.getString(this.surname),
+                    resultatQuery.getInt(this.id),
+                    resultatQuery.getString(this.mail),
+                    resultatQuery.getString(this.phone),
+                    resultatQuery.getBoolean(this.isDriver),
+                    resultatQuery.getInt(this.workplaceId),
+                    resultatQuery.getString(this.passWord));
+          //  System.out.println(newUser);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return newUser;
+    }
+
     public User find(String mail, String password) {
         User newUser = null;
         try {
@@ -61,7 +83,7 @@ public class DAOUser extends DAO {
                     resultatQuery.getBoolean(this.isDriver),
                     resultatQuery.getInt(this.workplaceId),
                     resultatQuery.getString(this.passWord));
-            System.out.println(newUser);
+            //System.out.println(newUser);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -108,7 +130,7 @@ public class DAOUser extends DAO {
                     userToAdd.isDriver()+", "+
                     userToAdd.getWorkplaceId()+", '"+
                     userToAdd.getPassWord()+"')") == 1){
-                return userToAdd;
+                return findByMail(userToAdd.getMail());
             }
         } catch (SQLException e) {
             e.printStackTrace();
