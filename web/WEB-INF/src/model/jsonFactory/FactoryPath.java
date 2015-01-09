@@ -2,6 +2,7 @@ package model.jsonFactory;
 
 import model.Location;
 import model.Path;
+import model.dao.DAOUser;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,13 +34,17 @@ public class FactoryPath extends Factory<Path> {
     @Override
     public JSONObject objectToJson(Path object) {
         JSONObject jsonToReturn = new JSONObject();
+        DAOUser daoUs = new DAOUser();
+        FactoryUser facUs = new FactoryUser();
+
         try {
             jsonToReturn.put(JsonKey.latitude,object.getLocation().getLatitude());
             jsonToReturn.put(JsonKey.longitude,object.getLocation().getLongitude());
             jsonToReturn.put(JsonKey.departure_hour,object.getDepartureHour());
             jsonToReturn.put(JsonKey.workplace,object.getWorkPlaceId());
             jsonToReturn.put(JsonKey.direction,object.getDirection());
-            jsonToReturn.put(JsonKey.user_id,object.getUserId());
+            jsonToReturn.put(JsonKey.user_id,facUs.objectToJson(daoUs.find(object.getUserId())));
+            jsonToReturn.put(JsonKey.distance,object.getDistance());
         } catch (JSONException e) {
             e.printStackTrace();
         }

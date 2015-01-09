@@ -27,6 +27,7 @@ public class JsonKey {
     public static String departure_hour = "departure_hour";
     public static String direction = "direction";
     public static String user_id = "user_id";
+    public static String distance = "distance";
 
     /*
     JSON WORKPLACE
