@@ -59,6 +59,7 @@ public class UserController extends AbstractController {
             }
         }
         User newUser = daoUs.create(facUs.jsonToObject(json));
+        newUser.setToken(TokenList.getNewToken());
         return facUs.objectToJson(newUser).toString();
     }
 
