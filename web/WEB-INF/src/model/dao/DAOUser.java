@@ -99,10 +99,10 @@ public class DAOUser extends DAO {
     public User create(Object obj) {
         User userToAdd = (User)obj;
         try {
-            if(this.statement.executeUpdate("INSERT INTO "+this.userTable+" VALUES ('"+
+            if(this.statement.executeUpdate("INSERT INTO "+this.userTable+
+                    " ( "+this.name+","+this.surname+","+this.mail+","+this.phone+","+this.isDriver+","+this.workplaceId+","+this.passWord+" ) VALUES ('"+
                     userToAdd.getName()+"', '"+
-                    userToAdd.getSurname()+"', "+
-                    userToAdd.getId()+", '"+
+                    userToAdd.getSurname()+"',' "+
                     userToAdd.getMail()+"', '"+
                     userToAdd.getPhone()+"', "+
                     userToAdd.isDriver()+", "+
@@ -113,7 +113,7 @@ public class DAOUser extends DAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;//METTRE UN ERREUR
+        return null;//METTRE UNE ERREUR
     }
 
     @Override

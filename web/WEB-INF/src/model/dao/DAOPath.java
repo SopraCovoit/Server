@@ -44,8 +44,8 @@ public class DAOPath extends DAO {
     public Path create(Object obj) {
         Path pathtoAdd = (Path)obj;
         try {
-            if(this.statement.executeUpdate("INSERT INTO "+this.pathTable+" VALUES ("+
-                    pathtoAdd.getId()+","+
+            if(this.statement.executeUpdate("INSERT INTO "+this.pathTable+
+                    " ( "+this.latitude+","+this.longitude+","+this.workplaceId+","+this.departureHour+","+this.direction+","+this.userId+" ) VALUES ("+
                     pathtoAdd.getLocation().getLatitude()+","+
                     pathtoAdd.getLocation().getLongitude()+","+
                     pathtoAdd.getWorkPlaceId()+",'"+

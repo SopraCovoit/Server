@@ -23,7 +23,10 @@ public class UserServlet extends HttpServlet {
             c = new UserController();
         }
     }
-
+/*
+Renvoyer un workplace et pas un workplace id avec l'user
+Id géré par la base, ne spécifier aucun id lors de la création
+ */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //super.doGet(req, resp);
