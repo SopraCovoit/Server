@@ -43,23 +43,23 @@ public class UserController extends AbstractController {
     }
 
     public String postResponseFromResquest(HttpServletRequest request) {
-        Map m = request.getParameterMap();
-        Set s = m.entrySet();
-        Iterator it = s.iterator();
-        JSONObject json = new JSONObject();
-        while (it.hasNext()) {
-            Map.Entry<String, String> entry = (Map.Entry<String, String>) it.next();
-            String key = entry.getKey();
-            String value = entry.getValue();
+            Map m = request.getParameterMap();
+            Set s = m.entrySet();
+            Iterator it = s.iterator();
+            JSONObject json = new JSONObject();
+            while (it.hasNext()) {
+                Map.Entry<String, String> entry = (Map.Entry<String, String>) it.next();
+                String key = entry.getKey();
+                String value = entry.getValue();
 
-            try {
-                json.put(key, value);
-            } catch (JSONException e) {
-                e.printStackTrace();
+                try {
+                    json.put(key, value);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
-        }
-        User newUser = daoUs.create(facUs.jsonToObject(json));
-        newUser.setToken(TokenList.getNewToken());
+            User newUser = daoUs.create(facUs.jsonToObject(json));
+            newUser.setToken(TokenList.getNewToken());
         return facUs.objectToJson(newUser).toString();
     }
 

@@ -10,26 +10,35 @@ import java.util.HashMap;
  */
 public class TokenList {
 
-    public static long getNewToken(){
-        long r = (long)Math.random();
-        while(existToken(r)){
-            r = (long)Math.random();
+    protected static ArrayList<String> tokenList = new ArrayList<String>();
+    protected static String  tokenAdmin = "42zobs";
+
+
+    public static String getNewToken(){
+        String r = String.valueOf(Math.random());
+        while(leverage(r)){
+            r = String.valueOf(Math.random());
         }
         tokenList.add(r);
         return r;
     }
 
-    protected static ArrayList<Long> tokenList = new ArrayList<Long>();
 
-    public static boolean existToken(Long token){
+
+    public static boolean leverage(String token){
+        boolean ret;
         if(tokenList.contains(token)){
-            return true;
+            ret = true;
         }else{
-            return false;
+            ret = isAdmin(token);
         }
+        return ret;
+    }
+    public static boolean isAdmin(String token){
+        return token.equals(tokenAdmin);
     }
 
-    public static void deleteToken(Long token){
+    public static void deleteToken(String token){
         tokenList.remove(token);
     }
 

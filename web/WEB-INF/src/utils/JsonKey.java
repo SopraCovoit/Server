@@ -42,4 +42,5 @@ public class JsonKey {
     public static String message = "message";
 
 
+    public static String token = "token";
 }
