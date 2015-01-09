@@ -1,5 +1,6 @@
 package controller;
 
+import model.StatusedMessage;
 import model.Workplace;
 import model.dao.DAOPath;
 import model.jsonFactory.FactoryError;
@@ -8,6 +9,7 @@ import model.jsonFactory.FactoryWorkplace;
 import org.json.JSONException;
 import org.json.JSONObject;
 import utils.JsonKey;
+import utils.TokenList;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -31,6 +33,14 @@ public class PathController extends AbstractController {
 
 
     public String getResponseFromResquest(HttpServletRequest request){
+
+        try {
+            if (!TokenList.existToken((request.getParameter(JsonKey.token))) && !TokenList.isAdmin((request.getParameter(JsonKey.token)))) {
+                return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_TOKEN,StatusedMessage.FAILURE_TOKEN)).toString();
+            }
+        }catch(NullPointerException e){
+            return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_TOKEN,StatusedMessage.FAILURE_TOKEN)).toString();
+        }
 
             try {
                 JSONObject workplaceJson = new JSONObject(request.getParameter(JsonKey.workplace));
