@@ -5,6 +5,8 @@ package utils;
  */
 public class JsonKey {
 
+    public static String token = "token";
+
         /*
     JSON USER
      */
