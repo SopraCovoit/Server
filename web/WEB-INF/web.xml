@@ -35,9 +35,18 @@
         <servlet-class>view.WorkplaceServlet</servlet-class>
     </servlet>
 
+
     <servlet-mapping>
         <servlet-name>WorkplaceServlet</servlet-name>
         <url-pattern>/api/workplace</url-pattern>
     </servlet-mapping>
-
+    <!-- Servlet CONNECTION-->
+    <servlet>
+        <servlet-name>ConnectionServlet</servlet-name>
+        <servlet-class>view.ConnectionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ConnectionServlet</servlet-name>
+        <url-pattern>/api/user/token</url-pattern>
+    </servlet-mapping>
 </web-app>
