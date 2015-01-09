@@ -96,12 +96,35 @@ public class DAOPath extends DAO {
     public ArrayList<Path> findAllUserPath(long id){
         try {
             ArrayList<Path> toReturn = new ArrayList<Path>() ;
-            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.userTable+" WHERE "+this.id+" = "+id);
+            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.userTable+" WHERE "+this.userId+" = "+id);
             boolean rowExist = resultatQuery.first();
             while(rowExist){
                 resultatQuery.first();
                 toReturn.add(new Path(
                     new Location(resultatQuery.getDouble(this.latitude),resultatQuery.getDouble(this.longitude)),
+                        resultatQuery.getString(this.departureHour),
+                        resultatQuery.getInt(this.workplaceId),
+                        resultatQuery.getString(this.direction),
+                        resultatQuery.getInt(this.userId),
+                        resultatQuery.getInt(this.id)));
+                rowExist = resultatQuery.next();
+            }
+            return toReturn;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public ArrayList<Path> findAllWorkPlacePath(long id){
+        try {
+            ArrayList<Path> toReturn = new ArrayList<Path>() ;
+            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.userTable+" WHERE "+this.workplaceId+" = "+id);
+            boolean rowExist = resultatQuery.first();
+            while(rowExist){
+                resultatQuery.first();
+                toReturn.add(new Path(
+                        new Location(resultatQuery.getDouble(this.latitude),resultatQuery.getDouble(this.longitude)),
                         resultatQuery.getString(this.departureHour),
                         resultatQuery.getInt(this.workplaceId),
                         resultatQuery.getString(this.direction),
