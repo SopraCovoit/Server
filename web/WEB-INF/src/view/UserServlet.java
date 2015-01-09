@@ -27,7 +27,7 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //super.doGet(req, resp);
-        resp.setContentType("text/plain");
+       HeaderSetter.addCorsHeader(resp);
 
         initController();
         PrintWriter out = resp.getWriter();
@@ -40,7 +40,7 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //super.doPost(req, resp);
-        resp.setContentType("text/plain");
+        HeaderSetter.addCorsHeader(resp);
 
         initController();
         PrintWriter out = resp.getWriter();
@@ -51,7 +51,7 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //super.doDelete(req, resp);
-        resp.setContentType("text/plain");
+        HeaderSetter.addCorsHeader(resp);
 
         initController();
         PrintWriter out = resp.getWriter();
@@ -61,7 +61,7 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //super.doPut(req, resp);
-        resp.setContentType("text/plain");
+        HeaderSetter.addCorsHeader(resp);
 
         initController();
         PrintWriter out = resp.getWriter();
