@@ -63,12 +63,14 @@ public class DAOWorkplace extends DAO {
     public Workplace create(Object obj) {
         Workplace workplacetoAdd = (Workplace)obj;
         try {
-            if(this.statement.execute("INSERT INTO "+this.workplaceTable+" VALUES ("+
-                    workplacetoAdd.getId()+","+
-                    workplacetoAdd.getName()+","+
+            if(this.statement.executeUpdate("INSERT INTO "+this.workplaceTable+
+                    " ( "+this.latitude+","+this.longitude+","+this.name+" ) VALUES ("+
                     workplacetoAdd.getLocation().getLatitude()+","+
-                    workplacetoAdd.getLocation().getLongitude())){
+                    workplacetoAdd.getLocation().getLongitude()+",'"+
+                    workplacetoAdd.getName()+"')") == 1){
                 return workplacetoAdd;
+            }else{
+                return null;
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -81,7 +83,7 @@ public class DAOWorkplace extends DAO {
         Workplace workplaceToUpdate = (Workplace)obj;
         try {
             if( this.statement.executeUpdate("UPDATE "+this.workplaceTable+
-                    " SET "+this.name+" = "+workplaceToUpdate.getName()+", "+
+                    " SET "+this.name+" = '"+workplaceToUpdate.getName()+"', "+
                     this.latitude +" = "+workplaceToUpdate.getLocation().getLatitude()+", "+
                     this.longitude+" = "+workplaceToUpdate.getLocation().getLongitude()+" WHERE "+this.id+" = "+workplaceToUpdate.getId()) != 0){
                 return true;
@@ -98,7 +100,7 @@ public class DAOWorkplace extends DAO {
     public boolean delete(Object obj) {
         Workplace workplacetoAdd = (Workplace)obj;
         try {
-            return this.statement.execute("DELETE " + this.workplaceTable + " WHERE " + this.id + " = " + workplacetoAdd.getId());
+            return this.statement.execute("DELETE FROM " + this.workplaceTable + " WHERE " + this.id + " = " + workplacetoAdd.getId());
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -30,10 +30,14 @@ public class WorkplaceController extends AbstractController {
         facWp = new FactoryWorkplace();
         facEr = new FactoryError();
 
+
     }
 
     public String getResponseFromResquest(HttpServletRequest request){
         //send all worplace
+       // Workplace test = new Workplace(new Location(4,5),4,"saadslkt");
+       // daoWp.update(test);
+       // System.out.println(facWp.arrayListToJson(daoWp.findAll()).toString());
         return facWp.arrayListToJson(daoWp.findAll()).toString();
 
     }
@@ -48,8 +52,8 @@ public class WorkplaceController extends AbstractController {
         while(it.hasNext()){
             Map.Entry<String,String> entry = (Map.Entry<String,String>)it.next();
 
-            String key             = entry.getKey();
-            String value         = entry.getValue();
+            String key = entry.getKey();
+            String value = entry.getValue();
 
             try {
                 json.put(key,value);
@@ -104,7 +108,7 @@ public class WorkplaceController extends AbstractController {
         if(daoWp.update(wpToUp)){
             return facWp.objectToJson(wpToUp).toString();
         }else{
-            return facEr.objectToJson(new StatusedMessage(1,"Fail to update workplace")).toString();
+            return facEr.objectToJson(new StatusedMessage(StatusedMessage.FAILURE_STATUS,StatusedMessage.FAILURE_PUT_WORKPLACE)).toString();
         }
     }
 }

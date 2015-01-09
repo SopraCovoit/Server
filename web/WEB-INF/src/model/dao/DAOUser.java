@@ -99,15 +99,15 @@ public class DAOUser extends DAO {
     public User create(Object obj) {
         User userToAdd = (User)obj;
         try {
-            if(this.statement.execute("INSERT INTO "+this.userTable+" VALUES ("+
-                    userToAdd.getName()+", "+
-                    userToAdd.getSurname()+", "+
-                    userToAdd.getId()+", "+
-                    userToAdd.getMail()+", "+
-                    userToAdd.getPhone()+", "+
+            if(this.statement.executeUpdate("INSERT INTO "+this.userTable+" VALUES ('"+
+                    userToAdd.getName()+"', '"+
+                    userToAdd.getSurname()+"', "+
+                    userToAdd.getId()+", '"+
+                    userToAdd.getMail()+"', '"+
+                    userToAdd.getPhone()+"', "+
                     userToAdd.isDriver()+", "+
-                    userToAdd.getWorkplaceId()+", "+
-                    userToAdd.getPassWord())){
+                    userToAdd.getWorkplaceId()+", '"+
+                    userToAdd.getPassWord()+"')") == 1){
                 return userToAdd;
             }
         } catch (SQLException e) {
@@ -121,8 +121,8 @@ public class DAOUser extends DAO {
         User userToUpdate = (User)obj;
         try {
             if( this.statement.executeUpdate("UPDATE "+this.userTable+
-                    " SET "+this.name+" = "+userToUpdate.getName()+", "+
-                    this.surname +" = "+userToUpdate.getSurname()+", "+
+                    " SET "+this.name+" = '"+userToUpdate.getName()+"', "+
+                    this.surname +" = '"+userToUpdate.getSurname()+"', "+
                     this.isDriver+" = "+userToUpdate.isDriver()+
                     this.workplaceId+" = "+userToUpdate.getWorkplaceId()+", "+
                     this.passWord+ "= "+userToUpdate.getPassWord()+" WHERE "+this.id+" = "+userToUpdate.getId()) != 0){
@@ -140,7 +140,7 @@ public class DAOUser extends DAO {
     public boolean delete(Object obj) {
             User userToDelete = (User)obj;
         try {
-            return this.statement.execute("DELETE "+this.userTable+" WHERE "+this.id+" = "+userToDelete.getId());
+            return this.statement.execute("DELETE FROM "+this.userTable+" WHERE "+this.id+" = "+userToDelete.getId());
         } catch (SQLException e) {
             e.printStackTrace();
         }

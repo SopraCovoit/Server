@@ -44,14 +44,14 @@ public class DAOPath extends DAO {
     public Path create(Object obj) {
         Path pathtoAdd = (Path)obj;
         try {
-            if(this.statement.execute("INSERT INTO "+this.pathTable+" VALUES ("+
+            if(this.statement.executeUpdate("INSERT INTO "+this.pathTable+" VALUES ("+
                     pathtoAdd.getId()+","+
                     pathtoAdd.getLocation().getLatitude()+","+
                     pathtoAdd.getLocation().getLongitude()+","+
-                    pathtoAdd.getWorkPlaceId()+","+
-                    pathtoAdd.getDepartureHour()+","+
-                    pathtoAdd.getDirection()+","+
-                    pathtoAdd.getUserId())){
+                    pathtoAdd.getWorkPlaceId()+",'"+
+                    pathtoAdd.getDepartureHour()+"','"+
+                    pathtoAdd.getDirection()+"',"+
+                    pathtoAdd.getUserId()+")") == 1){
                 return pathtoAdd;
             }
         } catch (SQLException e) {
@@ -67,8 +67,8 @@ public class DAOPath extends DAO {
             if( this.statement.executeUpdate("UPDATE "+this.pathTable+
                     " SET "+this.latitude+" = "+pathToUpdate.getLocation().getLatitude()+", "+
                     this.longitude +" = "+pathToUpdate.getLocation().getLongitude()+", "+
-                    this.departureHour +" = "+pathToUpdate.getDepartureHour()+", "+
-                    this.direction +" = "+pathToUpdate.getDepartureHour()+", "+
+                    this.departureHour +" = '"+pathToUpdate.getDepartureHour()+"', "+
+                    this.direction +" = '"+pathToUpdate.getDirection()+"', "+
                     this.userId +" = "+pathToUpdate.getUserId()+", "+
                     this.workplaceId+" = "+pathToUpdate.getWorkPlaceId()+" WHERE "+this.id+" = "+pathToUpdate.getId()) != 0){
                 return true;
@@ -85,7 +85,7 @@ public class DAOPath extends DAO {
     public boolean delete(Object obj) {
         Path pathToDelete = (Path)obj;
         try {
-            return this.statement.execute("DELETE "+this+pathTable+" WHERE "+this.id+" = "+pathToDelete.getId());
+            return this.statement.execute("DELETE FROM "+this+pathTable+" WHERE "+this.id+" = "+pathToDelete.getId());
         } catch (SQLException e) {
             e.printStackTrace();
         }

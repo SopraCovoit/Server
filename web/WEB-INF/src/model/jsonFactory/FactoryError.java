@@ -13,8 +13,6 @@ import java.util.ArrayList;
  */
 public class FactoryError extends Factory<StatusedMessage> {
 
-
-
     @Override
     public StatusedMessage jsonToObject(JSONObject json) {
         try {
@@ -38,7 +36,8 @@ public class FactoryError extends Factory<StatusedMessage> {
     }
 
     @Override
-    public JSONArray arrayListToJson(ArrayList<Error> list) {
+    public JSONArray arrayListToJson(ArrayList<StatusedMessage> list) {
         return null;
     }
+
 }

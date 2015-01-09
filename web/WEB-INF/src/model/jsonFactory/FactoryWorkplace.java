@@ -34,6 +34,7 @@ public class FactoryWorkplace extends Factory<Workplace> {
             jsonToReturn.put(JsonKey.latitude,object.getLocation().getLatitude());
             jsonToReturn.put(JsonKey.longitude,object.getLocation().getLongitude());
             jsonToReturn.put(JsonKey.id,object.getId());
+            jsonToReturn.put(JsonKey.name,object.getName());
         } catch (JSONException e) {
             e.printStackTrace();
         }
