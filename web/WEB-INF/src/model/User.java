@@ -13,7 +13,7 @@ public class User {
     private boolean isDriver;
     private int workplaceId;
     private String passWord;
-    private String token;
+    private Long token;
 
 
     public User(String name, String surname, int id, String mail, String phone,
@@ -93,11 +93,11 @@ public class User {
         this.workplaceId = workplaceId;
     }
 
-    public String getToken() {
+    public Long getToken() {
         return token;
     }
 
-    public void setToken(String token) {
+    public void setToken(Long token) {
         this.token = token;
     }
 }

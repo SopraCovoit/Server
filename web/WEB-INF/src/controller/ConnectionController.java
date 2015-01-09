@@ -16,10 +16,11 @@ import javax.servlet.http.HttpServletRequest;
 public class ConnectionController extends AbstractController {
     DAOUser daoUs;
     FactoryError facEr;
+    FactoryUser facUs;
 
     public ConnectionController(){
         daoUs = new DAOUser();
-        //facUs = new FactoryUser();
+        facUs = new FactoryUser();
         facEr = new FactoryError();
 
     }
@@ -34,7 +35,8 @@ public class ConnectionController extends AbstractController {
 
         if( toReturn != null){
             Long token = TokenList.getNewToken();
-            return String.valueOf(token);
+            toReturn.setToken(token);
+            return facUs.objectToJson(toReturn).toString();
         }else{
             return facEr.objectToJson(new StatusedMessage(StatusedMessage.FAILURE_STATUS,StatusedMessage.FAILURE_POST_USER)).toString();
         }
