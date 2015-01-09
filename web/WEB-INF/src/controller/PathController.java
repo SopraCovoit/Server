@@ -35,11 +35,11 @@ public class PathController extends AbstractController {
     public String getResponseFromResquest(HttpServletRequest request){
 
         try {
-            if (!TokenList.existToken((request.getParameter(JsonKey.token))) && !TokenList.isAdmin((request.getParameter(JsonKey.token)))) {
-                return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_TOKEN,StatusedMessage.FAILURE_TOKEN)).toString();
+            if (!TokenList.leverage((request.getParameter(JsonKey.token)))) {
+                return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_TOKEN,StatusedMessage.FAILURE_GET_PATH)).toString();
             }
         }catch(NullPointerException e){
-            return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_TOKEN,StatusedMessage.FAILURE_TOKEN)).toString();
+            return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_TOKEN,StatusedMessage.FAILURE_GET_PATH)).toString();
         }
 
             try {
