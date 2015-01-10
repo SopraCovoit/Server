@@ -10,6 +10,7 @@ public class StatusedMessage {
     public final static int BAD_TOKEN = 401;
     public final static int BAD_SYNTAX = 400;
     public final static int TEAPOT_BRAW = 418;
+    public final static int ALREADY_IN_BASE = 409;
 
 
     public final static String SUCCESS_GET_WORKPLACE ="Success getting workplace";

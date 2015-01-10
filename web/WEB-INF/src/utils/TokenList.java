@@ -1,9 +1,7 @@
 package utils;
 
-import model.User;
-
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Random;
 
 /**
  * Created by julescantegril on 08/01/2015.
@@ -15,7 +13,8 @@ public class TokenList {
 
 
     public static String getNewToken(){
-        String r = String.valueOf(Math.random());
+        Random rn = new Random();
+        String r = String.valueOf(rn.nextInt());
         while(leverage(r)){
             r = String.valueOf(Math.random());
         }

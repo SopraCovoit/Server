@@ -20,6 +20,7 @@ public class FactoryUser extends Factory<User> {
 
     @Override
     public User jsonToObject(JSONObject json) {
+        FactoryWorkplace facWp = new FactoryWorkplace();
         try {
             try{
                 json.getString(JsonKey.password);
@@ -30,7 +31,7 @@ public class FactoryUser extends Factory<User> {
                         json.getString(JsonKey.mail),
                         json.getString(JsonKey.phone),
                         json.getBoolean(JsonKey.isDriver),
-                        json.getInt(JsonKey.workplace),
+                        facWp.jsonToObject(new JSONObject(json.getString(JsonKey.workplace))).getId(),
                         "");
             }
             return new User(json.getString(JsonKey.name),
@@ -39,7 +40,7 @@ public class FactoryUser extends Factory<User> {
                     json.getString(JsonKey.mail),
                     json.getString(JsonKey.phone),
                     json.getBoolean(JsonKey.isDriver),
-                    json.getInt(JsonKey.workplace),
+                    facWp.jsonToObject(new JSONObject(json.getString(JsonKey.workplace))).getId(),
                     json.getString(JsonKey.password));
         } catch (JSONException e) {
             e.printStackTrace();
@@ -57,6 +58,10 @@ public class FactoryUser extends Factory<User> {
 
         Workplace wpUser = daoWp.find(object.getWorkplaceId());
 
+        if(wpUser == null){
+            return null;
+        }
+
         JSONObject jsonToReturn = new JSONObject();
         try {
             jsonToReturn.put(JsonKey.name,object.getName());
@@ -66,8 +71,9 @@ public class FactoryUser extends Factory<User> {
             jsonToReturn.put(JsonKey.phone,object.getPhone());
             jsonToReturn.put(JsonKey.isDriver,object.isDriver());
             jsonToReturn.put(JsonKey.workplace,facWp.objectToJson(wpUser));
-            jsonToReturn.put(JsonKey.path,facPath.arrayListToJson(daoPath.findAllUserPath(object.getId())));
+            //jsonToReturn.put(JsonKey.path,facPath.arrayListToJson(daoPath.findAllUserPath(object.getId())));
             jsonToReturn.put(JsonKey.password,object.getPassWord());
+            jsonToReturn.put(JsonKey.token,object.getToken());
         } catch (JSONException e) {
             e.printStackTrace();
         }

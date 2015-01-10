@@ -17,13 +17,14 @@ public class FactoryPath extends Factory<Path> {
 
     @Override
     public Path jsonToObject(JSONObject json) {
+        FactoryUser facUs = new FactoryUser();
         try {
 
             return new Path(new Location(json.getJSONObject(JsonKey.location).getDouble(JsonKey.latitude),json.getJSONObject(JsonKey.location).getDouble(JsonKey.longitude)),
                     json.getString(JsonKey.departure_hour),
                     json.getInt(JsonKey.workplace),
                     json.getString(JsonKey.direction),
-                    json.getInt(JsonKey.user_id),
+                    facUs.jsonToObject(new JSONObject(json.getString(JsonKey.user_id))).getId(),
                     0);//PATH ID A 0 ?
         } catch (JSONException e) {
             e.printStackTrace();

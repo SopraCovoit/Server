@@ -32,4 +32,13 @@ public class PathServlet extends HttpServlet {
         PrintWriter out = resp.getWriter();
         out.write(c.getResponseFromResquest(req));
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //super.doGet(req, resp);
+        HeaderSetter.addCorsHeader(resp);
+        initController();
+        PrintWriter out = resp.getWriter();
+        out.write(c.postResponseFromResquest(req));
+    }
 }

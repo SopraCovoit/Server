@@ -1,5 +1,6 @@
 package controller;
 
+import model.Path;
 import model.StatusedMessage;
 import model.Workplace;
 import model.dao.DAOPath;
@@ -9,7 +10,6 @@ import model.jsonFactory.FactoryWorkplace;
 import org.json.JSONException;
 import org.json.JSONObject;
 import utils.JsonKey;
-import utils.TokenList;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -34,9 +34,9 @@ public class PathController extends AbstractController {
     public String getResponseFromResquest(HttpServletRequest request){
 
         try {
-            if (!TokenList.leverage((request.getParameter(JsonKey.token)))) {
+            /*if (!TokenList.leverage((request.getParameter(JsonKey.token)))) {
                 return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_TOKEN,StatusedMessage.FAILURE_GET_PATH)).toString();
-            }
+            }*/
         }catch(NullPointerException e){
             return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_TOKEN,StatusedMessage.FAILURE_GET_PATH)).toString();
         }
@@ -55,9 +55,17 @@ public class PathController extends AbstractController {
         return  null;
     }
 
-    //le reste n'est pas utilisé
     public String postResponseFromResquest(HttpServletRequest request){
-        return  null;
+
+      //  Path path = new Path(new Location(5,6),"13h40",10,"HOME",9,5);
+       // System.out.println(facPath.objectToJson(path).toString());
+
+        Path pathToAdd = facPath.jsonToObject(getJsonFromRequest(request));
+        if(daoPt.create(pathToAdd) != null){
+            return facPath.objectToJson(pathToAdd).toString();
+        }else{
+            return facEr.objectToJson(new StatusedMessage(StatusedMessage.ALREADY_IN_BASE,StatusedMessage.FAILURE_POST_WORKPLACE)).toString();
+        }
     }
 
     public String deleteResponseFromResquest(HttpServletRequest request){

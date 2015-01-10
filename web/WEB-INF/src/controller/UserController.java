@@ -5,15 +5,10 @@ import model.User;
 import model.dao.DAOUser;
 import model.jsonFactory.FactoryError;
 import model.jsonFactory.FactoryUser;
-import org.json.JSONException;
-import org.json.JSONObject;
 import utils.JsonKey;
 import utils.TokenList;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by julescantegril on 19/12/2014.
@@ -33,44 +28,49 @@ public class UserController extends AbstractController {
 
     public String getResponseFromResquest(HttpServletRequest request) {
 
+
         String json = null;
-        if (request.getParameter(id) != null) {
+        if (request.getParameter(JsonKey.id) != null) {
             json = facUs.objectToJson(daoUs.find(Long.parseLong(request.getParameter(JsonKey.id)))).toString();
         } else {
             json = facUs.arrayListToJson(daoUs.findAll()).toString();
         }
-        return json;
+        if(json != null){
+            return json;
+        }else{
+            return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_SYNTAX,StatusedMessage.FAILURE_GET_USER)).toString();
+        }
     }
 
     public String postResponseFromResquest(HttpServletRequest request) {
-        Map m = request.getParameterMap();
-        Set s = m.entrySet();
-        Iterator it = s.iterator();
 
-        Map.Entry<String,String> entry = (Map.Entry<String,String>)it.next();
-
-        JSONObject json = null;
-        try {
-            json = new JSONObject(entry.getKey());
-        } catch (JSONException e) {
-            e.printStackTrace();
+        User newUser = null;
+        try{
+            newUser = daoUs.create(facUs.jsonToObject(getJsonFromRequest(request)));
+            newUser.setToken(TokenList.getNewToken());
+            newUser.setId(daoUs.findByMail(newUser.getMail()).getId());
+        }catch(NullPointerException e){
+            return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_SYNTAX,StatusedMessage.FAILURE_POST_USER)).toString();
         }
 
-            User newUser = daoUs.create(facUs.jsonToObject(json));
-            newUser.setToken(TokenList.getNewToken());
-        return facUs.objectToJson(newUser).toString();
+        if(facUs.objectToJson(newUser).toString() == null){
+            return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_SYNTAX,StatusedMessage.FAILURE_POST_USER)).toString();
+        }else{
+            return facUs.objectToJson(newUser).toString();
+        }
     }
 
     public String deleteResponseFromResquest(HttpServletRequest request) {
         String json = null;
-        boolean success = false;
-        if (request.getParameter(id) != null) {
-            success = daoUs.delete(daoUs.find(Long.parseLong(request.getParameter(id))));
-        }
-        if (success) {
-            json = facEr.objectToJson(new StatusedMessage(StatusedMessage.SUCCESS_STATUS, StatusedMessage.FAILURE_DELETE_USER)).toString();
-        } else {
 
+        if (request.getParameter(id) != null) {
+            User userToDelete = daoUs.find(Long.parseLong(request.getParameter(id)));
+            if(userToDelete == null){
+                json = facEr.objectToJson(new StatusedMessage(StatusedMessage.FAILURE_STATUS, StatusedMessage.FAILURE_DELETE_USER)).toString();
+            }else{
+                daoUs.delete(userToDelete);
+                json = facEr.objectToJson(new StatusedMessage(StatusedMessage.SUCCESS_STATUS, StatusedMessage.SUCCESS_DELETE_USER)).toString();
+            }
         }
 
         return json;
@@ -78,21 +78,8 @@ public class UserController extends AbstractController {
 
     public String putResponseFromResquest(HttpServletRequest request) {
         String retStr;
-        Map m = request.getParameterMap();
-        Set s = m.entrySet();
-        Iterator it = s.iterator();
 
-
-        Map.Entry<String,String> entry = (Map.Entry<String,String>)it.next();
-
-        JSONObject json = null;
-        try {
-            json = new JSONObject(entry.getKey());
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        boolean isUpdated = daoUs.update(facUs.jsonToObject(json));
+        boolean isUpdated = daoUs.update(facUs.jsonToObject(getJsonFromRequest(request)));
         if (isUpdated) {
             retStr = facEr.objectToJson(new StatusedMessage(StatusedMessage.SUCCESS_STATUS, StatusedMessage.FAILURE_PUT_USER)).toString();
         }

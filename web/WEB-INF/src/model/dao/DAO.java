@@ -40,8 +40,8 @@ public abstract class DAO<T> {
     protected String pathTable = "pathTable";
     protected String workplaceTable = "workplaceTable";
 
-    protected String userId = "workplaceTable";
-    protected String direction = "workplaceTable";
+    protected String userId = "userId";
+    protected String direction = "direction";
 
 
     /**

@@ -1,6 +1,12 @@
 package controller;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import javax.servlet.http.HttpServletRequest;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by julescantegril on 19/12/2014.
@@ -15,6 +21,24 @@ public abstract class AbstractController {
     public abstract String deleteResponseFromResquest(HttpServletRequest request);
 
     public abstract String putResponseFromResquest(HttpServletRequest request);
+
+    public JSONObject getJsonFromRequest(HttpServletRequest request){
+        Map m = request.getParameterMap();
+        Set s = m.entrySet();
+        Iterator it = s.iterator();
+
+        System.out.println(request.getParameterMap().toString()+" map ");
+        System.out.println(request.getParameterNames().toString()+" names ");
+
+        Map.Entry<String,String> entry = (Map.Entry<String,String>)it.next();
+
+        try {
+            return new JSONObject(entry.getKey());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     /**
      * Every key we use to get every values in our JSonObject

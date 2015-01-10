@@ -43,6 +43,8 @@ public class FactoryWorkplace extends Factory<Workplace> {
             jsonToReturn.put(JsonKey.name,object.getName());
         } catch (JSONException e) {
             e.printStackTrace();
+        }catch(NullPointerException e){
+            return null;
         }
         return jsonToReturn;
     }

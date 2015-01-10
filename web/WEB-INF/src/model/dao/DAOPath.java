@@ -99,7 +99,6 @@ public class DAOPath extends DAO {
             ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.pathTable+" WHERE "+this.userId+" = "+id);
             boolean rowExist = resultatQuery.first();
             while(rowExist){
-                resultatQuery.first();
                 toReturn.add(new Path(
                     new Location(resultatQuery.getDouble(this.latitude),resultatQuery.getDouble(this.longitude)),
                         resultatQuery.getString(this.departureHour),

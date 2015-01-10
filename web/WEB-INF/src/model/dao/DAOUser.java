@@ -39,7 +39,6 @@ public class DAOUser extends DAO {
                     resultatQuery.getBoolean(this.isDriver),
                     resultatQuery.getInt(this.workplaceId),
                     resultatQuery.getString(this.passWord));
-            System.out.println(newUser);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -72,7 +71,7 @@ public class DAOUser extends DAO {
     public User find(String mail, String password) {
         User newUser = null;
         try {
-            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.userTable+" WHERE "+this.mail+" = "+mail+" AND "+this.passWord+" = "+password);
+            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.userTable+" WHERE "+this.mail+" = '"+mail+"' AND "+this.passWord+" = '"+password+"'");
             resultatQuery.first();
             newUser = new User(
                     resultatQuery.getString(this.name),
@@ -98,7 +97,6 @@ public class DAOUser extends DAO {
             ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.userTable);
             boolean rowExist = resultatQuery.first();
             while(rowExist){
-                resultatQuery.first();
                 toReturn.add(new User(
                         resultatQuery.getString(this.name),
                         resultatQuery.getString(this.surname),
@@ -121,15 +119,19 @@ public class DAOUser extends DAO {
     public User create(Object obj) {
         User userToAdd = (User)obj;
         try {
-            if(this.statement.executeUpdate("INSERT INTO "+this.userTable+
-                    " ( "+this.name+","+this.surname+","+this.mail+","+this.phone+","+this.isDriver+","+this.workplaceId+","+this.passWord+" ) VALUES ('"+
-                    userToAdd.getName()+"', '"+
-                    userToAdd.getSurname()+"',' "+
-                    userToAdd.getMail()+"', '"+
-                    userToAdd.getPhone()+"', "+
-                    userToAdd.isDriver()+", "+
-                    userToAdd.getWorkplaceId()+", '"+
-                    userToAdd.getPassWord()+"')") == 1){
+            if (this.findByMail(userToAdd.getMail()) != null) {
+                return null;
+            }
+
+            if (this.statement.executeUpdate("INSERT INTO " + this.userTable +
+                    " ( " + this.name + "," + this.surname + "," + this.mail + "," + this.phone + "," + this.isDriver + "," + this.workplaceId + "," + this.passWord + " ) VALUES ('" +
+                    userToAdd.getName() + "','" +
+                    userToAdd.getSurname() + "','" +
+                    userToAdd.getMail() + "','" +
+                    userToAdd.getPhone() + "'," +
+                    userToAdd.isDriver() + "," +
+                    userToAdd.getWorkplaceId() + ",'" +
+                    userToAdd.getPassWord() + "')") == 1) {
                 return findByMail(userToAdd.getMail());
             }
         } catch (SQLException e) {
@@ -143,10 +145,10 @@ public class DAOUser extends DAO {
         User userToUpdate = (User)obj;
         try {
             if( this.statement.executeUpdate("UPDATE "+this.userTable+
-                    " SET "+this.name+" = '"+userToUpdate.getName()+"', "+
-                    this.surname +" = '"+userToUpdate.getSurname()+"', "+
-                    this.isDriver+" = "+userToUpdate.isDriver()+
-                    this.workplaceId+" = "+userToUpdate.getWorkplaceId()+", "+
+                    " SET "+this.name+" = '"+userToUpdate.getName()+"',"+
+                    this.surname +" = '"+userToUpdate.getSurname()+"',"+
+                    this.isDriver+" = "+userToUpdate.isDriver()+","+
+                    this.workplaceId+" = "+userToUpdate.getWorkplaceId()+","+
                     this.passWord+ "= "+userToUpdate.getPassWord()+" WHERE "+this.id+" = "+userToUpdate.getId()) != 0){
                 return true;
             }else{
