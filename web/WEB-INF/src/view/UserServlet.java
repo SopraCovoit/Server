@@ -68,4 +68,10 @@ Id géré par la base, ne spécifier aucun id lors de la création
         PrintWriter out = resp.getWriter();
         out.write(c.putResponseFromResquest(req));
     }
+
+    @Override
+    protected void doOptions(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+        HeaderSetter.addCorsHeader(httpServletResponse);
+        super.doOptions(httpServletRequest, httpServletResponse);
+    }
 }

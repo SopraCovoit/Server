@@ -4,7 +4,7 @@ package utils;
  * Created by julescantegril on 08/01/2015.
  */
 public class JsonKey {
-    
+
 
         /*
     JSON USER
