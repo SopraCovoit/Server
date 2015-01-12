@@ -34,4 +34,10 @@ public class ConnectionServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
+
+    @Override
+    protected void doOptions(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+        HeaderSetter.addCorsHeader(httpServletResponse);
+        super.doOptions(httpServletRequest, httpServletResponse);
+    }
 }
