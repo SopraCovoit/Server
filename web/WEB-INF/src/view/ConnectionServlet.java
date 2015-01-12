@@ -23,9 +23,9 @@ public class ConnectionServlet extends HttpServlet {
             c = new ConnectionController();
         }
     }
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HeaderSetter.addCorsHeader(response);
-
         initController();
         PrintWriter out = response.getWriter();
         out.write(c.postResponseFromResquest(request));
