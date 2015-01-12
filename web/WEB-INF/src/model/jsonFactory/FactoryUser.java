@@ -23,6 +23,17 @@ public class FactoryUser extends Factory<User> {
         FactoryWorkplace facWp = new FactoryWorkplace();
         try {
             try{
+                json.getInt(JsonKey.id);
+            } catch (JSONException et){
+                return new User(json.getString(JsonKey.name),
+                        json.getString(JsonKey.surname),-1,
+                        json.getString(JsonKey.mail),
+                        json.getString(JsonKey.phone),
+                        json.getBoolean(JsonKey.isDriver),
+                        json.getJSONObject(JsonKey.workplace).getInt(JsonKey.id),
+                        "");
+            }
+            try{
                 json.getString(JsonKey.password);
             }catch(JSONException e){
                 return new User(json.getString(JsonKey.name),
@@ -31,7 +42,8 @@ public class FactoryUser extends Factory<User> {
                         json.getString(JsonKey.mail),
                         json.getString(JsonKey.phone),
                         json.getBoolean(JsonKey.isDriver),
-                        json.getJSONObject(JsonKey.workplace).getInt(JsonKey.id),
+                        //json.getJSONObject(JsonKey.workplace).getInt(JsonKey.id),
+                        /*???*/facWp.jsonToObject(new JSONObject(json.getString(JsonKey.workplace))).getId(),
                         "");
             }
             return new User(json.getString(JsonKey.name),
