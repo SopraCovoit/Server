@@ -19,45 +19,29 @@ public class FactoryUser extends Factory<User> {
 
 
     @Override
-    public User jsonToObject(JSONObject json) {
-        FactoryWorkplace facWp = new FactoryWorkplace();
+    public User jsonToObject(JSONObject json){
+        User userToReturn = null;
         try {
-            try{
-                json.getInt(JsonKey.id);
-            } catch (JSONException et){
-                return new User(json.getString(JsonKey.name),
-                        json.getString(JsonKey.surname),-1,
-                        json.getString(JsonKey.mail),
-                        json.getString(JsonKey.phone),
-                        json.getBoolean(JsonKey.isDriver),
-                        json.getJSONObject(JsonKey.workplace).getInt(JsonKey.id),
-                        "");
-            }
-            try{
-                json.getString(JsonKey.password);
-            }catch(JSONException e){
-                return new User(json.getString(JsonKey.name),
-                        json.getString(JsonKey.surname),
-                        json.getInt(JsonKey.id),
-                        json.getString(JsonKey.mail),
-                        json.getString(JsonKey.phone),
-                        json.getBoolean(JsonKey.isDriver),
-                        json.getJSONObject(JsonKey.workplace).getInt(JsonKey.id),
-                        "");
-            }
-            return new User(json.getString(JsonKey.name),
+            userToReturn = new User(json.getString(JsonKey.name),
                     json.getString(JsonKey.surname),
-                    json.getInt(JsonKey.id),
                     json.getString(JsonKey.mail),
                     json.getString(JsonKey.phone),
                     json.getBoolean(JsonKey.isDriver),
-                    json.getJSONObject(JsonKey.workplace).getInt(JsonKey.id),
-                    //facWp.jsonToObject(new JSONObject(json.getString(JsonKey.workplace))).getId(),
-                    json.getString(JsonKey.password));
-        } catch (JSONException e) {
+                    json.getJSONObject(JsonKey.workplace).getInt(JsonKey.id));
+        }catch (JSONException e) {
             e.printStackTrace();
         }
-        return null;
+        try {
+            userToReturn.setId(json.getInt(JsonKey.id));
+        } catch (JSONException e1) {
+            e1.printStackTrace();
+        }
+        try {
+            userToReturn.setPassWord(json.getString(JsonKey.password));
+        } catch (JSONException e1) {
+            e1.printStackTrace();
+        }
+        return userToReturn;
     }
 
     @Override

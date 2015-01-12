@@ -1,6 +1,7 @@
 package model.jsonFactory;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 public abstract class Factory<T> {
 
 
-    public abstract T jsonToObject(JSONObject json);
+    public abstract T jsonToObject(JSONObject json) throws JSONException;
 
     public abstract JSONObject objectToJson(T object);
 

@@ -16,6 +16,15 @@ public class User {
     private String token;
 
 
+    public User(String name, String surname, String mail, String phone,
+                boolean isDriver, int workplaceId){
+        this.name = name;
+        this.surname = surname;
+        this.mail = mail;
+        this.phone = phone;
+        this.isDriver = isDriver;
+        this.workplaceId = workplaceId;
+    }
     public User(String name, String surname, int id, String mail, String phone,
                 boolean isDriver, int workplaceId,String passWord) {
         this.passWord = passWord;
