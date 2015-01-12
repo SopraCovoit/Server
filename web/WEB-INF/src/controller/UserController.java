@@ -38,17 +38,11 @@ public class UserController extends AbstractController {
 
 
         String json;
-
-        if (request.getParameter(JsonKey.id) != null) {
-            json = facUs.objectToJson(daoUs.find(Long.parseLong(request.getParameter(JsonKey.id)))).toString();
-        } else {
-            json = facUs.arrayListToJson(daoUs.findAll()).toString();
+        json = facUs.arrayListToJson(daoUs.findAll()).toString();
+        if(json == null) {
+            json = facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_SYNTAX, StatusedMessage.FAILURE_GET_USER)).toString();
         }
-        if(json != null){
-            return json;
-        }else{
-            return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_SYNTAX,StatusedMessage.FAILURE_GET_USER)).toString();
-        }
+        return json;
     }
 
     public String postResponseFromResquest(HttpServletRequest request) {
@@ -72,6 +66,11 @@ public class UserController extends AbstractController {
         return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_SYNTAX,StatusedMessage.NO_SUCH_WORKPLACE)).toString();
     }
 
+    @Override
+    public String deleteResponseFromResquest(HttpServletRequest request) {
+        return null;
+    }
+
     private boolean isWorkplaceValid(HttpServletRequest request){
         boolean ret = false;
         try{
@@ -85,51 +84,7 @@ public class UserController extends AbstractController {
         return ret;
     }
 
-    public String deleteResponseFromResquest(HttpServletRequest request) {
-        String json = null;
-
-        if (request.getParameter(id) != null) {
-            User userToDelete = daoUs.find(Long.parseLong(request.getParameter(id)));
-            if(userToDelete == null){
-                json = facEr.objectToJson(new StatusedMessage(StatusedMessage.FAILURE_STATUS, StatusedMessage.FAILURE_DELETE_USER)).toString();
-            }else{
-                daoUs.delete(userToDelete);
-                json = facEr.objectToJson(new StatusedMessage(StatusedMessage.SUCCESS_STATUS, StatusedMessage.SUCCESS_DELETE_USER)).toString();
-            }
-        }
-
-        return json;
-    }
-
     public String putResponseFromResquest(HttpServletRequest request) {
-        String retStr;
-
-        ServletInputStream inputStream = null;
-        String entry = "" ;
-        try {
-            inputStream = request.getInputStream();
-            int next = 0;
-
-            while(next != -1){
-                next = inputStream.read();
-                entry = entry+(char)next;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        boolean isUpdated = false;
-        try {
-            isUpdated = daoUs.update(facUs.jsonToObject(new JSONObject(entry)));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        if (isUpdated) {
-            retStr = facEr.objectToJson(new StatusedMessage(StatusedMessage.SUCCESS_STATUS, StatusedMessage.SUCCESS_PUT_USER)).toString();
-        }
-        else {
-            retStr = facEr.objectToJson(new StatusedMessage(StatusedMessage.FAILURE_STATUS, StatusedMessage.FAILURE_PUT_USER)).toString();
-        }
-        return retStr;
+        return null;
     }
 }

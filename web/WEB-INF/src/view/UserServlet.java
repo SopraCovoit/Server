@@ -29,22 +29,15 @@ Id géré par la base, ne spécifier aucun id lors de la création
  */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //super.doGet(req, resp);
-       HeaderSetter.addCorsHeader(resp);
-
+        HeaderSetter.addCorsHeader(resp);
         initController();
         PrintWriter out = resp.getWriter();
-        if(req!=null) {
-            out.write(c.getResponseFromResquest(req));
-        }else{
-        }
+        out.write(c.getResponseFromResquest(req));
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //super.doPost(req, resp);
         HeaderSetter.addCorsHeader(resp);
-
         initController();
         PrintWriter out = resp.getWriter();
         out.write(c.postResponseFromResquest(req));

@@ -49,4 +49,22 @@
         <servlet-name>ConnectionServlet</servlet-name>
         <url-pattern>/api/user/token</url-pattern>
     </servlet-mapping>
+    <!-- Servlet USERWITH ID-->
+    <servlet>
+        <servlet-name>UserWithIdServlet</servlet-name>
+        <servlet-class>view.UserWithIdServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserWithIdServlet</servlet-name>
+        <url-pattern>/api/user/*</url-pattern>
+    </servlet-mapping>
+    <!-- Servlet WORKPLACE W ID-->
+    <servlet>
+        <servlet-name>WorkplaceWithIdServlet</servlet-name>
+        <servlet-class>view.WorkplaceWithIdServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WorkplaceWithIdServlet</servlet-name>
+        <url-pattern>/api/workplace/*</url-pattern>
+    </servlet-mapping>
 </web-app>

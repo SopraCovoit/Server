@@ -54,17 +54,7 @@ public class WorkplaceController extends AbstractController {
     }
 
     public String deleteResponseFromResquest(HttpServletRequest request){
-
-        Workplace wpToDelete = null;
-        wpToDelete = daoWp.find(Long.parseLong(request.getParameter(JsonKey.id)));
-
-
-        if(wpToDelete != null){
-            daoWp.delete(wpToDelete);
-            return facEr.objectToJson(new StatusedMessage(StatusedMessage.SUCCESS_STATUS,StatusedMessage.SUCCESS_DELETE_WORKPLACE)).toString();
-        }else{
-            return facEr.objectToJson(new StatusedMessage(StatusedMessage.FAILURE_STATUS,StatusedMessage.FAILURE_DELETE_WORKPLACE)).toString();
-        }
+        return null;
 
     }
 
