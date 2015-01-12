@@ -149,7 +149,7 @@ public class DAOUser extends DAO {
                     this.surname +" = '"+userToUpdate.getSurname()+"',"+
                     this.isDriver+" = "+userToUpdate.isDriver()+","+
                     this.workplaceId+" = "+userToUpdate.getWorkplaceId()+","+
-                    this.passWord+ "= "+userToUpdate.getPassWord()+" WHERE "+this.id+" = "+userToUpdate.getId()) != 0){
+                    this.passWord+ "= '"+userToUpdate.getPassWord()+"' WHERE "+this.id+" = "+userToUpdate.getId()) != 0){
                 return true;
             }else{
                 return false;

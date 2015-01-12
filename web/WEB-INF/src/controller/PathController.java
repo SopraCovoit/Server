@@ -11,7 +11,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import utils.JsonKey;
 
+import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 
 /**
  * Created by julescantegril on 19/12/2014.
@@ -69,10 +71,55 @@ public class PathController extends AbstractController {
     }
 
     public String deleteResponseFromResquest(HttpServletRequest request){
-        return  null;
+        String json = null;
+
+        if (request.getParameter(id) != null) {
+            Path pathToDelete = daoPt.find(Long.parseLong(request.getParameter(id)));
+            if(pathToDelete == null){
+                json = facEr.objectToJson(new StatusedMessage(StatusedMessage.FAILURE_STATUS, StatusedMessage.FAILURE_DELETE_PATH)).toString();
+            }else{
+                if(daoPt.delete(pathToDelete)){
+                    json = facEr.objectToJson(new StatusedMessage(StatusedMessage.SUCCESS_STATUS, StatusedMessage.SUCCESS_DELETE_PATH)).toString();
+                }else{
+                    json = facEr.objectToJson(new StatusedMessage(StatusedMessage.FAILURE_STATUS, StatusedMessage.FAILURE_DELETE_PATH)).toString();
+                }
+            }
+        }else{
+            json = facEr.objectToJson(new StatusedMessage(StatusedMessage.FAILURE_STATUS, StatusedMessage.FAILURE_DELETE_PATH)).toString();
+        }
+
+        return json;
     }
 
     public String putResponseFromResquest(HttpServletRequest request){
-        return  null;
+        String retStr;
+
+        ServletInputStream inputStream = null;
+        String entry = "" ;
+        try {
+            inputStream = request.getInputStream();
+            int next = 0;
+
+            while(next != -1){
+                next = inputStream.read();
+                entry = entry+(char)next;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        boolean isUpdated = false;
+        try {
+            isUpdated = daoPt.update(facPath.jsonToObject(new JSONObject(entry)));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        if (isUpdated) {
+            retStr = facEr.objectToJson(new StatusedMessage(StatusedMessage.SUCCESS_STATUS, StatusedMessage.SUCCESS_PUT_USER)).toString();
+        }
+        else {
+            retStr = facEr.objectToJson(new StatusedMessage(StatusedMessage.FAILURE_STATUS, StatusedMessage.FAILURE_PUT_USER)).toString();
+        }
+        return retStr;
     }
 }

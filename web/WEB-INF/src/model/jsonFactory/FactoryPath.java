@@ -25,8 +25,18 @@ public class FactoryPath extends Factory<Path> {
                     json.getInt(JsonKey.workplace),
                     json.getString(JsonKey.direction),
                     facUs.jsonToObject(new JSONObject(json.getString(JsonKey.user_id))).getId(),
-                    0);//PATH ID A 0 ?
+                    json.getInt(JsonKey.id));//PATH ID A 0 ?
         } catch (JSONException e) {
+            try {
+                return new Path(new Location(json.getJSONObject(JsonKey.location).getDouble(JsonKey.latitude),json.getJSONObject(JsonKey.location).getDouble(JsonKey.longitude)),
+                        json.getString(JsonKey.departure_hour),
+                        json.getInt(JsonKey.workplace),
+                        json.getString(JsonKey.direction),
+                        facUs.jsonToObject(new JSONObject(json.getString(JsonKey.user_id))).getId(),
+                        0);//PATH ID A 0 ?
+            } catch (JSONException e1) {
+                e1.printStackTrace();
+            }
             e.printStackTrace();
         }
         return null;

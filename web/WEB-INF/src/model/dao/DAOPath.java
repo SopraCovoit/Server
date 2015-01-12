@@ -28,6 +28,7 @@ public class DAOPath extends DAO {
     public Path find(long id) {
         try {
             ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.pathTable+" WHERE "+this.id+" = "+id);
+            resultatQuery.first();
             return new Path(
                     new Location(resultatQuery.getDouble(this.latitude),resultatQuery.getDouble(this.longitude)),
                     resultatQuery.getString(this.departureHour),
@@ -65,6 +66,7 @@ public class DAOPath extends DAO {
     public boolean update(Object obj) {
         Path pathToUpdate = (Path)obj;
         try {
+            System.out.println(pathToUpdate.getId()+" IDDD");
             if( this.statement.executeUpdate("UPDATE "+this.pathTable+
                     " SET "+this.latitude+" = "+pathToUpdate.getLocation().getLatitude()+", "+
                     this.longitude +" = "+pathToUpdate.getLocation().getLongitude()+", "+
@@ -86,7 +88,8 @@ public class DAOPath extends DAO {
     public boolean delete(Object obj) {
         Path pathToDelete = (Path)obj;
         try {
-            return this.statement.execute("DELETE FROM "+this+pathTable+" WHERE "+this.id+" = "+pathToDelete.getId());
+            this.statement.execute("DELETE FROM "+this.pathTable+" WHERE "+this.id+" = "+pathToDelete.getId());
+            return true;
         } catch (SQLException e) {
             e.printStackTrace();
         }

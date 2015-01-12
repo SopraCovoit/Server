@@ -55,7 +55,6 @@ Id géré par la base, ne spécifier aucun id lors de la création
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //super.doDelete(req, resp);
         HeaderSetter.addCorsHeader(resp);
-
         initController();
         PrintWriter out = resp.getWriter();
         out.write(c.deleteResponseFromResquest(req));
@@ -65,7 +64,6 @@ Id géré par la base, ne spécifier aucun id lors de la création
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //super.doPut(req, resp);
         HeaderSetter.addCorsHeader(resp);
-
         initController();
         PrintWriter out = resp.getWriter();
         out.write(c.putResponseFromResquest(req));

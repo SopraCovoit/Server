@@ -27,8 +27,8 @@ public abstract class AbstractController {
         Set s = m.entrySet();
         Iterator it = s.iterator();
 
-        System.out.println(request.getParameterMap().toString()+" map ");
-        System.out.println(request.getParameterNames().toString()+" names ");
+      //  System.out.println(request.getParameterMap().toString()+" map ");
+       // System.out.println(request.getParameterNames().toString()+" names ");
 
         Map.Entry<String,String> entry = (Map.Entry<String,String>)it.next();
 

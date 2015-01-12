@@ -34,11 +34,30 @@ public class PathServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //super.doGet(req, resp);
         HeaderSetter.addCorsHeader(resp);
         initController();
         PrintWriter out = resp.getWriter();
         out.write(c.postResponseFromResquest(req));
     }
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //super.doGet(req, resp);
+        HeaderSetter.addCorsHeader(resp);
+        initController();
+        PrintWriter out = resp.getWriter();
+        out.write(c.putResponseFromResquest(req));
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //super.doGet(req, resp);
+        HeaderSetter.addCorsHeader(resp);
+        initController();
+        PrintWriter out = resp.getWriter();
+        out.write(c.deleteResponseFromResquest(req));
+    }
+
 }

@@ -5,10 +5,14 @@ import model.User;
 import model.dao.DAOUser;
 import model.jsonFactory.FactoryError;
 import model.jsonFactory.FactoryUser;
+import org.json.JSONException;
+import org.json.JSONObject;
 import utils.JsonKey;
 import utils.TokenList;
 
+import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 
 /**
  * Created by julescantegril on 19/12/2014.
@@ -79,9 +83,28 @@ public class UserController extends AbstractController {
     public String putResponseFromResquest(HttpServletRequest request) {
         String retStr;
 
-        boolean isUpdated = daoUs.update(facUs.jsonToObject(getJsonFromRequest(request)));
+        ServletInputStream inputStream = null;
+        String entry = "" ;
+        try {
+            inputStream = request.getInputStream();
+            int next = 0;
+
+            while(next != -1){
+                next = inputStream.read();
+                entry = entry+(char)next;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        boolean isUpdated = false;
+        try {
+            isUpdated = daoUs.update(facUs.jsonToObject(new JSONObject(entry)));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         if (isUpdated) {
-            retStr = facEr.objectToJson(new StatusedMessage(StatusedMessage.SUCCESS_STATUS, StatusedMessage.FAILURE_PUT_USER)).toString();
+            retStr = facEr.objectToJson(new StatusedMessage(StatusedMessage.SUCCESS_STATUS, StatusedMessage.SUCCESS_PUT_USER)).toString();
         }
         else {
             retStr = facEr.objectToJson(new StatusedMessage(StatusedMessage.FAILURE_STATUS, StatusedMessage.FAILURE_PUT_USER)).toString();
