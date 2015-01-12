@@ -37,6 +37,7 @@ public class StatusedMessage {
     public final static String FAILURE_DELETE_PATH ="Failure deleting path";
     public final static String SUCCESS_POST_PATH ="Success post path";
     public final static String FAILURE_POST_PATH ="Failure post path";
+    public static final String NO_SUCH_WORKPLACE = "There is no such workplace";
 
     int id;
     String message;

@@ -3,6 +3,7 @@ package controller;
 import model.StatusedMessage;
 import model.User;
 import model.dao.DAOUser;
+import model.dao.DAOWorkplace;
 import model.jsonFactory.FactoryError;
 import model.jsonFactory.FactoryUser;
 import org.json.JSONException;
@@ -20,11 +21,14 @@ import java.io.IOException;
 public class UserController extends AbstractController {
 
     DAOUser daoUs;
+    DAOWorkplace daoWp;
     FactoryUser facUs;
     FactoryError facEr;
 
+
     public UserController() {
         daoUs = new DAOUser();
+        daoWp = new DAOWorkplace();
         facUs = new FactoryUser();
         facEr = new FactoryError();
 
@@ -49,19 +53,35 @@ public class UserController extends AbstractController {
     public String postResponseFromResquest(HttpServletRequest request) {
 
         User newUser = null;
-        try{
-            newUser = daoUs.create(facUs.jsonToObject(getJsonFromRequest(request)));
-            newUser.setToken(TokenList.getNewToken());
-            newUser.setId(daoUs.findByMail(newUser.getMail()).getId());
-        }catch(NullPointerException e){
-            return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_SYNTAX,StatusedMessage.FAILURE_POST_USER)).toString();
-        }
+        if(isWorkplaceValid(request)){
+            try{
+                newUser = daoUs.create(facUs.jsonToObject(getJsonFromRequest(request)));
+                newUser.setToken(TokenList.getNewToken());
+                newUser.setId(daoUs.findByMail(newUser.getMail()).getId());
+            }catch(NullPointerException e){
+                return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_SYNTAX,StatusedMessage.FAILURE_POST_USER)).toString();
+            }
 
-        if(facUs.objectToJson(newUser).toString() == null){
-            return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_SYNTAX,StatusedMessage.FAILURE_POST_USER)).toString();
-        }else{
-            return facUs.objectToJson(newUser).toString();
+            if(facUs.objectToJson(newUser).toString() == null){
+                return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_SYNTAX,StatusedMessage.FAILURE_POST_USER)).toString();
+            }else{
+                return facUs.objectToJson(newUser).toString();
+            }
         }
+        return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_SYNTAX,StatusedMessage.NO_SUCH_WORKPLACE)).toString();
+    }
+
+    private boolean isWorkplaceValid(HttpServletRequest request){
+        boolean ret = false;
+        try{
+            JSONObject json = getJsonFromRequest(request);
+            if(daoWp.find(json.getJSONObject(JsonKey.workplace).getInt(JsonKey.id)) != null){
+                ret = true;
+            }
+        } catch (JSONException e){
+            e.printStackTrace();
+        }
+        return ret;
     }
 
     public String deleteResponseFromResquest(HttpServletRequest request) {
