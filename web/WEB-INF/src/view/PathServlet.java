@@ -59,5 +59,10 @@ public class PathServlet extends HttpServlet {
         PrintWriter out = resp.getWriter();
         out.write(c.deleteResponseFromResquest(req));
     }
+    @Override
+    protected void doOptions(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+        HeaderSetter.addCorsHeader(httpServletResponse);
+        super.doOptions(httpServletRequest, httpServletResponse);
+    }
 
 }
