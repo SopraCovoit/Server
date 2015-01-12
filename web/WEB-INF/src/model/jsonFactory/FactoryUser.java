@@ -31,7 +31,7 @@ public class FactoryUser extends Factory<User> {
                         json.getString(JsonKey.mail),
                         json.getString(JsonKey.phone),
                         json.getBoolean(JsonKey.isDriver),
-                        facWp.jsonToObject(new JSONObject(json.getString(JsonKey.workplace))).getId(),
+                        json.getJSONObject(JsonKey.workplace).getInt(JsonKey.id),
                         "");
             }
             return new User(json.getString(JsonKey.name),
