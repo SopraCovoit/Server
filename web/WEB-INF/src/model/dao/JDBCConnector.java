@@ -12,8 +12,8 @@ public class JDBCConnector {
 
     private static boolean driverLoaded = false;
     private static String urlBase ="jdbc:mysql://localhost:3306/sopracovoit";
-    private static String utilisateur = "root";
-    private static String motDePasse = "root";
+    private static String utilisateur = "sopra";
+    private static String motDePasse = "covoit";
 
    /* private static String urlBase ="jdbc:mysql://localhost:8889/sopracovoit";
     private static String utilisateur = "a";

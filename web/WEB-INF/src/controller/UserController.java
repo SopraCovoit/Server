@@ -37,7 +37,8 @@ public class UserController extends AbstractController {
     public String getResponseFromResquest(HttpServletRequest request) {
 
 
-        String json = null;
+        String json;
+
         if (request.getParameter(JsonKey.id) != null) {
             json = facUs.objectToJson(daoUs.find(Long.parseLong(request.getParameter(JsonKey.id)))).toString();
         } else {
