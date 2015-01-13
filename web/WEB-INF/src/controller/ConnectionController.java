@@ -25,12 +25,12 @@ public class ConnectionController extends AbstractController {
 
     }
     @Override
-    public String getResponseFromResquest(HttpServletRequest request) {
+    public String postResponseFromResquest(HttpServletRequest request) {
         return null;
     }
 
     @Override
-    public String postResponseFromResquest(HttpServletRequest request) {
+    public String getResponseFromResquest(HttpServletRequest request) {
         User toReturn = daoUs.find(request.getParameter(this.mail),request.getParameter(JsonKey.password));
         if( toReturn != null){
             String token = TokenList.getNewToken();
