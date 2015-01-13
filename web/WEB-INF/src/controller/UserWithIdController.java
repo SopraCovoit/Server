@@ -30,7 +30,10 @@ public class UserWithIdController extends AbstractController {
     @Override
     public String getResponseFromResquest(HttpServletRequest request) {
         String json;
-        json = facUs.objectToJson(daoUs.find(Long.parseLong(request.getContextPath()))).toString();
+        String id = request.getPathInfo();
+        id="" + id.substring(id.lastIndexOf("/"), id.length()- 1);
+        System.out.println(id);
+        json = facUs.objectToJson(daoUs.find(Long.parseLong(id))).toString();
         if(json == null){
             json = facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_SYNTAX,StatusedMessage.FAILURE_GET_USER)).toString();
         }
