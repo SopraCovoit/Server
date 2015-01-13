@@ -5,9 +5,10 @@ import org.json.JSONObject;
 import utils.JsonKey;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 /**
  * Created by julescantegril on 19/12/2014.
@@ -24,21 +25,52 @@ public abstract class AbstractController {
     public abstract String putResponseFromResquest(HttpServletRequest request);
 
     public JSONObject getJsonFromRequest(HttpServletRequest request){
-        Map m = request.getParameterMap();
-        Set s = m.entrySet();
-        Iterator it = s.iterator();
 
-      //  System.out.println(request.getParameterMap().toString()+" map ");
-       // System.out.println(request.getParameterNames().toString()+" names ");
-
-        Map.Entry<String,String> entry = (Map.Entry<String,String>)it.next();
+        JSONObject ret = null;
 
         try {
-            return new JSONObject(entry.getKey());
+            String body = getBody(request);
+            ret = new JSONObject(body);
+        } catch (IOException e) {
+            e.printStackTrace();
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return null;
+        return ret;
+    }
+
+    private static String getBody(HttpServletRequest request) throws IOException {
+
+        String body = null;
+        StringBuilder stringBuilder = new StringBuilder();
+        BufferedReader bufferedReader = null;
+
+        try {
+            InputStream inputStream = request.getInputStream();
+            if (inputStream != null) {
+                bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                char[] charBuffer = new char[128];
+                int bytesRead = -1;
+                while ((bytesRead = bufferedReader.read(charBuffer)) > 0) {
+                    stringBuilder.append(charBuffer, 0, bytesRead);
+                }
+            } else {
+                stringBuilder.append("");
+            }
+        } catch (IOException ex) {
+            throw ex;
+        } finally {
+            if (bufferedReader != null) {
+                try {
+                    bufferedReader.close();
+                } catch (IOException ex) {
+                    throw ex;
+                }
+            }
+        }
+
+        body = stringBuilder.toString();
+        return body;
     }
 
     public static int isError(String er){
