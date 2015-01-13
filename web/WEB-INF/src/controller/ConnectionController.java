@@ -9,6 +9,7 @@ import utils.JsonKey;
 import utils.TokenList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created by root on 09/01/15.
@@ -37,7 +38,7 @@ public class ConnectionController extends AbstractController {
             toReturn.setToken(token);
             return facUs.objectToJson(toReturn).toString();
         }else{
-            return facEr.objectToJson(new StatusedMessage(StatusedMessage.FAILURE_STATUS,StatusedMessage.FAILURE_POST_USER)).toString();
+            return facEr.objectToJson(new StatusedMessage(HttpServletResponse.SC_FORBIDDEN,StatusedMessage.FAILURE_POST_USER)).toString();
         }
     }
 

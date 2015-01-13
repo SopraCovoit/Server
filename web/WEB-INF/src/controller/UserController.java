@@ -1,5 +1,6 @@
 package controller;
 
+import model.Path;
 import model.StatusedMessage;
 import model.User;
 import model.dao.DAOPath;
@@ -58,22 +59,24 @@ public class UserController extends AbstractController {
 
             //add work place if exist
 
-            try {
-                JSONArray path = requestInString.getJSONArray(JsonKey.path);
-                for(int i = 0;i< path.length();i++){
-                    //facPt.jsonToObject(path.get(i));
-                    //daoPt.create();
-                }
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-
             try{
                 newUser = daoUs.create(facUs.jsonToObject(requestInString));
                 newUser.setToken(TokenList.getNewToken());
-                newUser.setId(daoUs.findByMail(newUser.getMail()).getId());
+                int goodId = daoUs.findByMail(newUser.getMail()).getId();
+                newUser.setId(goodId);
+
+                try {
+                    JSONArray paths = requestInString.getJSONArray(JsonKey.path);
+                    for(int i = 0;i< paths.length();i++){
+                        Path pathToAdd = facPt.jsonToObject(new JSONObject(paths.get(i)));
+                        pathToAdd.setUserId(goodId);
+                        daoPt.create(pathToAdd);
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
             }catch(NullPointerException e){
                 return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_SYNTAX,StatusedMessage.FAILURE_POST_USER)).toString();
             }

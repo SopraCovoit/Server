@@ -21,6 +21,17 @@ public class ConnectionServlet extends HttpServlet {
             c = new ConnectionController();
         }
     }
+
+    public void sendResponse(String respFromRequest, HttpServletResponse resp)throws ServletException, IOException {
+        PrintWriter out = resp.getWriter();
+        if(AbstractController.isError(respFromRequest) == -1){
+            out.write(respFromRequest);
+        }else {
+            out.write(respFromRequest);
+            resp.setStatus(AbstractController.isError(respFromRequest));
+        }
+    }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -30,7 +41,8 @@ public class ConnectionServlet extends HttpServlet {
         HeaderSetter.addCorsHeader(response);
         initController();
         PrintWriter out = response.getWriter();
-        out.write(c.getResponseFromResquest(request));
+        String respFromRequest = c.getResponseFromResquest(request);
+        sendResponse(respFromRequest, response);
     }
 
     @Override
