@@ -3,7 +3,6 @@ package controller;
 import model.StatusedMessage;
 import model.User;
 import model.dao.DAOUser;
-import model.dao.DAOWorkplace;
 import model.jsonFactory.FactoryError;
 import model.jsonFactory.FactoryUser;
 import org.json.JSONException;
@@ -24,7 +23,6 @@ public class UserWithIdController extends AbstractController {
 
     public UserWithIdController() {
         daoUs = new DAOUser();
-        //daoWp = new DAOWorkplace();
         facUs = new FactoryUser();
         facEr = new FactoryError();
 

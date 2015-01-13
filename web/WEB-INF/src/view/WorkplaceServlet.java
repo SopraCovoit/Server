@@ -29,6 +29,7 @@ public class WorkplaceServlet extends HttpServlet {
 
     public void sendResponse(String respFromRequest, HttpServletResponse resp)throws ServletException, IOException {
         PrintWriter out = resp.getWriter();
+
         if(AbstractController.isError(respFromRequest) == -1){
             out.write(respFromRequest);
         }else {
