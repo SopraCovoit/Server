@@ -63,6 +63,7 @@ public class PathController extends AbstractController {
        // System.out.println(facPath.objectToJson(path).toString());
 
         Path pathToAdd = facPath.jsonToObject(getJsonFromRequest(request));
+        System.out.println(pathToAdd.getWorkPlaceId());
         if(daoPt.create(pathToAdd) != null){
             return facPath.objectToJson(pathToAdd).toString();
         }else{
