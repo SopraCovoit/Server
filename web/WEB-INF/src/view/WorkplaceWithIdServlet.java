@@ -22,11 +22,24 @@ public class WorkplaceWithIdServlet extends HttpServlet {
             c = new WorkplaceWithIdController();
         }
     }
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HeaderSetter.addCorsHeader(response);
+
+    public void sendResponse(String respFromRequest, HttpServletResponse resp)throws ServletException, IOException {
+        PrintWriter out = resp.getWriter();
+        if(AbstractController.isError(respFromRequest) == -1){
+            out.write(respFromRequest);
+        }else {
+            out.write(respFromRequest);
+            resp.setStatus(AbstractController.isError(respFromRequest));
+        }
+    }
+
+    protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+        HeaderSetter.addCorsHeader(httpServletResponse);
         initController();
-        PrintWriter out = response.getWriter();
-        out.write(c.deleteResponseFromResquest(request));
+        PrintWriter out = httpServletResponse.getWriter();
+        String respFromRequest = c.postResponseFromResquest(httpServletRequest);
+        sendResponse(respFromRequest,httpServletResponse);
+
     }
 
     @Override
@@ -34,7 +47,9 @@ public class WorkplaceWithIdServlet extends HttpServlet {
         HeaderSetter.addCorsHeader(httpServletResponse);
         initController();
         PrintWriter out = httpServletResponse.getWriter();
-        out.write(c.deleteResponseFromResquest(httpServletRequest));
+        String respFromRequest = c.deleteResponseFromResquest(httpServletRequest);
+        sendResponse(respFromRequest,httpServletResponse);
+
     }
 
     @Override
@@ -42,15 +57,19 @@ public class WorkplaceWithIdServlet extends HttpServlet {
         HeaderSetter.addCorsHeader(httpServletResponse);
         initController();
         PrintWriter out = httpServletResponse.getWriter();
-        out.write(c.putResponseFromResquest(httpServletRequest));
+        String respFromRequest = c.putResponseFromResquest(httpServletRequest);
+        sendResponse(respFromRequest,httpServletResponse);
+
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HeaderSetter.addCorsHeader(response);
+    protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+        HeaderSetter.addCorsHeader(httpServletResponse);
         initController();
-        PrintWriter out = response.getWriter();
-        out.write(c.getResponseFromResquest(request));
+        PrintWriter out = httpServletResponse.getWriter();
+        String respFromRequest = c.getResponseFromResquest(httpServletRequest);
+        sendResponse(respFromRequest,httpServletResponse);
+
     }
 
     @Override

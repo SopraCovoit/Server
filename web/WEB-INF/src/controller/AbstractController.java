@@ -2,6 +2,7 @@ package controller;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import utils.JsonKey;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Iterator;
@@ -38,6 +39,21 @@ public abstract class AbstractController {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static int isError(String er){
+        try {
+            JSONObject json = new JSONObject(er);
+            if(json.getInt(JsonKey.status) != 200){
+                return json.getInt(JsonKey.status);
+            }else{
+                return json.getInt(JsonKey.status);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return -1;//c'est pas une erreur, ni vrai ni faut on renvoit
+        }
+
     }
 
     /**

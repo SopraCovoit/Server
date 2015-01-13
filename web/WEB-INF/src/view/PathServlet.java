@@ -24,13 +24,25 @@ public class PathServlet extends HttpServlet {
         }
     }
 
+    public void sendResponse(String respFromRequest, HttpServletResponse resp)throws ServletException, IOException {
+        PrintWriter out = resp.getWriter();
+        if(AbstractController.isError(respFromRequest) == -1){
+            out.write(respFromRequest);
+        }else {
+            out.write(respFromRequest);
+            resp.setStatus(AbstractController.isError(respFromRequest));
+        }
+    }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //super.doGet(req, resp);
         HeaderSetter.addCorsHeader(resp);
         initController();
         PrintWriter out = resp.getWriter();
-        out.write(c.getResponseFromResquest(req));
+        String respFromRequest = c.getResponseFromResquest(req);
+        sendResponse(respFromRequest,resp);
+
     }
 
     @Override
@@ -39,7 +51,9 @@ public class PathServlet extends HttpServlet {
         HeaderSetter.addCorsHeader(resp);
         initController();
         PrintWriter out = resp.getWriter();
-        out.write(c.postResponseFromResquest(req));
+        String respFromRequest = c.postResponseFromResquest(req);
+        sendResponse(respFromRequest,resp);
+
     }
 
     @Override
@@ -48,7 +62,9 @@ public class PathServlet extends HttpServlet {
         HeaderSetter.addCorsHeader(resp);
         initController();
         PrintWriter out = resp.getWriter();
-        out.write(c.putResponseFromResquest(req));
+        String respFromRequest = c.putResponseFromResquest(req);
+        sendResponse(respFromRequest,resp);
+
     }
 
     @Override
@@ -57,7 +73,9 @@ public class PathServlet extends HttpServlet {
         HeaderSetter.addCorsHeader(resp);
         initController();
         PrintWriter out = resp.getWriter();
-        out.write(c.deleteResponseFromResquest(req));
+        String respFromRequest = c.deleteResponseFromResquest(req);
+        sendResponse(respFromRequest,resp);
+
     }
     @Override
     protected void doOptions(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
