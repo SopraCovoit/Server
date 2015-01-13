@@ -30,7 +30,7 @@ public class UserWithIdController extends AbstractController {
     public String getResponseFromResquest(HttpServletRequest request) {
         String json;
         String id = request.getPathInfo();
-        id="" + id.substring(id.lastIndexOf("/"), id.length()- 1);
+        id="" + id.substring(id.lastIndexOf("/")+1, id.length());
         System.out.println(id);
         json = facUs.objectToJson(daoUs.find(Long.parseLong(id))).toString();
         if(json == null){
