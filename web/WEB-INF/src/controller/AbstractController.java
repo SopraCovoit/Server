@@ -30,6 +30,7 @@ public abstract class AbstractController {
 
         try {
             String body = getBody(request);
+            //System.out.println("nll"+body+"er");
             ret = new JSONObject(body);
         } catch (IOException e) {
             e.printStackTrace();
@@ -49,7 +50,7 @@ public abstract class AbstractController {
             InputStream inputStream = request.getInputStream();
             if (inputStream != null) {
                 bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                char[] charBuffer = new char[128];
+                char[] charBuffer = new char[1024];
                 int bytesRead = -1;
                 while ((bytesRead = bufferedReader.read(charBuffer)) > 0) {
                     stringBuilder.append(charBuffer, 0, bytesRead);
@@ -58,7 +59,9 @@ public abstract class AbstractController {
                 stringBuilder.append("");
             }
         } catch (IOException ex) {
-            throw ex;
+            //System.out.println("RETURN HERE");
+            body = stringBuilder.toString();
+            return body;
         } finally {
             if (bufferedReader != null) {
                 try {
@@ -68,7 +71,7 @@ public abstract class AbstractController {
                 }
             }
         }
-
+       // System.out.println("RETURN LA");
         body = stringBuilder.toString();
         return body;
     }
@@ -82,7 +85,7 @@ public abstract class AbstractController {
                 return json.getInt(JsonKey.status);
             }
         } catch (JSONException e) {
-            e.printStackTrace();
+           // e.printStackTrace();
             return -1;//c'est pas une erreur, ni vrai ni faut on renvoit
         }
 

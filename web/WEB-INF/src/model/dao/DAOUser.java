@@ -40,7 +40,8 @@ public class DAOUser extends DAO {
                     resultatQuery.getInt(this.workplaceId),
                     resultatQuery.getString(this.passWord));
         } catch (SQLException e) {
-            e.printStackTrace();
+           return null;
+           // e.printStackTrace();
         }
 
         return newUser;

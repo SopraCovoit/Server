@@ -31,7 +31,14 @@ public class UserWithIdController extends AbstractController {
         String json;
         String id = request.getPathInfo();
         id="" + id.substring(id.lastIndexOf("/")+1, id.length());
-        json = facUs.objectToJson(daoUs.find(Long.parseLong(id))).toString();
+
+        User goodUser = daoUs.find(Long.parseLong(id));
+
+        if(goodUser == null){
+            return facEr.objectToJson(new StatusedMessage(StatusedMessage.FAILURE_STATUS, StatusedMessage.FAILURE_GET_USER)).toString();
+        }
+
+        json = facUs.objectToJson(goodUser).toString();
         if(json == null){
             json = facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_SYNTAX,StatusedMessage.FAILURE_GET_USER)).toString();
         }
