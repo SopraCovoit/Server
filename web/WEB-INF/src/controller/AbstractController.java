@@ -76,20 +76,6 @@ public abstract class AbstractController {
         return body;
     }
 
-    public static int isError(String er){
-        try {
-            JSONObject json = new JSONObject(er);
-            if(json.getInt(JsonKey.status) != 200){
-                return json.getInt(JsonKey.status);
-            }else{
-                return json.getInt(JsonKey.status);
-            }
-        } catch (JSONException e) {
-           // e.printStackTrace();
-            return -1;//c'est pas une erreur, ni vrai ni faut on renvoit
-        }
-
-    }
 
     public static int isError(String er){
         try {

@@ -6,12 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a7c268e-e1d1-43b1-b3ea-4542f1863991" name="Default" comment="factUser avec certaines fois">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAOUser.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAOUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryPath.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryPath.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryUser.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/src/controller/UserController.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/src/controller/WorkplaceWithIdController.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/controller/WorkplaceWithIdController.java" />
+    <list default="true" id="3a7c268e-e1d1-43b1-b3ea-4542f1863991" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/src/controller/AbstractController.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/controller/AbstractController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceServlet.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Server.iws" />
@@ -39,10 +36,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="UserWithIdServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/UserWithIdServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="1155">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="34" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1065">
+            <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1065">
               <caret line="64" column="22" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
               <folding>
                 <element signature="docComment;class#UserController#0" expanded="false" />
@@ -54,14 +61,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FactoryPath.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryPath.java">
+      <file leaf-file-name="WorkplaceServlet.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9411765" vertical-offset="675" max-vertical-offset="1245">
-              <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-              <folding>
-                <element signature="method#objectToJson#1;class#FactoryPath#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.30541873" vertical-offset="264" max-vertical-offset="1230">
+              <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -82,6 +87,16 @@
                 <marker date="1421163829000" expanded="true" signature="5407:5817" placeholder="UPDATE missi..." />
                 <marker date="1421163829000" expanded="true" signature="6201:6252" placeholder="DELETE FROM ..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/AbstractController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="975" max-vertical-offset="1755">
+              <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -125,7 +140,6 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/src/utils/TokenList.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/utils/JsonKey.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/view/PathServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/model/User.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/model/StatusedMessage.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/model/dao/JDBCConnector.java" />
@@ -140,11 +154,12 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAOWorkplace.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/controller/UserWithIdController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryUser.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/controller/AbstractController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/controller/WorkplaceWithIdController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAOUser.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/controller/UserController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryPath.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/controller/AbstractController.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceServlet.java" />
       </list>
     </option>
   </component>
@@ -926,7 +941,7 @@
       <workItem from="1421078867753" duration="15669000" />
       <workItem from="1421150253718" duration="280000" />
       <workItem from="1421150551085" duration="3297000" />
-      <workItem from="1421159518681" duration="4732000" />
+      <workItem from="1421159518681" duration="4811000" />
     </task>
     <task id="LOCAL-00001" summary="Servletallrunningmaggle">
       <created>1418986863469</created>
@@ -1174,11 +1189,17 @@
       <option name="project" value="LOCAL" />
       <updated>1421162347365</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="toto">
+      <created>1421164337131</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1421164337131</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67240000" />
+    <option name="totallyTimeSpent" value="67319000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="729" extended-state="6" />
@@ -1193,7 +1214,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867885" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929516" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3101777" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15541601" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15541601" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1206,7 +1227,7 @@
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38932496" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.07535322" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17956819" sideWeight="0.114982575" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1267,7 +1288,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="UpCase in Factory and DAOUser (almost)up and running" />
     <MESSAGE value="tchoutchou" />
     <MESSAGE value="Error-&gt; StatusedMessage" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;web/WEB-INF/src/controller/WorkplaceController.java&#10;&#9;web/WEB-INF/src/model/CustomError.java&#10;&#9;web/WEB-INF/src/model/Error.java&#10;&#9;web/WEB-INF/src/model/StatusedMessage.java&#10;&#9;web/WEB-INF/src/model/jsonFactory/FactoryError.java&#10;" />
@@ -1292,7 +1312,8 @@
     <MESSAGE value="Toto" />
     <MESSAGE value="tata" />
     <MESSAGE value="post user ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="post user ok" />
+    <MESSAGE value="toto" />
+    <option name="LAST_COMMIT_MESSAGE" value="toto" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1526,16 +1547,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="805" max-vertical-offset="1476">
-          <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/PathServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="750" max-vertical-offset="1512">
@@ -1543,14 +1554,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/UserWithIdServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="484" max-vertical-offset="1530">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1674,14 +1677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/AbstractController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67105263" vertical-offset="912" max-vertical-offset="1740">
-          <caret line="79" column="13" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="618" max-vertical-offset="1275">
@@ -1708,9 +1703,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryPath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9411765" vertical-offset="675" max-vertical-offset="1245">
+          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding>
+            <element signature="method#objectToJson#1;class#FactoryPath#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1065">
+        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1065">
           <caret line="64" column="22" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
           <folding>
             <element signature="docComment;class#UserController#0" expanded="false" />
@@ -1721,13 +1726,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryPath.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/AbstractController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9411765" vertical-offset="675" max-vertical-offset="1245">
-          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-          <folding>
-            <element signature="method#objectToJson#1;class#FactoryPath#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="975" max-vertical-offset="1755">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/UserWithIdServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="1155">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="34" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30541873" vertical-offset="264" max-vertical-offset="1230">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
