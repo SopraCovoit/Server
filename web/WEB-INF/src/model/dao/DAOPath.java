@@ -13,12 +13,14 @@ import java.util.ArrayList;
  */
 public class DAOPath extends DAO {
 
-    Statement statement;
+    static Statement statement;
 
     public DAOPath(){
         super();
         try {
-            statement = this.connect.createStatement();
+            if(statement == null){
+                statement = this.connect.createStatement();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -27,7 +29,7 @@ public class DAOPath extends DAO {
     @Override
     public Path find(long id) {
         try {
-            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.pathTable+" WHERE "+this.id+" = "+id);
+            ResultSet resultatQuery = statement.executeQuery("SELECT *"+" FROM "+this.pathTable+" WHERE "+this.id+" = "+id);
             resultatQuery.first();
             return new Path(
                     new Location(resultatQuery.getDouble(this.latitude),resultatQuery.getDouble(this.longitude)),
@@ -46,7 +48,7 @@ public class DAOPath extends DAO {
     public Path create(Object obj) {
         Path pathtoAdd = (Path)obj;
         try {
-            if(this.statement.executeUpdate("INSERT INTO "+this.pathTable+
+            if(statement.executeUpdate("INSERT INTO "+this.pathTable+
                     " ( "+this.latitude+","+this.longitude+","+this.workplaceId+","+this.departureHour+","+this.direction+","+this.userId+" ) VALUES ("+
                     pathtoAdd.getLocation().getLatitude()+","+
                     pathtoAdd.getLocation().getLongitude()+","+
@@ -67,7 +69,7 @@ public class DAOPath extends DAO {
         Path pathToUpdate = (Path)obj;
         try {
             System.out.println(pathToUpdate.getId()+" IDDD");
-            if( this.statement.executeUpdate("UPDATE "+this.pathTable+
+            if( statement.executeUpdate("UPDATE "+this.pathTable+
                     " SET "+this.latitude+" = "+pathToUpdate.getLocation().getLatitude()+", "+
                     this.longitude +" = "+pathToUpdate.getLocation().getLongitude()+", "+
                     this.departureHour +" = '"+pathToUpdate.getDepartureHour()+"', "+
@@ -88,13 +90,24 @@ public class DAOPath extends DAO {
     public boolean delete(Object obj) {
         Path pathToDelete = (Path)obj;
         try {
-            this.statement.execute("DELETE FROM "+this.pathTable+" WHERE "+this.id+" = "+pathToDelete.getId());
+            statement.execute("DELETE FROM "+this.pathTable+" WHERE "+this.id+" = "+pathToDelete.getId());
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return false;
     }
+
+    public boolean deleteAllFromUserId(int id) {
+        try {
+            statement.execute("DELETE FROM " + this.pathTable + " WHERE " + this.userId + " = "+id);
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 
     public ArrayList<Path> findAllUserPath(long id){
         try {
@@ -149,7 +162,6 @@ public class DAOPath extends DAO {
             ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.pathTable);
             boolean rowExist = resultatQuery.first();
             while(rowExist){
-                resultatQuery.first();
                 allPath.add(new Path(
                         new Location(resultatQuery.getDouble(this.latitude),resultatQuery.getDouble(this.longitude)),
                         resultatQuery.getString(this.departureHour),
@@ -161,7 +173,8 @@ public class DAOPath extends DAO {
             }
 
             for(int i = 0;i<allPath.size();i++){
-                if(allPath.get(i).getWorkPlaceId() == wpId && getDistance(latitude,longitude,allPath.get(i).getLocation().getLatitude(),allPath.get(i).getLocation().getLongitude())<=distance){
+                if(allPath.get(i).getWorkPlaceId() == wpId){
+                    //System.out.println(getDistance(latitude,longitude,allPath.get(i).getLocation().getLatitude(),allPath.get(i).getLocation().getLongitude())+" et "+distance);
                     allPath.get(i).setDistance(getDistance(latitude,longitude,allPath.get(i).getLocation().getLatitude(),allPath.get(i).getLocation().getLongitude()));
                     toReturn.add(allPath.get(i));
                 }
@@ -173,7 +186,7 @@ public class DAOPath extends DAO {
         return null;
     }
 
-    private double getDistance(double lat1, double long1,double lat2,double long2){
+    private int getDistance(double lat1, double long1,double lat2,double long2){
 
         int R = 6371; // Radius of the earth in km
         double dLat = deg2rad(lat2-lat1);  // deg2rad below
@@ -185,7 +198,7 @@ public class DAOPath extends DAO {
                 ;
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
         double d = (R * c)*1000; // Distance in km
-        return d;
+        return (int)d;
 
 
     }

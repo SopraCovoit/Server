@@ -13,12 +13,14 @@ import java.util.ArrayList;
 
 public class DAOUser extends DAO {
 
-    Statement statement;
+  static Statement statement;
 
     public DAOUser(){
         super();
         try {
-            statement = this.connect.createStatement();
+            if(statement == null){
+                statement = this.connect.createStatement();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -28,7 +30,7 @@ public class DAOUser extends DAO {
     public User find(long id) {
         User newUser = null;
         try {
-            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.userTable+" WHERE "+this.id+" = "+id);
+            ResultSet resultatQuery = statement.executeQuery("SELECT *"+" FROM "+this.userTable+" WHERE "+this.id+" = "+id);
             resultatQuery.first();
             newUser = new User(
                     resultatQuery.getString(this.name),
@@ -50,7 +52,7 @@ public class DAOUser extends DAO {
     public User findByMail(String mail) {
         User newUser = null;
         try {
-            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.userTable+" WHERE "+this.mail+" = '"+mail+"'");
+            ResultSet resultatQuery = statement.executeQuery("SELECT *"+" FROM "+this.userTable+" WHERE "+this.mail+" = '"+mail+"'");
             resultatQuery.first();
             newUser = new User(
                     resultatQuery.getString(this.name),
@@ -63,16 +65,18 @@ public class DAOUser extends DAO {
                     resultatQuery.getString(this.passWord));
           //  System.out.println(newUser);
         } catch (SQLException e) {
-            e.printStackTrace();
+            return null;
+            ///e.printStackTrace();
         }
 
         return newUser;
     }
 
     public User find(String mail, String password) {
+        System.out.println(mail+" "+password);
         User newUser = null;
         try {
-            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.userTable+" WHERE "+this.mail+" = '"+mail+"' AND "+this.passWord+" = '"+password+"'");
+            ResultSet resultatQuery = statement.executeQuery("SELECT *"+" FROM "+this.userTable+" WHERE "+this.mail+" = '"+mail+"' AND "+this.passWord+" = '"+password+"'");
             resultatQuery.first();
             newUser = new User(
                     resultatQuery.getString(this.name),
@@ -95,7 +99,7 @@ public class DAOUser extends DAO {
     public ArrayList<User> findAll(){
         try {
             ArrayList<User> toReturn = new ArrayList<User>() ;
-            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.userTable);
+            ResultSet resultatQuery = statement.executeQuery("SELECT *"+" FROM "+this.userTable);
             boolean rowExist = resultatQuery.first();
             while(rowExist){
                 toReturn.add(new User(
@@ -124,7 +128,7 @@ public class DAOUser extends DAO {
                 return null;
             }
 
-            if (this.statement.executeUpdate("INSERT INTO " + this.userTable +
+            if (statement.executeUpdate("INSERT INTO " + this.userTable +
                     " ( " + this.name + "," + this.surname + "," + this.mail + "," + this.phone + "," + this.isDriver + "," + this.workplaceId + "," + this.passWord + " ) VALUES ('" +
                     userToAdd.getName() + "','" +
                     userToAdd.getSurname() + "','" +
@@ -145,7 +149,7 @@ public class DAOUser extends DAO {
     public boolean update(Object obj) {
         User userToUpdate = (User)obj;
         try {
-            if( this.statement.executeUpdate("UPDATE "+this.userTable+
+            if( statement.executeUpdate("UPDATE "+this.userTable+
                     " SET "+this.name+" = '"+userToUpdate.getName()+"',"+
                     this.surname +" = '"+userToUpdate.getSurname()+"',"+
                     this.isDriver+" = "+userToUpdate.isDriver()+","+
@@ -164,8 +168,10 @@ public class DAOUser extends DAO {
     @Override
     public boolean delete(Object obj) {
             User userToDelete = (User)obj;
+        DAOPath daoPt = new DAOPath();
+        daoPt.deleteAllFromUserId(userToDelete.getId());
         try {
-            return this.statement.execute("DELETE FROM "+this.userTable+" WHERE "+this.id+" = "+userToDelete.getId());
+            return statement.execute("DELETE FROM "+this.userTable+" WHERE "+this.id+" = "+userToDelete.getId());
         } catch (SQLException e) {
             e.printStackTrace();
         }

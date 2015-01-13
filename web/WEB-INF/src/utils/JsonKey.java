@@ -18,7 +18,7 @@ public class JsonKey {
     public static String isDriver="isDriver";
     public static String workplace="workplace";
     public static String password="password";
-    public static String path="paths";
+    public static String path="path";
 
     /*
     JSON PATH
@@ -29,6 +29,8 @@ public class JsonKey {
     public static String departure_hour = "departure_hour";
     public static String direction = "direction";
     public static String user_id = "user_id";
+    public static String user = "user";
+
     public static String distance = "distance";
 
     /*

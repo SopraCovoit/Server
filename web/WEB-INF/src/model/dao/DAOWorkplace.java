@@ -13,12 +13,14 @@ import java.util.ArrayList;
  */
 public class DAOWorkplace extends DAO {
 
-    Statement statement;
+    static Statement statement;
 
     public DAOWorkplace(){
         super();
         try {
-            statement = this.connect.createStatement();
+            if(statement == null){
+                statement = this.connect.createStatement();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -28,7 +30,7 @@ public class DAOWorkplace extends DAO {
     @Override
     public Workplace find(long id) {
         try {
-            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.workplaceTable+" WHERE "+this.id+" = "+id);
+            ResultSet resultatQuery = statement.executeQuery("SELECT *"+" FROM "+this.workplaceTable+" WHERE "+this.id+" = "+id);
             resultatQuery.first();
             return new Workplace(
                     new Location(resultatQuery.getDouble(this.latitude),resultatQuery.getDouble(this.longitude)),
@@ -45,7 +47,7 @@ public class DAOWorkplace extends DAO {
 
     public Workplace findByName(String name) {
         try {
-            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.workplaceTable+" WHERE "+this.name+" = '"+name+"'");
+            ResultSet resultatQuery = statement.executeQuery("SELECT *"+" FROM "+this.workplaceTable+" WHERE "+this.name+" = '"+name+"'");
             resultatQuery.first();
             return new Workplace(
                     new Location(resultatQuery.getDouble(this.latitude),resultatQuery.getDouble(this.longitude)),
@@ -60,7 +62,7 @@ public class DAOWorkplace extends DAO {
     public ArrayList<Workplace> findAll() {
         ArrayList<Workplace> toReturn = new ArrayList<Workplace>() ;
         try {
-            ResultSet resultatQuery = this.statement.executeQuery("SELECT *"+" FROM "+this.workplaceTable);
+            ResultSet resultatQuery = statement.executeQuery("SELECT *"+" FROM "+this.workplaceTable);
             boolean rowExist = resultatQuery.first();
             while(rowExist){
                 toReturn.add(new Workplace(
@@ -81,7 +83,7 @@ public class DAOWorkplace extends DAO {
     public Workplace create(Object obj) {
         Workplace workplacetoAdd = (Workplace)obj;
         try {
-            if(this.statement.executeUpdate("INSERT INTO "+this.workplaceTable+
+            if(statement.executeUpdate("INSERT INTO "+this.workplaceTable+
                     " ( "+this.latitude+","+this.longitude+","+this.name+" ) VALUES ("+
                     workplacetoAdd.getLocation().getLatitude()+","+
                     workplacetoAdd.getLocation().getLongitude()+",'"+

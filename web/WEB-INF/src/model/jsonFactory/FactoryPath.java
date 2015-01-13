@@ -3,6 +3,7 @@ package model.jsonFactory;
 import model.Location;
 import model.Path;
 import model.dao.DAOUser;
+import model.dao.DAOWorkplace;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,6 +20,7 @@ public class FactoryPath extends Factory<Path> {
     public Path jsonToObject(JSONObject json) {
         int id = 0;
         FactoryUser facUs = new FactoryUser();
+        FactoryWorkplace facWp = new FactoryWorkplace();
 
         try {
                 id = json.getInt(JsonKey.user_id);
@@ -27,17 +29,18 @@ public class FactoryPath extends Factory<Path> {
                 id = facUs.jsonToObject(new JSONObject(json.getString(JsonKey.user_id))).getId();
             } catch (JSONException e1) {
                 //no id specieded
-                e1.printStackTrace();
+                id = 0;
+                //e1.printStackTrace();
             }
 
 
         }
-
+        //System.out.println(json.toString()+" path json");
         try {
 
             return new Path(new Location(json.getJSONObject(JsonKey.location).getDouble(JsonKey.latitude),json.getJSONObject(JsonKey.location).getDouble(JsonKey.longitude)),
                     json.getString(JsonKey.departure_hour),
-                    json.getInt(JsonKey.workplace),
+                    json.getJSONObject(JsonKey.workplace).getInt(JsonKey.id),
                     json.getString(JsonKey.direction),
                     id,
                     json.getInt(JsonKey.id));//PATH ID A 0 ?
@@ -45,7 +48,7 @@ public class FactoryPath extends Factory<Path> {
             try {
                 return new Path(new Location(json.getJSONObject(JsonKey.location).getDouble(JsonKey.latitude),json.getJSONObject(JsonKey.location).getDouble(JsonKey.longitude)),
                         json.getString(JsonKey.departure_hour),
-                        json.getInt(JsonKey.workplace),
+                        json.getJSONObject(JsonKey.workplace).getInt(JsonKey.id),
                         json.getString(JsonKey.direction),
                         id,
                         0);//PATH ID A 0 ?
@@ -63,19 +66,26 @@ public class FactoryPath extends Factory<Path> {
         DAOUser daoUs = new DAOUser();
         FactoryUser facUs = new FactoryUser();
         FactoryLocation facLoc = new FactoryLocation();
+        DAOWorkplace daoWp = new DAOWorkplace();
+        FactoryWorkplace facWp = new FactoryWorkplace();
 
         try {
             jsonToReturn.put(JsonKey.location,facLoc.objectToJson(object.getLocation()));
             jsonToReturn.put(JsonKey.departure_hour,object.getDepartureHour());
-            jsonToReturn.put(JsonKey.workplace,object.getWorkPlaceId());
+            jsonToReturn.put(JsonKey.workplace,facWp.objectToJson(daoWp.find(object.getWorkPlaceId())));
             jsonToReturn.put(JsonKey.direction,object.getDirection());
-            jsonToReturn.put(JsonKey.user_id,facUs.objectToJson(daoUs.find(object.getUserId())));
+            jsonToReturn.put(JsonKey.user,facUs.objectToJson(daoUs.find(object.getUserId())));
             jsonToReturn.put(JsonKey.distance,object.getDistance());
+            jsonToReturn.put(JsonKey.id,object.getId());
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
         return jsonToReturn;
+
+
+
     }
 
 
@@ -84,14 +94,20 @@ public class FactoryPath extends Factory<Path> {
         DAOUser daoUs = new DAOUser();
         FactoryUser facUs = new FactoryUser();
         FactoryLocation facLoc = new FactoryLocation();
+
+        DAOWorkplace daoWp = new DAOWorkplace();
+        FactoryWorkplace facWp = new FactoryWorkplace();
         if(withUserJson){
             try {
                 jsonToReturn.put(JsonKey.location,facLoc.objectToJson(object.getLocation()));
                 jsonToReturn.put(JsonKey.departure_hour,object.getDepartureHour());
-                jsonToReturn.put(JsonKey.workplace,object.getWorkPlaceId());
+                jsonToReturn.put(JsonKey.workplace,facWp.objectToJson(daoWp.find(object.getWorkPlaceId())));
                 jsonToReturn.put(JsonKey.direction,object.getDirection());
-                jsonToReturn.put(JsonKey.user_id,facUs.objectToJson(daoUs.find(object.getUserId())));
+                jsonToReturn.put(JsonKey.user,facUs.objectToJson(daoUs.find(object.getUserId())));
                 jsonToReturn.put(JsonKey.distance,object.getDistance());
+                jsonToReturn.put(JsonKey.id,object.getId());
+
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -99,10 +115,10 @@ public class FactoryPath extends Factory<Path> {
             try {
                 jsonToReturn.put(JsonKey.location,facLoc.objectToJson(object.getLocation()));
                 jsonToReturn.put(JsonKey.departure_hour,object.getDepartureHour());
-                jsonToReturn.put(JsonKey.workplace,object.getWorkPlaceId());
-                jsonToReturn.put(JsonKey.direction,object.getDirection());
-                //jsonToReturn.put(JsonKey.user_id,facUs.objectToJson(daoUs.find(object.getUserId())));
+                jsonToReturn.put(JsonKey.workplace,facWp.objectToJson(daoWp.find(object.getWorkPlaceId())));                jsonToReturn.put(JsonKey.direction,object.getDirection());
+                //jsonToReturn.put(JsonKey.user,facUs.objectToJson(daoUs.find(object.getUserId())));
                 jsonToReturn.put(JsonKey.distance,object.getDistance());
+                jsonToReturn.put(JsonKey.id,object.getId());
             } catch (JSONException e) {
                 e.printStackTrace();
             }

@@ -67,8 +67,9 @@ public class UserController extends AbstractController {
 
                 try {
                     JSONArray paths = requestInString.getJSONArray(JsonKey.path);
+                    //System.out.println(paths.toString()+" la");
                     for(int i = 0;i< paths.length();i++){
-                        Path pathToAdd = facPt.jsonToObject(new JSONObject(paths.get(i)));
+                        Path pathToAdd = facPt.jsonToObject(paths.getJSONObject(i));
                         pathToAdd.setUserId(goodId);
                         daoPt.create(pathToAdd);
                     }
@@ -78,12 +79,15 @@ public class UserController extends AbstractController {
                 }
 
             }catch(NullPointerException e){
+                e.printStackTrace();
                 return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_SYNTAX,StatusedMessage.FAILURE_POST_USER)).toString();
             }
 
             if(facUs.objectToJson(newUser).toString() == null){
                 return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_SYNTAX,StatusedMessage.FAILURE_POST_USER)).toString();
             }else{
+               // System.out.println("y a bon");
+                System.out.println(facUs.objectToJson(newUser).toString());
                 return facUs.objectToJson(newUser).toString();
             }
         }
@@ -97,15 +101,16 @@ public class UserController extends AbstractController {
 
     private boolean isWorkplaceValid(JSONObject request){
         boolean ret = false;
+        JSONObject json = request;
+        System.out.println(json.toString());
         try{
-            JSONObject json = request;
             if(daoWp.find(json.getJSONObject(JsonKey.workplace).getInt(JsonKey.id)) != null){
-                ret = true;
+                return true;
             }
         } catch (JSONException e){
             e.printStackTrace();
         }
-        return ret;
+        return false;
     }
 
     public String putResponseFromResquest(HttpServletRequest request) {

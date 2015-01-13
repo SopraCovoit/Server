@@ -86,7 +86,7 @@ public abstract class AbstractController {
                 return json.getInt(JsonKey.status);
             }
         } catch (JSONException e) {
-            e.printStackTrace();
+          //  e.printStackTrace();
             return -1;//c'est pas une erreur, ni vrai ni faut on renvoit
         }
 

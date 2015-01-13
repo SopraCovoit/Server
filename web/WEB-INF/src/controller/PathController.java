@@ -4,6 +4,7 @@ import model.Path;
 import model.StatusedMessage;
 import model.Workplace;
 import model.dao.DAOPath;
+import model.dao.DAOWorkplace;
 import model.jsonFactory.FactoryError;
 import model.jsonFactory.FactoryPath;
 import model.jsonFactory.FactoryWorkplace;
@@ -24,10 +25,12 @@ public class PathController extends AbstractController {
     FactoryPath facPath;
     FactoryError facEr;
     FactoryWorkplace facWp;
+    DAOWorkplace daoWp;
     int distance = 5;
 
     public PathController(){
         daoPt = new DAOPath();
+        daoWp = new DAOWorkplace();
         facPath = new FactoryPath();
         facWp = new FactoryWorkplace();
         facEr = new FactoryError();
@@ -43,18 +46,12 @@ public class PathController extends AbstractController {
             return facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_TOKEN,StatusedMessage.FAILURE_GET_PATH)).toString();
         }
 
-            try {
-                JSONObject workplaceJson = new JSONObject(request.getParameter(JsonKey.workplace));
+                int id = Integer.parseInt(request.getParameter(JsonKey.workplace));
                 double lat = Double.parseDouble(request.getParameter(JsonKey.latitude));
                 double longi = Double.parseDouble(request.getParameter(JsonKey.longitude));
 
-                Workplace wp = facWp.jsonToObject(workplaceJson);
-                return facPath.arrayListToJson(daoPt.findAllPath(wp.getId(),lat,longi,distance)).toString();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-        return  null;
+                Workplace wp = daoWp.find(id);
+                return facPath.arrayListToJson(daoPt.findAllPath(id,lat,longi,distance)).toString();
     }
 
     public String postResponseFromResquest(HttpServletRequest request){
