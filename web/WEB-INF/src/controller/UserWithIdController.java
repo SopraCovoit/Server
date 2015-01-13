@@ -31,7 +31,6 @@ public class UserWithIdController extends AbstractController {
         String json;
         String id = request.getPathInfo();
         id="" + id.substring(id.lastIndexOf("/")+1, id.length());
-        System.out.println(id);
         json = facUs.objectToJson(daoUs.find(Long.parseLong(id))).toString();
         if(json == null){
             json = facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_SYNTAX,StatusedMessage.FAILURE_GET_USER)).toString();
@@ -47,7 +46,9 @@ public class UserWithIdController extends AbstractController {
     @Override
     public String deleteResponseFromResquest(HttpServletRequest request) {
         String json;
-        User userToDelete = daoUs.find(Long.parseLong(request.getContextPath()));
+        String id = request.getPathInfo();
+        id="" + id.substring(id.lastIndexOf("/")+1, id.length());
+        User userToDelete = daoUs.find(Long.parseLong(id));
         if(userToDelete == null){
             json = facEr.objectToJson(new StatusedMessage(StatusedMessage.FAILURE_STATUS, StatusedMessage.FAILURE_DELETE_USER)).toString();
         }else{
