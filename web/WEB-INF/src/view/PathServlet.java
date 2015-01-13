@@ -24,6 +24,16 @@ public class PathServlet extends HttpServlet {
         }
     }
 
+    public void sendResponse(String respFromRequest, HttpServletResponse resp)throws ServletException, IOException {
+        PrintWriter out = resp.getWriter();
+        if(AbstractController.isError(respFromRequest) == -1){
+            out.write(respFromRequest);
+        }else {
+            out.write(respFromRequest);
+            resp.setStatus(AbstractController.isError(respFromRequest));
+        }
+    }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //super.doGet(req, resp);
@@ -31,12 +41,8 @@ public class PathServlet extends HttpServlet {
         initController();
         PrintWriter out = resp.getWriter();
         String respFromRequest = c.getResponseFromResquest(req);
-        if(AbstractController.isError(respFromRequest) == -1){
-            out.write(respFromRequest);
-        }else{
-            out.write(respFromRequest);
-            resp.sendError(AbstractController.isError(respFromRequest));
-        }
+        sendResponse(respFromRequest,resp);
+
     }
 
     @Override
@@ -46,12 +52,8 @@ public class PathServlet extends HttpServlet {
         initController();
         PrintWriter out = resp.getWriter();
         String respFromRequest = c.postResponseFromResquest(req);
-        if(AbstractController.isError(respFromRequest) == -1){
-            out.write(respFromRequest);
-        }else{
-            out.write(respFromRequest);
-            resp.sendError(AbstractController.isError(respFromRequest));
-        }
+        sendResponse(respFromRequest,resp);
+
     }
 
     @Override
@@ -61,12 +63,8 @@ public class PathServlet extends HttpServlet {
         initController();
         PrintWriter out = resp.getWriter();
         String respFromRequest = c.putResponseFromResquest(req);
-        if(AbstractController.isError(respFromRequest) == -1){
-            out.write(respFromRequest);
-        }else{
-            out.write(respFromRequest);
-            resp.sendError(AbstractController.isError(respFromRequest));
-        }
+        sendResponse(respFromRequest,resp);
+
     }
 
     @Override
@@ -76,12 +74,8 @@ public class PathServlet extends HttpServlet {
         initController();
         PrintWriter out = resp.getWriter();
         String respFromRequest = c.deleteResponseFromResquest(req);
-        if(AbstractController.isError(respFromRequest) == -1){
-            out.write(respFromRequest);
-        }else{
-            out.write(respFromRequest);
-            resp.sendError(AbstractController.isError(respFromRequest));
-        }
+        sendResponse(respFromRequest,resp);
+
     }
     @Override
     protected void doOptions(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {

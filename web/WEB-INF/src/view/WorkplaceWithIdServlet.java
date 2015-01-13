@@ -22,17 +22,24 @@ public class WorkplaceWithIdServlet extends HttpServlet {
             c = new WorkplaceWithIdController();
         }
     }
+
+    public void sendResponse(String respFromRequest, HttpServletResponse resp)throws ServletException, IOException {
+        PrintWriter out = resp.getWriter();
+        if(AbstractController.isError(respFromRequest) == -1){
+            out.write(respFromRequest);
+        }else {
+            out.write(respFromRequest);
+            resp.setStatus(AbstractController.isError(respFromRequest));
+        }
+    }
+
     protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
         HeaderSetter.addCorsHeader(httpServletResponse);
         initController();
         PrintWriter out = httpServletResponse.getWriter();
         String respFromRequest = c.postResponseFromResquest(httpServletRequest);
-        if(AbstractController.isError(respFromRequest) == -1){
-            out.write(respFromRequest);
-        }else{
-            out.write(respFromRequest);
-            httpServletResponse.sendError(AbstractController.isError(respFromRequest));
-        }
+        sendResponse(respFromRequest,httpServletResponse);
+
     }
 
     @Override
@@ -41,12 +48,8 @@ public class WorkplaceWithIdServlet extends HttpServlet {
         initController();
         PrintWriter out = httpServletResponse.getWriter();
         String respFromRequest = c.deleteResponseFromResquest(httpServletRequest);
-        if(AbstractController.isError(respFromRequest) == -1){
-            out.write(respFromRequest);
-        }else{
-            out.write(respFromRequest);
-            httpServletResponse.sendError(AbstractController.isError(respFromRequest));
-        }
+        sendResponse(respFromRequest,httpServletResponse);
+
     }
 
     @Override
@@ -55,12 +58,8 @@ public class WorkplaceWithIdServlet extends HttpServlet {
         initController();
         PrintWriter out = httpServletResponse.getWriter();
         String respFromRequest = c.putResponseFromResquest(httpServletRequest);
-        if(AbstractController.isError(respFromRequest) == -1){
-            out.write(respFromRequest);
-        }else{
-            out.write(respFromRequest);
-            httpServletResponse.sendError(AbstractController.isError(respFromRequest));
-        }
+        sendResponse(respFromRequest,httpServletResponse);
+
     }
 
     @Override
@@ -69,12 +68,8 @@ public class WorkplaceWithIdServlet extends HttpServlet {
         initController();
         PrintWriter out = httpServletResponse.getWriter();
         String respFromRequest = c.getResponseFromResquest(httpServletRequest);
-        if(AbstractController.isError(respFromRequest) == -1){
-            out.write(respFromRequest);
-        }else{
-            out.write(respFromRequest);
-            httpServletResponse.sendError(AbstractController.isError(respFromRequest));
-        }
+        sendResponse(respFromRequest,httpServletResponse);
+
     }
 
     @Override

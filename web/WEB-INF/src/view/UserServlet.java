@@ -24,6 +24,17 @@ public class UserServlet extends HttpServlet {
             c = new UserController();
         }
     }
+
+    public void sendResponse(String respFromRequest, HttpServletResponse resp)throws ServletException, IOException {
+        PrintWriter out = resp.getWriter();
+        if(AbstractController.isError(respFromRequest) == -1){
+            out.write(respFromRequest);
+        }else {
+            out.write(respFromRequest);
+            resp.setStatus(AbstractController.isError(respFromRequest));
+        }
+    }
+
 /*
 Renvoyer un workplace et pas un workplace id avec l'user
 Id géré par la base, ne spécifier aucun id lors de la création
@@ -36,12 +47,7 @@ Id géré par la base, ne spécifier aucun id lors de la création
         initController();
         PrintWriter out = resp.getWriter();
         String respFromRequest = c.getResponseFromResquest(req);
-        if(AbstractController.isError(respFromRequest) == -1){
-            out.write(respFromRequest);
-        }else{
-            out.write(respFromRequest);
-            resp.sendError(AbstractController.isError(respFromRequest));
-        }
+        sendResponse(respFromRequest,resp);
     }
 
     @Override
@@ -50,12 +56,7 @@ Id géré par la base, ne spécifier aucun id lors de la création
         initController();
         PrintWriter out = resp.getWriter();
         String respFromRequest = c.postResponseFromResquest(req);
-        if(AbstractController.isError(respFromRequest) == -1){
-            out.write(respFromRequest);
-        }else{
-            out.write(respFromRequest);
-            resp.sendError(AbstractController.isError(respFromRequest));
-        }
+        sendResponse(respFromRequest,resp);
     }
 
     @Override
@@ -65,12 +66,7 @@ Id géré par la base, ne spécifier aucun id lors de la création
         initController();
         PrintWriter out = resp.getWriter();
         String respFromRequest = c.deleteResponseFromResquest(req);
-        if(AbstractController.isError(respFromRequest) == -1){
-            out.write(respFromRequest);
-        }else{
-            out.write(respFromRequest);
-            resp.sendError(AbstractController.isError(respFromRequest));
-        }
+        sendResponse(respFromRequest,resp);
     }
 
     @Override
@@ -80,12 +76,7 @@ Id géré par la base, ne spécifier aucun id lors de la création
         initController();
         PrintWriter out = resp.getWriter();
         String respFromRequest = c.putResponseFromResquest(req);
-        if(AbstractController.isError(respFromRequest) == -1){
-            out.write(respFromRequest);
-        }else{
-            out.write(respFromRequest);
-            resp.sendError(AbstractController.isError(respFromRequest));
-        }
+        sendResponse(respFromRequest,resp);
     }
 
     @Override
