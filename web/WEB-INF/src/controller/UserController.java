@@ -11,9 +11,7 @@ import org.json.JSONObject;
 import utils.JsonKey;
 import utils.TokenList;
 
-import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
 
 /**
  * Created by julescantegril on 19/12/2014.
@@ -48,9 +46,11 @@ public class UserController extends AbstractController {
     public String postResponseFromResquest(HttpServletRequest request) {
 
         User newUser = null;
-        if(isWorkplaceValid(request)){
+        JSONObject requestInString = getJsonFromRequest(request);
+
+        if(isWorkplaceValid(requestInString)){
             try{
-                newUser = daoUs.create(facUs.jsonToObject(getJsonFromRequest(request)));
+                newUser = daoUs.create(facUs.jsonToObject(requestInString));
                 newUser.setToken(TokenList.getNewToken());
                 newUser.setId(daoUs.findByMail(newUser.getMail()).getId());
             }catch(NullPointerException e){
@@ -71,10 +71,10 @@ public class UserController extends AbstractController {
         return null;
     }
 
-    private boolean isWorkplaceValid(HttpServletRequest request){
+    private boolean isWorkplaceValid(JSONObject request){
         boolean ret = false;
         try{
-            JSONObject json = getJsonFromRequest(request);
+            JSONObject json = request;
             if(daoWp.find(json.getJSONObject(JsonKey.workplace).getInt(JsonKey.id)) != null){
                 ret = true;
             }
