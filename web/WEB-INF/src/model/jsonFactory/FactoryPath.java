@@ -18,24 +18,13 @@ public class FactoryPath extends Factory<Path> {
     @Override
     public Path jsonToObject(JSONObject json) {
         FactoryUser facUs = new FactoryUser();
-        int id;
-        try{
-            id = json.getInt(JsonKey.user_id);
-        } catch (JSONException e) {
-            try{
-                id = facUs.jsonToObject(new JSONObject(json.getString(JsonKey.user_id))).getId();
-            }catch (JSONException tarace){
-                return null;
-            }
-        }
         try {
 
             return new Path(new Location(json.getJSONObject(JsonKey.location).getDouble(JsonKey.latitude),json.getJSONObject(JsonKey.location).getDouble(JsonKey.longitude)),
                     json.getString(JsonKey.departure_hour),
                     json.getInt(JsonKey.workplace),
                     json.getString(JsonKey.direction),
-                    id,
-                    //,
+                    facUs.jsonToObject(new JSONObject(json.getString(JsonKey.user_id))).getId(),
                     json.getInt(JsonKey.id));//PATH ID A 0 ?
         } catch (JSONException e) {
             try {
@@ -43,7 +32,7 @@ public class FactoryPath extends Factory<Path> {
                         json.getString(JsonKey.departure_hour),
                         json.getInt(JsonKey.workplace),
                         json.getString(JsonKey.direction),
-                        id,
+                        facUs.jsonToObject(new JSONObject(json.getString(JsonKey.user_id))).getId(),
                         0);//PATH ID A 0 ?
             } catch (JSONException e1) {
                 e1.printStackTrace();
@@ -59,6 +48,7 @@ public class FactoryPath extends Factory<Path> {
         DAOUser daoUs = new DAOUser();
         FactoryUser facUs = new FactoryUser();
         FactoryLocation facLoc = new FactoryLocation();
+
         try {
             jsonToReturn.put(JsonKey.location,facLoc.objectToJson(object.getLocation()));
             jsonToReturn.put(JsonKey.departure_hour,object.getDepartureHour());
@@ -69,6 +59,40 @@ public class FactoryPath extends Factory<Path> {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        return jsonToReturn;
+    }
+
+
+    public JSONObject objectToJson(Path object,boolean withUserJson) {
+        JSONObject jsonToReturn = new JSONObject();
+        DAOUser daoUs = new DAOUser();
+        FactoryUser facUs = new FactoryUser();
+        FactoryLocation facLoc = new FactoryLocation();
+        if(withUserJson){
+            try {
+                jsonToReturn.put(JsonKey.location,facLoc.objectToJson(object.getLocation()));
+                jsonToReturn.put(JsonKey.departure_hour,object.getDepartureHour());
+                jsonToReturn.put(JsonKey.workplace,object.getWorkPlaceId());
+                jsonToReturn.put(JsonKey.direction,object.getDirection());
+                jsonToReturn.put(JsonKey.user_id,facUs.objectToJson(daoUs.find(object.getUserId())));
+                jsonToReturn.put(JsonKey.distance,object.getDistance());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }else{
+            try {
+                jsonToReturn.put(JsonKey.location,facLoc.objectToJson(object.getLocation()));
+                jsonToReturn.put(JsonKey.departure_hour,object.getDepartureHour());
+                jsonToReturn.put(JsonKey.workplace,object.getWorkPlaceId());
+                jsonToReturn.put(JsonKey.direction,object.getDirection());
+                //jsonToReturn.put(JsonKey.user_id,facUs.objectToJson(daoUs.find(object.getUserId())));
+                jsonToReturn.put(JsonKey.distance,object.getDistance());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
         return jsonToReturn;
     }
 
@@ -77,6 +101,14 @@ public class FactoryPath extends Factory<Path> {
         JSONArray jsonToReturn = new JSONArray();
         for(int i = 0;i<list.size();i++){
             jsonToReturn.put(objectToJson(list.get(i)));
+        }
+        return jsonToReturn;
+    }
+
+    public JSONArray arrayListToJson(ArrayList<Path> list,boolean withUserId) {
+        JSONArray jsonToReturn = new JSONArray();
+        for(int i = 0;i<list.size();i++){
+            jsonToReturn.put(objectToJson(list.get(i),withUserId));
         }
         return jsonToReturn;
     }

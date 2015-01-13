@@ -67,7 +67,7 @@ public class FactoryUser extends Factory<User> {
             jsonToReturn.put(JsonKey.phone,object.getPhone());
             jsonToReturn.put(JsonKey.isDriver,object.isDriver());
             jsonToReturn.put(JsonKey.workplace,facWp.objectToJson(wpUser));
-        //    jsonToReturn.put(JsonKey.path,facPath.arrayListToJson(daoPath.findAllUserPath(object.getId())));
+            jsonToReturn.put(JsonKey.path,facPath.arrayListToJson(daoPath.findAllUserPath(object.getId()),false));
             jsonToReturn.put(JsonKey.password,object.getPassWord());
             jsonToReturn.put(JsonKey.token,object.getToken());
         } catch (JSONException e) {

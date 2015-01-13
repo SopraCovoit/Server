@@ -4,9 +4,13 @@ import model.StatusedMessage;
 import model.Workplace;
 import model.dao.DAOWorkplace;
 import model.jsonFactory.FactoryError;
-import utils.JsonKey;
+import model.jsonFactory.FactoryWorkplace;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 
 /**
  * Created by root on 12/01/15.
@@ -14,8 +18,10 @@ import javax.servlet.http.HttpServletRequest;
 public class WorkplaceWithIdController extends AbstractController {
     DAOWorkplace daoWp;
     FactoryError facEr;
+    FactoryWorkplace facWp;
 
     public WorkplaceWithIdController(){
+        facWp = new FactoryWorkplace();
         this.daoWp = new DAOWorkplace();
         this.facEr = new FactoryError();
     }
@@ -46,6 +52,30 @@ public class WorkplaceWithIdController extends AbstractController {
 
     @Override
     public String putResponseFromResquest(HttpServletRequest request) {
-        return null;
+        ServletInputStream inputStream = null;
+        String entry = "" ;
+        try {
+            inputStream = request.getInputStream();
+            int next = 0;
+
+            while(next != -1){
+                next = inputStream.read();
+                entry = entry+(char)next;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Workplace wpToUp = null;
+        try {
+            wpToUp = facWp.jsonToObject(new JSONObject(entry));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        if(daoWp.update(wpToUp)){
+            return facEr.objectToJson(new StatusedMessage(StatusedMessage.SUCCESS_STATUS,StatusedMessage.SUCCESS_PUT_WORKPLACE)).toString();
+        }else{
+            return facEr.objectToJson(new StatusedMessage(StatusedMessage.FAILURE_STATUS,StatusedMessage.FAILURE_PUT_WORKPLACE)).toString();
+        }
     }
 }

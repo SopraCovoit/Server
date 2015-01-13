@@ -2,10 +2,13 @@ package controller;
 
 import model.StatusedMessage;
 import model.User;
+import model.dao.DAOPath;
 import model.dao.DAOUser;
 import model.dao.DAOWorkplace;
 import model.jsonFactory.FactoryError;
+import model.jsonFactory.FactoryPath;
 import model.jsonFactory.FactoryUser;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import utils.JsonKey;
@@ -45,10 +48,28 @@ public class UserController extends AbstractController {
 
     public String postResponseFromResquest(HttpServletRequest request) {
 
+        DAOPath daoPt = new DAOPath();
+        FactoryPath facPt = new FactoryPath();
+
         User newUser = null;
         JSONObject requestInString = getJsonFromRequest(request);
 
         if(isWorkplaceValid(requestInString)){
+
+            //add work place if exist
+
+            try {
+                JSONArray path = requestInString.getJSONArray(JsonKey.path);
+                for(int i = 0;i< path.length();i++){
+                    //facPt.jsonToObject(path.get(i));
+                    //daoPt.create();
+                }
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+
             try{
                 newUser = daoUs.create(facUs.jsonToObject(requestInString));
                 newUser.setToken(TokenList.getNewToken());

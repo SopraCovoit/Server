@@ -138,7 +138,7 @@ public class DAOUser extends DAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;//METTRE UNE ERREUR
+        return null;
     }
 
     @Override
