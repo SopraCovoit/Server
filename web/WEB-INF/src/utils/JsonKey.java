@@ -39,7 +39,7 @@ public class JsonKey {
     /*
     JSON ERROR
      */
-    public static String type = "type";
+    public static String status = "status";
     public static String message = "message";
 
 

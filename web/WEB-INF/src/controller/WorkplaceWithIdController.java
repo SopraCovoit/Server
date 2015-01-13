@@ -39,6 +39,7 @@ public class WorkplaceWithIdController extends AbstractController {
         }else{
             return facEr.objectToJson(new StatusedMessage(StatusedMessage.FAILURE_STATUS,StatusedMessage.FAILURE_DELETE_WORKPLACE)).toString();
         }
+
     }
 
     @Override

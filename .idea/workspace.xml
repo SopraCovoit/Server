@@ -6,16 +6,20 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a7c268e-e1d1-43b1-b3ea-4542f1863991" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/src/controller/UserWithIdController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/src/view/UserWithIdServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/src/controller/WorkplaceWithIdController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceWithIdServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/src/controller/ConnectionController.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/controller/ConnectionController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/src/controller/UserController.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/controller/UserController.java" />
+    <list default="true" id="3a7c268e-e1d1-43b1-b3ea-4542f1863991" name="Default" comment="Test avant deployement">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/json_20090211.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_34_bin.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/src/controller/AbstractController.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/controller/AbstractController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryError.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryError.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/src/model/dao/JDBCConnector.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/model/dao/JDBCConnector.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/src/utils/JsonKey.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/utils/JsonKey.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/src/view/PathServlet.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/view/PathServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/src/view/UserServlet.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/view/UserServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/src/controller/WorkplaceController.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/controller/WorkplaceController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/src/view/UserWithIdServlet.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/view/UserWithIdServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceServlet.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/src/controller/WorkplaceWithIdController.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/controller/WorkplaceWithIdController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceWithIdServlet.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceWithIdServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Server.iws" />
@@ -43,16 +47,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/UserController.java">
+      <file leaf-file-name="AbstractController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/AbstractController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="942" max-vertical-offset="1494">
-              <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="990">
+              <caret line="53" column="72" selection-start-line="53" selection-start-column="72" selection-end-line="53" selection-end-column="72" />
               <folding>
-                <element signature="e#2272#2273#0" expanded="true" />
-                <element signature="e#2299#2300#0" expanded="true" />
-                <element signature="e#2780#2781#0" expanded="true" />
-                <element signature="e#2807#2808#0" expanded="true" />
+                <element signature="method#getJsonFromRequest#0;class#AbstractController#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -61,33 +62,19 @@
       <file leaf-file-name="UserWithIdServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/UserWithIdServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="142" max-vertical-offset="1062">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="30" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="619" max-vertical-offset="1245">
+              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="77" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WorkplaceServlet.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WorkplaceServlet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="553" max-vertical-offset="1224">
-              <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.50797874" vertical-offset="244" max-vertical-offset="1380">
+              <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserWithIdController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/UserWithIdController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1189" max-vertical-offset="1764">
-              <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1251#1252#0" expanded="true" />
-                <element signature="e#1278#1279#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -95,66 +82,18 @@
       <file leaf-file-name="WorkplaceWithIdServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceWithIdServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="93" max-vertical-offset="1062">
-              <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1245">
+              <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <file leaf-file-name="JDBCConnector.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/dao/JDBCConnector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8651685" vertical-offset="726" max-vertical-offset="1350">
-              <caret line="66" column="59" selection-start-line="66" selection-start-column="59" selection-end-line="66" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WorkplaceWithIdController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/WorkplaceWithIdController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="972">
-              <caret line="34" column="82" selection-start-line="34" selection-start-column="82" selection-end-line="34" selection-end-column="82" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#584#585#0" expanded="true" />
-                <element signature="e#611#612#0" expanded="true" />
-                <element signature="e#699#700#0" expanded="true" />
-                <element signature="e#726#727#0" expanded="true" />
-                <element signature="e#1412#1413#0" expanded="true" />
-                <element signature="e#1439#1440#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WorkplaceController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/WorkplaceController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="1512">
-              <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/UserServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="205" max-vertical-offset="1224">
-              <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PathServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/PathServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="444" max-vertical-offset="1188">
-              <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="900">
+              <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -168,57 +107,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/formBasique.html" />
-        <option value="$PROJECT_DIR$/Server.iml" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/helloWorld.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/api/HelloServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/sopra_covoit_a_p_i_v_1_dot_1_r_0/HelloServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/view/HelloServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/PathServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/WorkplaceServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/UserServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/controller/AbstractController.java" />
-        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/bdd/ConnectionPostgreSQL.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/PathServlet.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/bdd/JDBCConnector.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/bdd/DAO_User.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/model/bdd/DAO.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/bdd/DAO_Path.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/model/bdd/DAO_User.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/bdd/JDBCConnector.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/model/bdd/DAO_Workplace.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/bdd/DAO_Path.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/bdd/JDBCConnector.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/dao/ConnectionPostgreSQL.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/Location.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/model/Workplace.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAO_Workplace.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAO_Path.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAO_User.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/User.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/Error.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/factory.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/factoryError.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/factoryPath.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/factoryUser.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/factoryWorkplace.java" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/utils/TokenMap.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/test/workPlaceToBase.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/view/HeaderSetter.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/Path.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryLocation.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/controller/ConnectionController.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAOWorkplace.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/StatusedMessage.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAO.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/utils/TokenList.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryWorkplace.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAOUser.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/controller/WorkplaceController.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryPath.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/controller/PathController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAOPath.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/META-INF/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAO.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/factoryUser.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/Factory.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/Error.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryError.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/utils/TokenMap.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/utils/TokenList.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/utils/JsonKey.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/view/PathServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAOUser.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/User.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryUser.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/StatusedMessage.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/view/ConnectionServlet.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/dao/JDBCConnector.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/controller/ConnectionController.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/view/UserServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/controller/UserWithIdController.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/view/UserWithIdServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/controller/WorkplaceController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/controller/WorkplaceWithIdController.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/utils/JsonKey.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryError.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/controller/AbstractController.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/view/GeneralServlet.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/view/UserServlet.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/view/PathServlet.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/view/UserWithIdServlet.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceWithIdServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/model/dao/JDBCConnector.java" />
       </list>
     </option>
   </component>
@@ -240,9 +179,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="width" value="1922" />
-    <option name="height" value="1054" />
+    <option name="y" value="22" />
+    <option name="width" value="1280" />
+    <option name="height" value="729" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -270,6 +209,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -483,60 +423,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="target" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -570,27 +456,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="artifacts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -601,19 +468,23 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="preferences.lookFeel" />
+    <property name="options.lastSelected" value="configurable.group.appearance" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.47871116" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib/json-20090211.jar!/" />
-    <property name="FullScreen" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/WEB-INF/lib" />
+      <recent name="$PROJECT_DIR$/lib" />
+    </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Unnamed">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -837,7 +708,7 @@
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="JAR_PATH" value="$PROJECT_DIR$/web/WEB-INF/lib/json-20090211.jar" />
+      <option name="JAR_PATH" value="$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-5.1.34-bin.jar" />
       <envs />
       <method />
     </configuration>
@@ -1006,11 +877,6 @@
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SliceManager">
-    <option name="analysisUIOptions">
-      <AnalysisUIOptions />
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -1023,14 +889,22 @@
       <workItem from="1418658899667" duration="392000" />
       <workItem from="1418978486369" duration="3767000" />
       <workItem from="1418986292301" duration="696000" />
-      <workItem from="1418987215936" duration="2538000" />
-      <workItem from="1419002249520" duration="6973000" />
-      <workItem from="1420458960073" duration="8003000" />
-      <workItem from="1420707360308" duration="8913000" />
-      <workItem from="1420814644758" duration="7842000" />
-      <workItem from="1421073477859" duration="161000" />
-      <workItem from="1421073664186" duration="3977000" />
-      <workItem from="1421078867753" duration="15259000" />
+      <workItem from="1418987215936" duration="8633000" />
+      <workItem from="1419253944107" duration="103000" />
+      <workItem from="1419254056796" duration="2947000" />
+      <workItem from="1419335371784" duration="359000" />
+      <workItem from="1420214068201" duration="1429000" />
+      <workItem from="1420458210154" duration="9714000" />
+      <workItem from="1420706356884" duration="8852000" />
+      <workItem from="1420791704552" duration="4331000" />
+      <workItem from="1420797637010" duration="11691000" />
+      <workItem from="1420892921574" duration="6625000" />
+      <workItem from="1420907246303" duration="215000" />
+      <workItem from="1420907609753" duration="1519000" />
+      <workItem from="1421047587408" duration="4545000" />
+      <workItem from="1421066725685" duration="1352000" />
+      <workItem from="1421079930101" duration="564000" />
+      <workItem from="1421141073119" duration="1613000" />
     </task>
     <task id="LOCAL-00001" summary="Servletallrunningmaggle">
       <created>1418986863469</created>
@@ -1050,273 +924,327 @@
       <option name="project" value="LOCAL" />
       <updated>1418991370351</updated>
     </task>
-    <task id="LOCAL-00004" summary="dao">
-      <created>1419004368133</created>
+    <task id="LOCAL-00004" summary="architecture controller">
+      <created>1418999773663</created>
       <option name="number" value="00004" />
       <option name="project" value="LOCAL" />
-      <updated>1419004368133</updated>
+      <updated>1418999773663</updated>
     </task>
-    <task id="LOCAL-00005" summary="model + Us Pa Wp">
-      <created>1419005472408</created>
+    <task id="LOCAL-00005" summary="lib mysql jdbc">
+      <created>1419002072726</created>
       <option name="number" value="00005" />
       <option name="project" value="LOCAL" />
-      <updated>1419005472408</updated>
+      <updated>1419002072726</updated>
     </task>
-    <task id="LOCAL-00006" summary="DAO structure clean">
-      <created>1419005983054</created>
+    <task id="LOCAL-00006" summary="depencies on da place mftce">
+      <created>1419003321484</created>
       <option name="number" value="00006" />
       <option name="project" value="LOCAL" />
-      <updated>1419005983054</updated>
+      <updated>1419003321484</updated>
     </task>
-    <task id="LOCAL-00007" summary="sht">
-      <created>1419008239982</created>
+    <task id="LOCAL-00007" summary="depencies on da place mftce">
+      <created>1419003330710</created>
       <option name="number" value="00007" />
       <option name="project" value="LOCAL" />
-      <updated>1419008239982</updated>
+      <updated>1419003330710</updated>
     </task>
-    <task id="LOCAL-00008" summary="shit">
-      <created>1420467131784</created>
+    <task id="LOCAL-00008" summary="pom ici">
+      <created>1419003473028</created>
       <option name="number" value="00008" />
       <option name="project" value="LOCAL" />
-      <updated>1420467131784</updated>
+      <updated>1419003473028</updated>
     </task>
-    <task id="LOCAL-00009" summary="fuck">
-      <created>1420467709294</created>
+    <task id="LOCAL-00009" summary="package en place">
+      <created>1419003683086</created>
       <option name="number" value="00009" />
       <option name="project" value="LOCAL" />
-      <updated>1420467709294</updated>
+      <updated>1419003683086</updated>
     </task>
-    <task id="LOCAL-00010" summary="json mven -&gt; json in web/lib">
-      <created>1420708632922</created>
+    <task id="LOCAL-00010" summary="DAO crées, mais a implémenter">
+      <created>1419003812915</created>
       <option name="number" value="00010" />
       <option name="project" value="LOCAL" />
-      <updated>1420708632922</updated>
+      <updated>1419003812916</updated>
     </task>
-    <task id="LOCAL-00011" summary="UpCase in Factory and DAOUser (almost)up and running">
-      <created>1420711463874</created>
+    <task id="LOCAL-00011" summary="Amélioraton du contrôleur">
+      <created>1419005477964</created>
       <option name="number" value="00011" />
       <option name="project" value="LOCAL" />
-      <updated>1420711463874</updated>
+      <updated>1419005477964</updated>
     </task>
-    <task id="LOCAL-00012" summary="tchoutchou">
-      <created>1420712110929</created>
+    <task id="LOCAL-00012" summary="Merge branch 'master' of https://github.com/SopraCovoit/Server&#10;&#10;Conflicts:&#10;&#9;web/WEB-INF/src/model/dao/JDBCConnector.java&#10;">
+      <created>1419005577013</created>
       <option name="number" value="00012" />
       <option name="project" value="LOCAL" />
-      <updated>1420712110929</updated>
+      <updated>1419005577013</updated>
     </task>
-    <task id="LOCAL-00013" summary="Error-&gt; StatusedMessage">
-      <created>1420713445122</created>
+    <task id="LOCAL-00013" summary="all ok dao + controller">
+      <created>1419005650973</created>
       <option name="number" value="00013" />
       <option name="project" value="LOCAL" />
-      <updated>1420713445122</updated>
+      <updated>1419005650973</updated>
     </task>
-    <task id="LOCAL-00014" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;web/WEB-INF/src/controller/WorkplaceController.java&#10;&#9;web/WEB-INF/src/model/CustomError.java&#10;&#9;web/WEB-INF/src/model/Error.java&#10;&#9;web/WEB-INF/src/model/StatusedMessage.java&#10;&#9;web/WEB-INF/src/model/jsonFactory/FactoryError.java&#10;">
-      <created>1420713907469</created>
+    <task id="LOCAL-00014" summary="path + user + workplace + location created and instancied">
+      <created>1419006163288</created>
       <option name="number" value="00014" />
       <option name="project" value="LOCAL" />
-      <updated>1420713907469</updated>
+      <updated>1419006163288</updated>
     </task>
-    <task id="LOCAL-00015" summary="messages in status message">
-      <created>1420714737579</created>
+    <task id="LOCAL-00015" summary="path + user + workplace + location created and instancied">
+      <created>1419008331873</created>
       <option name="number" value="00015" />
       <option name="project" value="LOCAL" />
-      <updated>1420714737579</updated>
+      <updated>1419008331873</updated>
     </task>
-    <task id="LOCAL-00016" summary="TokenList">
-      <created>1420816097466</created>
+    <task id="LOCAL-00016" summary="daoUser implemented">
+      <created>1419271117116</created>
       <option name="number" value="00016" />
       <option name="project" value="LOCAL" />
-      <updated>1420816097466</updated>
+      <updated>1419271117116</updated>
     </task>
-    <task id="LOCAL-00017" summary="UserController">
-      <created>1420816955043</created>
+    <task id="LOCAL-00017" summary="daoUser modifié et commencé à débugger la base">
+      <created>1420215499642</created>
       <option name="number" value="00017" />
       <option name="project" value="LOCAL" />
-      <updated>1420816955043</updated>
+      <updated>1420215499642</updated>
     </task>
-    <task id="LOCAL-00018" summary="ConnectionServlet">
-      <created>1420817241839</created>
+    <task id="LOCAL-00018" summary="dao globale en place">
+      <created>1420461142255</created>
       <option name="number" value="00018" />
       <option name="project" value="LOCAL" />
-      <updated>1420817241839</updated>
+      <updated>1420461142255</updated>
     </task>
-    <task id="LOCAL-00019" summary="ConnectionController">
-      <created>1420817530222</created>
+    <task id="LOCAL-00019" summary="Error ajoutée, implementation de la factory et début de l'implémentation des controllers">
+      <created>1420465810266</created>
       <option name="number" value="00019" />
       <option name="project" value="LOCAL" />
-      <updated>1420817530222</updated>
+      <updated>1420465810267</updated>
     </task>
-    <task id="LOCAL-00020" summary="UserController">
-      <created>1420817666843</created>
+    <task id="LOCAL-00020" summary="Base fonctionnelle (driver ajouté à la main)">
+      <created>1420466808381</created>
       <option name="number" value="00020" />
       <option name="project" value="LOCAL" />
-      <updated>1420817666843</updated>
+      <updated>1420466808381</updated>
     </task>
-    <task id="LOCAL-00021" summary="UserController">
-      <created>1420818280065</created>
+    <task id="LOCAL-00021" summary="Servlet USer implémentée pour le post et le get">
+      <created>1420707317433</created>
       <option name="number" value="00021" />
       <option name="project" value="LOCAL" />
-      <updated>1420818280065</updated>
+      <updated>1420707317433</updated>
     </task>
-    <task id="LOCAL-00022" summary="tokenList admin powa">
-      <created>1420819615180</created>
+    <task id="LOCAL-00022" summary="Servlet USer implémentée pour le post et le get">
+      <created>1420708848790</created>
       <option name="number" value="00022" />
       <option name="project" value="LOCAL" />
-      <updated>1420819615180</updated>
+      <updated>1420708848790</updated>
     </task>
-    <task id="LOCAL-00023" summary="TUDOBEM">
-      <created>1420820750150</created>
+    <task id="LOCAL-00023" summary="JsonKey en static&#10;">
+      <created>1420711544827</created>
       <option name="number" value="00023" />
       <option name="project" value="LOCAL" />
-      <updated>1420820750150</updated>
+      <updated>1420711544827</updated>
     </task>
-    <task id="LOCAL-00024" summary="TUDOBEM">
-      <created>1421083138778</created>
+    <task id="LOCAL-00024" summary="Workplace Controller allmost donne">
+      <created>1420713053907</created>
       <option name="number" value="00024" />
       <option name="project" value="LOCAL" />
-      <updated>1421083138778</updated>
+      <updated>1420713053907</updated>
     </task>
-    <task id="LOCAL-00025" summary="ConnectionServlet doOptions">
-      <created>1421083370563</created>
+    <task id="LOCAL-00025" summary="token start to implement">
+      <created>1420715439304</created>
       <option name="number" value="00025" />
       <option name="project" value="LOCAL" />
-      <updated>1421083370563</updated>
+      <updated>1420715439304</updated>
     </task>
-    <task id="LOCAL-00026" summary="doOptions in all Servlets">
-      <created>1421083640488</created>
+    <task id="LOCAL-00026" summary="Merge branch 'master' of https://github.com/SopraCovoit/Server&#10;&#10;Conflicts:&#10;&#9;web/WEB-INF/src/controller/UserController.java&#10;&#10;token start to be implemented">
+      <created>1420715498755</created>
       <option name="number" value="00026" />
       <option name="project" value="LOCAL" />
-      <updated>1421083640488</updated>
+      <updated>1420715498755</updated>
     </task>
-    <task id="LOCAL-00027" summary="FactoryUser jsonToobject workplaceId (wtf?)">
-      <created>1421084325292</created>
+    <task id="LOCAL-00027" summary="Merge branch 'master' of https://github.com/SopraCovoit/Server&#10;&#10;Conflicts:&#10;&#9;web/WEB-INF/src/controller/UserController.java&#10;&#10;Token implémenté et à mettre en place&#10;">
+      <created>1420716232812</created>
       <option name="number" value="00027" />
       <option name="project" value="LOCAL" />
-      <updated>1421084325292</updated>
+      <updated>1420716232812</updated>
     </task>
-    <task id="LOCAL-00028" summary="lost @">
-      <created>1421084404148</created>
+    <task id="LOCAL-00028" summary="WorkplaceController testé et fonctionnel : insert/delete/update/select marchent tous et tapent bien dans la base.&#10;Récupération des JSON non testé (getparametermap à tester).">
+      <created>1420795854605</created>
       <option name="number" value="00028" />
       <option name="project" value="LOCAL" />
-      <updated>1421084404148</updated>
+      <updated>1420795854605</updated>
     </task>
-    <task id="LOCAL-00029" summary="?">
-      <created>1421085612923</created>
+    <task id="LOCAL-00029" summary="Renvois des json correct au demandeur">
+      <created>1420796413837</created>
       <option name="number" value="00029" />
       <option name="project" value="LOCAL" />
-      <updated>1421085612923</updated>
+      <updated>1420796413837</updated>
     </task>
-    <task id="LOCAL-00030" summary="factoryuser">
-      <created>1421086312087</created>
+    <task id="LOCAL-00030" summary="Header adapté au navigateur de jeremie">
+      <created>1420798251369</created>
       <option name="number" value="00030" />
       <option name="project" value="LOCAL" />
-      <updated>1421086312087</updated>
+      <updated>1420798251369</updated>
     </task>
-    <task id="LOCAL-00031" summary="factoryuser &amp; user seems ok">
-      <created>1421086880980</created>
+    <task id="LOCAL-00031" summary="Renvoi d'un workplace dans le json user plutôt que le workplaceId">
+      <created>1420806674344</created>
       <option name="number" value="00031" />
       <option name="project" value="LOCAL" />
-      <updated>1421086880980</updated>
+      <updated>1420806674344</updated>
     </task>
-    <task id="LOCAL-00032" summary="usercontroller">
-      <created>1421088452112</created>
+    <task id="LOCAL-00032" summary="Renvoi de tous les paths dans le json user plutôt que d'obliger david à faire plein de requêtes pour avoir les paths">
+      <created>1420807302448</created>
       <option name="number" value="00032" />
       <option name="project" value="LOCAL" />
-      <updated>1421088452112</updated>
+      <updated>1420807302448</updated>
     </task>
-    <task id="LOCAL-00033" summary="connectionservlet">
-      <created>1421090666563</created>
+    <task id="LOCAL-00033" summary="Path controller implémenté à moitié. Manque la partie ou latitude et longitude sont nul.&#10;Clariafier exactement ce que doit renvoyer le get du path">
+      <created>1420807749693</created>
       <option name="number" value="00033" />
       <option name="project" value="LOCAL" />
-      <updated>1421090666563</updated>
+      <updated>1420807749693</updated>
     </task>
-    <task id="LOCAL-00034" summary="connectionservlet">
-      <created>1421092798265</created>
+    <task id="LOCAL-00034" summary="PathController a jour et fonctionnel">
+      <created>1420816733871</created>
       <option name="number" value="00034" />
       <option name="project" value="LOCAL" />
-      <updated>1421092798265</updated>
+      <updated>1420816733871</updated>
     </task>
-    <task id="LOCAL-00035" summary="usernamepassword JDBC">
-      <created>1421094527773</created>
+    <task id="LOCAL-00035" summary="upload pathController pour respecter l'API">
+      <created>1420817084142</created>
       <option name="number" value="00035" />
       <option name="project" value="LOCAL" />
-      <updated>1421094527773</updated>
+      <updated>1420817084142</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Location intégré en tant que json global pour respecter l'API">
+      <created>1420817637497</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1420817637497</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Modifications mineures pour respecter l'API">
+      <created>1420818263595</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1420818263595</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Pleins d'erreurs">
+      <created>1420819073518</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1420819073518</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Plus d'erreurs">
+      <created>1420819875499</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1420819875499</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Post data récupérée correctement">
+      <created>1420822236053</created>
+      <option name="number" value="00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1420822236053</updated>
+    </task>
+    <task id="LOCAL-00041" summary="WorplaceController creation avec renvoit de l'ID correct testé&#10;UserController creation avec renvoit de l'ID correct non testé">
+      <created>1420824114553</created>
+      <option name="number" value="00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1420824114554</updated>
+    </task>
+    <task id="LOCAL-00042" summary="WorkplaceController et UserController testé et fonctionnel pour toutes les méthodes sauf le PUT (post data irrécupérable)&#10;&#10;PathController testé et fonctionnel pour la méthode POST.&#10;Reste le GET à testé.">
+      <created>1420909191710</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1420909191710</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Tous les controllers fonctionnels, put compris">
+      <created>1421057999358</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1421057999358</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Test avant deployement">
+      <created>1421070417833</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1421070417833</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58521000" />
+    <option name="totallyTimeSpent" value="69347000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1922" height="1054" extended-state="6" />
+    <frame x="0" y="22" width="1280" height="729" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929516" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867885" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929516" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32108626" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1585903" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36463225" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22691706" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18210863" sideWeight="0.8832753" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36784142" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13876653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22374798" sideWeight="0.49921507" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36577708" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.65149134" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39029768" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18210863" sideWeight="0.114982575" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28756058" sideWeight="0.50078493" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286385" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32810047" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929516" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867885" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3187166" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15951595" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36463225" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22691706" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1919786" sideWeight="0.88268155" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40859032" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3812601" sideWeight="0.49921507" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36577708" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.09140969" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286385" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.65149134" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32810047" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39029768" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24697208" sideWeight="0.11545624" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28756058" sideWeight="0.50078493" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -1335,35 +1263,37 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="sht" />
-    <MESSAGE value="shit" />
-    <MESSAGE value="fuck" />
-    <MESSAGE value="json mven -&gt; json in web/lib" />
-    <MESSAGE value="UpCase in Factory and DAOUser (almost)up and running" />
-    <MESSAGE value="tchoutchou" />
-    <MESSAGE value="Error-&gt; StatusedMessage" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;web/WEB-INF/src/controller/WorkplaceController.java&#10;&#9;web/WEB-INF/src/model/CustomError.java&#10;&#9;web/WEB-INF/src/model/Error.java&#10;&#9;web/WEB-INF/src/model/StatusedMessage.java&#10;&#9;web/WEB-INF/src/model/jsonFactory/FactoryError.java&#10;" />
-    <MESSAGE value="messages in status message" />
-    <MESSAGE value="TokenList" />
-    <MESSAGE value="ConnectionServlet" />
-    <MESSAGE value="ConnectionController" />
-    <MESSAGE value="UserController" />
-    <MESSAGE value="tokenList admin powa" />
-    <MESSAGE value="TUDOBEM" />
-    <MESSAGE value="ConnectionServlet doOptions" />
-    <MESSAGE value="doOptions in all Servlets" />
-    <MESSAGE value="FactoryUser jsonToobject workplaceId (wtf?)" />
-    <MESSAGE value="lost @" />
-    <MESSAGE value="?" />
-    <MESSAGE value="factoryuser" />
-    <MESSAGE value="factoryuser &amp; user seems ok" />
-    <MESSAGE value="usercontroller" />
-    <MESSAGE value="connectionservlet" />
-    <MESSAGE value="usernamepassword JDBC" />
-    <option name="LAST_COMMIT_MESSAGE" value="usernamepassword JDBC" />
+    <MESSAGE value="JsonKey en static&#10;" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/SopraCovoit/Server&#10;&#10;Conflicts:&#10;&#9;web/WEB-INF/src/controller/UserController.java&#10;&#9;web/WEB-INF/src/model/dao/DAOUser.java&#10;&#9;web/WEB-INF/src/model/dao/JDBCConnector.java&#10;&#10;And JSON KEY" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/SopraCovoit/Server&#10;&#10;Conflicts:&#10;&#9;web/WEB-INF/src/controller/UserController.java&#10;&#9;web/WEB-INF/src/model/dao/DAOUser.java&#10;&#9;web/WEB-INF/src/model/dao/JDBCConnector.java&#10;&#10;JSON KEY" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/SopraCovoit/Server&#10;        &#10;        Conflicts:&#10;        &#9;web/WEB-INF/src/controller/UserController.java&#10;        &#9;web/WEB-INF/src/model/dao/DAOUser.java&#10;        &#9;web/WEB-INF/src/model/dao/JDBCConnector.java&#10;        &#10;        JSON KEY" />
+    <MESSAGE value="Workplace Controller allmost donne" />
+    <MESSAGE value="token start to implement" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/SopraCovoit/Server&#10;&#10;Conflicts:&#10;&#9;web/WEB-INF/src/controller/UserController.java&#10;&#10;token start to be implemented" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/SopraCovoit/Server&#10;&#10;Conflicts:&#10;&#9;web/WEB-INF/src/controller/UserController.java&#10;&#10;Token implémenté et à mettre en place&#10;" />
+    <MESSAGE value="WorkplaceController testé et fonctionnel : insert/delete/update/select marchent tous et tapent bien dans la base.&#10;Récupération des JSON non testé (getparametermap à tester)." />
+    <MESSAGE value="Renvois des json correct au demandeur" />
+    <MESSAGE value="Header adapté au navigateur de jeremie" />
+    <MESSAGE value="Renvoi d'un workplace dans le json user plutôt que le workplaceId" />
+    <MESSAGE value="Renvoi de tous les paths dans le json user plutôt que d'obliger david à faire plein de requêtes pour avoir les paths" />
+    <MESSAGE value="Path controller implémenté à moitié. Manque la partie ou latitude et longitude sont nul.&#10;Clariafier exactement ce que doit renvoyer le get du path" />
+    <MESSAGE value="PathController a jour et fonctionnel" />
+    <MESSAGE value="upload pathController pour respecter l'API" />
+    <MESSAGE value="Location intégré en tant que json global pour respecter l'API" />
+    <MESSAGE value="Modifications mineures pour respecter l'API" />
+    <MESSAGE value="Pleins d'erreurs" />
+    <MESSAGE value="Plus d'erreurs" />
+    <MESSAGE value="Post data récupérée correctement" />
+    <MESSAGE value="WorplaceController creation avec renvoit de l'ID correct testé&#10;UserController creation avec renvoit de l'ID correct non testé" />
+    <MESSAGE value="WorkplaceController et UserController testé et fonctionnel pour toutes les méthodes sauf le PUT (post data irrécupérable)&#10;&#10;PathController testé et fonctionnel pour la méthode POST.&#10;Reste le GET à testé." />
+    <MESSAGE value="Tous les controllers fonctionnels, put compris" />
+    <MESSAGE value="Test avant deployement" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test avant deployement" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="17" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1371,40 +1301,57 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/dao/JDBCConnector.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="373" max-vertical-offset="1008">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/PathController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="666">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/PathServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="205" max-vertical-offset="684">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1140">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#DAO#0" expanded="false" />
+            <element signature="docComment;field#userTable#0;class#DAO#0" expanded="false" />
+            <element signature="docComment;method#find#0;class#DAO#0" expanded="false" />
+            <element signature="docComment;method#create#0;class#DAO#0" expanded="false" />
+            <element signature="docComment;method#update#0;class#DAO#0" expanded="false" />
+            <element signature="docComment;method#delete#0;class#DAO#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/AbstractController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="450">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="735">
+          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/PathController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="450">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="495">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAOUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="450">
+          <caret line="88" column="38" selection-start-line="88" selection-start-column="38" selection-end-line="88" selection-end-column="38" />
+          <folding>
+            <element signature="method#findByMail#0;class#DAOUser#0" expanded="false" />
+            <element signature="method#find#1;class#DAOUser#0" expanded="false" />
+            <marker date="1421049069000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
+            <marker date="1421049069000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
+            <marker date="1421049069000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
+            <marker date="1421049069000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
+            <marker date="1421049069000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1421049069000" expanded="true" signature="-1:-1" placeholder="UPDATE missi..." />
+            <marker date="1421049069000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1420,6 +1367,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="435">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/PathServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="480">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/UserServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="540">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -1446,13 +1414,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="399">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-app_3_1.xsd">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.047817" vertical-offset="4499" max-vertical-offset="4980">
@@ -1462,341 +1423,332 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Server.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+        <state vertical-scroll-proportion="0.026595745" vertical-offset="0" max-vertical-offset="585">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar!/com/mysql/jdbc/Driver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.32" vertical-offset="0" max-vertical-offset="432">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar!/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="126">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="648">
-          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/Factory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/Path.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1206">
-          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryError.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4" max-vertical-offset="882">
-          <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1564" max-vertical-offset="20934">
-          <caret line="128" column="17" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryPath.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1170">
-          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/Location.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="576">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/HeaderSetter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/PathController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1090" max-vertical-offset="2124">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.24549918" vertical-offset="0" max-vertical-offset="611">
+          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/Workplace.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666">
-          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <element signature="e#721#722#0" expanded="false" />
-            <element signature="e#753#754#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+          <caret line="11" column="31" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryWorkplace.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/Factory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="1062">
-          <caret line="19" column="178" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="178" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAO.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryLocation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="93" max-vertical-offset="1404">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-          <folding />
+        <state vertical-scroll-proportion="0.7393258" vertical-offset="196" max-vertical-offset="720">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/ConnectionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="81" max-vertical-offset="690">
+          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/json-20090211.jar!/org/json/JSONObject.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="9268" max-vertical-offset="11625">
+          <caret line="668" column="0" selection-start-line="668" selection-start-column="0" selection-end-line="668" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/utils/TokenList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="810">
-          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.49458483" vertical-offset="103" max-vertical-offset="690">
+          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryWorkplace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.95366794" vertical-offset="338" max-vertical-offset="885">
+          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35521236" vertical-offset="163" max-vertical-offset="900">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+          <folding>
+            <element signature="docComment;class#DAO#0" expanded="false" />
+            <element signature="docComment;field#userTable#0;class#DAO#0" expanded="false" />
+            <element signature="docComment;method#find#0;class#DAO#0" expanded="false" />
+            <element signature="docComment;method#create#0;class#DAO#0" expanded="false" />
+            <element signature="docComment;method#update#0;class#DAO#0" expanded="false" />
+            <element signature="docComment;method#delete#0;class#DAO#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/Path.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3325" vertical-offset="122" max-vertical-offset="915">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAOPath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27659574" vertical-offset="716" max-vertical-offset="1725">
+          <caret line="91" column="24" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
+          <folding>
+            <element signature="docComment;class#DAOPath#0" expanded="false" />
+            <element signature="method#DAOPath#0;class#DAOPath#0" expanded="false" />
+            <element signature="method#create#0;class#DAOPath#0" expanded="false" />
+            <element signature="method#findAllUserPath#0;class#DAOPath#0" expanded="false" />
+            <element signature="method#findAllWorkPlacePath#0;class#DAOPath#0" expanded="false" />
+            <element signature="method#getDistance#0;class#DAOPath#0" expanded="false" />
+            <marker date="1421057975000" expanded="false" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
+            <marker date="1421057975000" expanded="false" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1421057975000" expanded="true" signature="-1:-1" placeholder="UPDATE missi..." />
+            <marker date="1421057975000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1421057975000" expanded="false" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
+            <marker date="1421057975000" expanded="false" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
+            <marker date="1421057975000" expanded="false" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/artifacts/Server_war.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32110092" vertical-offset="0" max-vertical-offset="327">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="352">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.356383" vertical-offset="0" max-vertical-offset="855">
+          <caret line="34" column="60" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/utils/JsonKey.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="954">
-          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.22094926" vertical-offset="165" max-vertical-offset="825">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryUser.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/WorkplaceController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="172" max-vertical-offset="1530">
-          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="78" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1260">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAOWorkplace.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2232">
-          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1860">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <marker date="1421073801044" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
-            <marker date="1421073801044" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
-            <marker date="1421073801044" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
-            <marker date="1421073801044" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1421073801044" expanded="true" signature="-1:-1" placeholder="UPDATE missi..." />
-            <marker date="1421073801044" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1420822733000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
+            <marker date="1420822733000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
+            <marker date="1420822733000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
+            <marker date="1420822733000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1420822733000" expanded="true" signature="-1:-1" placeholder="UPDATE missi..." />
+            <marker date="1420822733000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAOPath.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2734" max-vertical-offset="3546">
-          <caret line="175" column="18" selection-start-line="175" selection-start-column="12" selection-end-line="175" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/StatusedMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="417" max-vertical-offset="1134">
-          <caret line="39" column="78" selection-start-line="39" selection-start-column="78" selection-end-line="39" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="209" max-vertical-offset="1476">
-          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/AbstractController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="1206">
-          <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.36" vertical-offset="0" max-vertical-offset="1296">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          <folding />
+        <state vertical-scroll-proportion="0.65630114" vertical-offset="484" max-vertical-offset="1125">
+          <caret line="87" column="15" selection-start-line="87" selection-start-column="15" selection-end-line="87" selection-end-column="15" />
+          <folding>
+            <element signature="e#2025#2026#0" expanded="true" />
+            <element signature="e#2059#2060#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/dao/DAOUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="143" max-vertical-offset="3222">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.6759411" vertical-offset="892" max-vertical-offset="2010">
+          <caret line="132" column="33" selection-start-line="132" selection-start-column="33" selection-end-line="132" selection-end-column="33" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3284#3290#0" expanded="true" />
-            <marker date="1421085575309" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
-            <marker date="1421085575309" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
-            <marker date="1421085575309" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
-            <marker date="1421085575309" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
-            <marker date="1421085575309" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1421085575309" expanded="true" signature="-1:-1" placeholder="UPDATE missi..." />
-            <marker date="1421085575309" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <element signature="method#findByMail#0;class#DAOUser#0" expanded="false" />
+            <element signature="method#find#1;class#DAOUser#0" expanded="false" />
+            <marker date="1421049069000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
+            <marker date="1421049069000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
+            <marker date="1421049069000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
+            <marker date="1421049069000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..missingValue..." />
+            <marker date="1421049069000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1421049069000" expanded="true" signature="-1:-1" placeholder="UPDATE missi..." />
+            <marker date="1421049069000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/dao/JDBCConnector.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/PathController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="28" max-vertical-offset="1080">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/ConnectionServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="702">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/ConnectionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
-          <caret line="33" column="107" selection-start-line="33" selection-start-column="107" selection-end-line="33" selection-end-column="107" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="1320">
+          <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#PathController#0" expanded="false" />
+            <element signature="method#PathController#0;class#PathController#0" expanded="false" />
+            <element signature="method#getResponseFromResquest#0;class#PathController#0" expanded="false" />
+            <element signature="e#2021#2087#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/UserServlet.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryPath.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="205" max-vertical-offset="1224">
-          <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.24549918" vertical-offset="0" max-vertical-offset="1050">
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="942" max-vertical-offset="1494">
-          <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
-          <folding>
-            <element signature="e#2272#2273#0" expanded="true" />
-            <element signature="e#2299#2300#0" expanded="true" />
-            <element signature="e#2780#2781#0" expanded="true" />
-            <element signature="e#2807#2808#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="267" max-vertical-offset="1224">
-          <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1395">
+          <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/PathServlet.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="444" max-vertical-offset="1188">
-          <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/UserWithIdServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="142" max-vertical-offset="1062">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="30" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/UserWithIdController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1189" max-vertical-offset="1764">
-          <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1251#1252#0" expanded="true" />
-            <element signature="e#1278#1279#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/WorkplaceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="1512">
-          <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1410">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/WorkplaceWithIdController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="972">
-          <caret line="34" column="82" selection-start-line="34" selection-start-column="82" selection-end-line="34" selection-end-column="82" />
+        <state vertical-scroll-proportion="0.705401" vertical-offset="34" max-vertical-offset="645">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/StatusedMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.25204584" vertical-offset="334" max-vertical-offset="945">
+          <caret line="12" column="43" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/utils/JsonKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7855974" vertical-offset="135" max-vertical-offset="795">
+          <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/jsonFactory/FactoryError.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28805238" vertical-offset="4" max-vertical-offset="615">
+          <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/javaee-api/6.0/javaee-api-6.0.jar!/javax/servlet/http/HttpServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15358362" vertical-offset="0" max-vertical-offset="1005">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/HeaderSetter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36824876" vertical-offset="0" max-vertical-offset="611">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/PathServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38625205" vertical-offset="739" max-vertical-offset="1350">
+          <caret line="73" column="28" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/controller/AbstractController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="990">
+          <caret line="53" column="72" selection-start-line="53" selection-start-column="72" selection-end-line="53" selection-end-column="72" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#584#585#0" expanded="true" />
-            <element signature="e#611#612#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#726#727#0" expanded="true" />
-            <element signature="e#1412#1413#0" expanded="true" />
-            <element signature="e#1439#1440#0" expanded="true" />
+            <element signature="method#getJsonFromRequest#0;class#AbstractController#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/UserServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4844517" vertical-offset="799" max-vertical-offset="1410">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="87" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/UserWithIdServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="619" max-vertical-offset="1245">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="77" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceWithIdServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="93" max-vertical-offset="1062">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1245">
+          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/model/dao/JDBCConnector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8651685" vertical-offset="726" max-vertical-offset="1350">
-          <caret line="66" column="59" selection-start-line="66" selection-start-column="59" selection-end-line="66" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="900">
+          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/view/WorkplaceServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50797874" vertical-offset="244" max-vertical-offset="1380">
+          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1843,7 +1795,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>1.6</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1880,11 +1832,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Java EE 6-Java EE 6</last-edited>
+          <last-edited>Maven: javax.servlet:servlet-api:3.0-alpha-1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.47871116" />
               </list>
             </option>
           </splitter-proportions>

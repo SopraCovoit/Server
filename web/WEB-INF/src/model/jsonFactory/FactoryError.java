@@ -16,7 +16,7 @@ public class FactoryError extends Factory<StatusedMessage> {
     @Override
     public StatusedMessage jsonToObject(JSONObject json) {
         try {
-            return new StatusedMessage(json.getInt(JsonKey.id),json.getString(JsonKey.message));
+            return new StatusedMessage(json.getInt(JsonKey.status),json.getString(JsonKey.message));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -27,7 +27,7 @@ public class FactoryError extends Factory<StatusedMessage> {
     public JSONObject objectToJson(StatusedMessage object) {
         JSONObject jsonToReturn = new JSONObject();
         try {
-            jsonToReturn.put(JsonKey.id,object.getId());
+            jsonToReturn.put(JsonKey.status,object.getId());
             jsonToReturn.put(JsonKey.message,object.getMessage());
         } catch (JSONException e) {
             e.printStackTrace();

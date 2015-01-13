@@ -30,7 +30,13 @@ public class PathServlet extends HttpServlet {
         HeaderSetter.addCorsHeader(resp);
         initController();
         PrintWriter out = resp.getWriter();
-        out.write(c.getResponseFromResquest(req));
+        String respFromRequest = c.getResponseFromResquest(req);
+        if(AbstractController.isError(respFromRequest) == -1){
+            out.write(respFromRequest);
+        }else{
+            out.write(respFromRequest);
+            resp.sendError(AbstractController.isError(respFromRequest));
+        }
     }
 
     @Override
@@ -39,7 +45,13 @@ public class PathServlet extends HttpServlet {
         HeaderSetter.addCorsHeader(resp);
         initController();
         PrintWriter out = resp.getWriter();
-        out.write(c.postResponseFromResquest(req));
+        String respFromRequest = c.postResponseFromResquest(req);
+        if(AbstractController.isError(respFromRequest) == -1){
+            out.write(respFromRequest);
+        }else{
+            out.write(respFromRequest);
+            resp.sendError(AbstractController.isError(respFromRequest));
+        }
     }
 
     @Override
@@ -48,7 +60,13 @@ public class PathServlet extends HttpServlet {
         HeaderSetter.addCorsHeader(resp);
         initController();
         PrintWriter out = resp.getWriter();
-        out.write(c.putResponseFromResquest(req));
+        String respFromRequest = c.putResponseFromResquest(req);
+        if(AbstractController.isError(respFromRequest) == -1){
+            out.write(respFromRequest);
+        }else{
+            out.write(respFromRequest);
+            resp.sendError(AbstractController.isError(respFromRequest));
+        }
     }
 
     @Override
@@ -57,7 +75,13 @@ public class PathServlet extends HttpServlet {
         HeaderSetter.addCorsHeader(resp);
         initController();
         PrintWriter out = resp.getWriter();
-        out.write(c.deleteResponseFromResquest(req));
+        String respFromRequest = c.deleteResponseFromResquest(req);
+        if(AbstractController.isError(respFromRequest) == -1){
+            out.write(respFromRequest);
+        }else{
+            out.write(respFromRequest);
+            resp.sendError(AbstractController.isError(respFromRequest));
+        }
     }
     @Override
     protected void doOptions(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
