@@ -31,8 +31,8 @@ public class WorkplaceWithIdController extends AbstractController {
 
     @Override
     public String deleteResponseFromResquest(HttpServletRequest request) {
-        Workplace wpToDelete = null;
-        wpToDelete = daoWp.find(Long.parseLong(request.getParameter(JsonKey.id)));
+        Workplace wpToDelete;
+        wpToDelete = daoWp.find(Long.parseLong(request.getContextPath()));
         if(wpToDelete != null){
             daoWp.delete(wpToDelete);
             return facEr.objectToJson(new StatusedMessage(StatusedMessage.SUCCESS_STATUS,StatusedMessage.SUCCESS_DELETE_WORKPLACE)).toString();

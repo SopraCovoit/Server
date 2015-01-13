@@ -32,7 +32,7 @@ public class UserWithIdController extends AbstractController {
     @Override
     public String getResponseFromResquest(HttpServletRequest request) {
         String json;
-        json = facUs.objectToJson(daoUs.find(Long.parseLong(request.getParameter(JsonKey.id)))).toString();
+        json = facUs.objectToJson(daoUs.find(Long.parseLong(request.getContextPath()))).toString();
         if(json == null){
             json = facEr.objectToJson(new StatusedMessage(StatusedMessage.BAD_SYNTAX,StatusedMessage.FAILURE_GET_USER)).toString();
         }
@@ -47,7 +47,7 @@ public class UserWithIdController extends AbstractController {
     @Override
     public String deleteResponseFromResquest(HttpServletRequest request) {
         String json;
-        User userToDelete = daoUs.find(Long.parseLong(request.getParameter(id)));
+        User userToDelete = daoUs.find(Long.parseLong(request.getContextPath()));
         if(userToDelete == null){
             json = facEr.objectToJson(new StatusedMessage(StatusedMessage.FAILURE_STATUS, StatusedMessage.FAILURE_DELETE_USER)).toString();
         }else{
