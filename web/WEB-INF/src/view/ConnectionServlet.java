@@ -2,8 +2,6 @@ package view;
 
 import controller.AbstractController;
 import controller.ConnectionController;
-import controller.UserController;
-import model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -25,14 +23,14 @@ public class ConnectionServlet extends HttpServlet {
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HeaderSetter.addCorsHeader(response);
-        initController();
-        PrintWriter out = response.getWriter();
-        out.write(c.postResponseFromResquest(request));
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        HeaderSetter.addCorsHeader(response);
+        initController();
+        PrintWriter out = response.getWriter();
+        out.write(c.getResponseFromResquest(request));
     }
 
     @Override

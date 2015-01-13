@@ -35,9 +35,12 @@ public class DAOWorkplace extends DAO {
                     resultatQuery.getInt(this.id),
                     resultatQuery.getString(this.name));
         } catch (SQLException e) {
-            e.printStackTrace();
+            return new Workplace(
+                    new Location(0,0),
+                    -1,
+                    "null");
+           // e.printStackTrace();
         }
-        return null;
     }
 
     public Workplace findByName(String name) {
