@@ -88,6 +88,21 @@ public abstract class AbstractController {
 
     }
 
+    public static int isError(String er){
+        try {
+            JSONObject json = new JSONObject(er);
+            if(json.getInt(JsonKey.status) != 200){
+                return json.getInt(JsonKey.status);
+            }else{
+                return json.getInt(JsonKey.status);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return -1;//c'est pas une erreur, ni vrai ni faut on renvoit
+        }
+
+    }
+
     /**
      * Every key we use to get every values in our JSonObject
      */
